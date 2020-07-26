@@ -15,3 +15,11 @@ You will find information about requirements, architecture, tasks, project manag
 === Requirements
 
 == MOF and UML
+
+=== Meta Object Facility
+
+=== Primitive Types
+
+=== Classes
+
+=== Structs
