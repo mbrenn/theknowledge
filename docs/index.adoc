@@ -1,8 +1,17 @@
 = The Knowledge
 
-This page contains all the knowlege about System Engineering and other topics
+== What is the idea about the book? 
+
+This book contains a collection of several topics and ideas regarding my daily work in office and some thoughts created at home. 
+
+Focus is Systems Engineering and the modelling of elements, interfaces and properties. Focus here is the big standard for UML, SysML and MOF. 
 
 You will find information about requirements, architecture, tasks, project management and other stupid things.
+
+The source of the book is available in  https://github.com/mbrenn/theknowledge[Github] and pull requests are always welcomed. 
+
+
+But now... let's start! 
 
 == Mathematics
 
@@ -15,3 +24,11 @@ You will find information about requirements, architecture, tasks, project manag
 === Requirements
 
 == MOF and UML
+
+=== Meta Object Facility
+
+=== Primitive Types
+
+=== Classes
+
+=== Structs
