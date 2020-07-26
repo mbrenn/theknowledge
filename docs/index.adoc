@@ -1,6 +1,8 @@
 = The Knowledge
 
-This page contains all the knowlege about System Engineering. Test
+This page contains all the knowlege about System Engineering.
+
+You will find information about requirements, architecture, tasks, project management and other stupid things. 
 
 == System Engineering
 
