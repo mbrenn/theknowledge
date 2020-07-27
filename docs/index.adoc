@@ -1,5 +1,7 @@
 = The Knowledge
 
+:toc:
+
 == What is the idea about the book? 
 
 This book contains a collection of several topics and ideas regarding my daily work in office and some thoughts created at home. 
@@ -32,3 +34,7 @@ But now... let's start!
 === Classes
 
 === Structs
+
+== Der DatenMeister
+
+include::datenmeister.adoc[]
