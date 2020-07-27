@@ -37,4 +37,4 @@ But now... let's start!
 
 == Der DatenMeister
 
-include::datenmeister.adoc
+include::datenmeister.adoc[]
