@@ -1,3 +1,16 @@
 Welcome to the DatenMeister. 
 
 http://www.datenmeister.net [Website of DatenMeister]
+
+http://github.com/mbrenn/datenmeister-new [Source of DatenMeister]
+
+This document gives you a short, unsorted overview through certain properties of the DatenMeister. 
+
+Each feature will be handled within a chapter in this document. 
+The document is splitted into three main chapters: 
+
+1. A description for the user of the DatenMeister in chapter 2.
+2. A description for the modeler of the DatenMeister in chapter 3.
+3. A description of the internal behavior of DatenMeister for developers in chapter 4. 
+
+include::datenmeister.usermanual.adoc[]
