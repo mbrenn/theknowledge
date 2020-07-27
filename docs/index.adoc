@@ -21,7 +21,7 @@ But now... let's start!
 
 == System Engineering
 
-=== Objects
+include::systemengineering.object.adoc[]
 
 === Requirements
 

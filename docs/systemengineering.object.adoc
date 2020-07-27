@@ -1,0 +1,15 @@
+
+
+=== Objects
+
+Let's start with the object. Within this chapter, we learn something about the difficulties to define things which seem to be clear for everyone but are very hard to explain. 
+
+When you are asking 10 different people about the definition of an object, you are expected to get 10 different answers with some overlap but also with some discrepancies. 
+
+We will also try find an appropriate definition of an object, but before getting into the definition, we should think about why we should define the term 'object'. Isn't life nice and easy with the non-definition and letting people have their own mindshop about the termin 'object'? 
+
+Yes, life is nice... But difficulties start to rise, when you are working with people and need to have a common understanding of how to exactly describe objects and their breakdown without having an idea how you should start to describe parts of a thing by using a term like 'object' or 'thing'.
+
+Some 'things' are obvious... Like a car, but even a car can have a total different shapes. Some 'things' seem to be clear for everyone. Talking about 'ice' has a different meaning while sitting on the beach and looking for a good and tasteful icecream or sitting in the antarctis and analysing glaciers.
+
+Here, we have a definition: https://en.wikipedia.org/wiki/Thing-in-itself
