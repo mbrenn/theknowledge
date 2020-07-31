@@ -3,7 +3,7 @@
 * http://www.datenmeister.net [Website of DatenMeister]
 * http://github.com/mbrenn/datenmeister-new [Source of DatenMeister]
 
-= Inhalte 
+== Inhalte 
 
 Dieses Dokument gibt dir einen kurzen, ungeordneten Überblick über verschiedene Aspekte des DatenMeisters. 
 
