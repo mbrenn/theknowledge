@@ -1,14 +1,21 @@
 = Gute Tools
 
-* Asciidoctor: https://asciidoctor.org/
+Asciidoctor:: https://asciidoctor.org/
 + 
 Ein Konvertierungstool um aus https://en.wikipedia.org/wiki/AsciiDoc[.adoc-Dateien] ein Html zu erzeugen. Auch das Geschriebene, welches du gerade liest, ist ein .adoc-Dokument. In Kombination mit Jenkins ein einfach gutes Tool. 
 
-* Jenkins: https://www.jenkins.io/
+Jenkins:: https://www.jenkins.io/
 + 
 Mittlerweile das Standard-Tool der automatisierten Ausführung von Skripten, wie zum Beispiel Build-Skripte, Test-Ausführungs-Skripte oder Konvertierungs-Skripte.
 
-* Visual Studio Code: https://code.visualstudio.com/
+Visual Studio Code:: https://code.visualstudio.com/
 +
 Ein sehr populärer Editor zum Bearbeiten von Code-, Markup und Daten-Dateien welcher unter allen großen Betriebssystemen läuft. Nutze ich täglich, wenn ich nicht Rider oder Visual Studio für C# nutze. 
 
+Visual Studio:: https://visualstudio.microsoft.com/de/
++
+Das Tool für Windows-Entwicklung, allerdings für C# nutze ich persönlich den Rider
+
+JetBrains Rider:: https://www.jetbrains.com/de-de/rider/
++
+Ein platform-übergreifendes Tool zur C#/.Net Entwicklung unter Windows und Linux. Mein persönliches Entwicklungstool. 
