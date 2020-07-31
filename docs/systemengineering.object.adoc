@@ -1,15 +1,18 @@
 
+= Objekte
 
-=== Objects
+Lass uns mit den Objekten starten. In diesen Kapitel lernen wir etwas über die Schwierigkeite Dinge zu Objekten zu machen und zwar in einer Art und Weise, dass die beabsichtigte Aussage über das Objekt auch deutlich kommunizierbar ist. 
 
-Let's start with the object. Within this chapter, we learn something about the difficulties to define things which seem to be clear for everyone but are very hard to explain. 
+Fragt man 10 verschiedene Persoenen über die Definition eines konkreten Objektes, kann man, vereinfacht gesagt, 10 verschiednee Antworten erhalten, die sich teilweise überlappen, aber auch teilweise völlig widersprechen. 
 
-When you are asking 10 different people about the definition of an object, you are expected to get 10 different answers with some overlap but also with some discrepancies. 
+Wir werden hier auch eine angemessene Definition des Terminus "Objekt" reden. Aber bevor wir das tun sollten wir darüber nachdenken, ob es überhaupt Sinn ergibt, eine Definition für das "Objekt" suchen. Wäre das Leben nicht schön, wenn wir einfach die Nicht-Definition akzeptieren und jeden mit seine eigenen Mindset denken, reden und handeln lassen. 
 
-We will also try find an appropriate definition of an object, but before getting into the definition, we should think about why we should define the term 'object'. Isn't life nice and easy with the non-definition and letting people have their own mindshop about the termin 'object'? 
+Ja, das Leben ist schön... je unkonkreter, des besser... allerdings fangen die Schwierigkeiten an, wenn wir mit Menschen zusammenarbeiten und jeder versteht, warum man ein Objekt genau so beschreibt, wie man es tut und wie man es am Besten beschreiben soll und warum es für eine sachliche Diskusssion wichtig ist, ein Objekt sauber zu beschreiben und abzugrenzen. 
 
-Yes, life is nice... But difficulties start to rise, when you are working with people and need to have a common understanding of how to exactly describe objects and their breakdown without having an idea how you should start to describe parts of a thing by using a term like 'object' or 'thing'.
+Einige Dinge sind einfach... Wie ein Fahrzeug, aber selbst ein Fahrzeug kann in völlig unterschiedlichen Formen auftreten. Ist ein Auto ein Fahrzeug? Ist ein Fahrrad ein Fahrzeug oder ist ein Inline-Skater ein Fahrzeug? Oder reden wir über ein 'Eis'. Ist eine Eis zum Schlecken oder Gletscher-Eis genannt? 
+
+Hier gibt es eine Definition: 
 
 Some 'things' are obvious... Like a car, but even a car can have a total different shapes. Some 'things' seem to be clear for everyone. Talking about 'ice' has a different meaning while sitting on the beach and looking for a good and tasteful icecream or sitting in the antarctis and analysing glaciers.
 
-Here, we have a definition: https://en.wikipedia.org/wiki/Thing-in-itself
+Hier haben wir eine Definition: https://de.wikipedia.org/wiki/Ding_an_sich
