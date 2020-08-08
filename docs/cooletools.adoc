@@ -19,3 +19,13 @@ Das Tool für Windows-Entwicklung, allerdings für C# nutze ich persönlich den 
 JetBrains Rider:: https://www.jetbrains.com/de-de/rider/
 +
 Ein platform-übergreifendes Tool zur C#/.Net Entwicklung unter Windows und Linux. Mein persönliches Entwicklungstool. 
++
+Kostet ein wenig Geld, aber ist in meinen Augen das Abo wert. 
+
+DotNet Benchmark:: https://github.com/dotnet/BenchmarkDotNet
++
+Gehört mit NUnit zu einer der Standard-Tools für die Bestimmung der Laufzeit von Methoden. Das Tool kümmert sich automatisch um die Analyse des Overheads und der notwendigen Wiederholraten um eine gewisse Konfidenz zu erreichen. Bevor man mit https://docs.microsoft.com/de-de/dotnet/api/system.diagnostics.stopwatch?view=netcore-3.1["StopWatch"] sein eigenes Benchmarking aufbaut, empfehle ich eine Prüfung dieser Bibliothek.
+
+SmartGit:: https://www.syntevo.com/smartgit/
++
+Aktuell mein Lieblings-Git-Tool. Sieht nicht hypig aus, funktioniert sehr zuverlässig und besitzt eine gute grafische Darstellung der Revisions-Logs. Insgesamt auch, wie Git halt so ist, sehr schnell. 
