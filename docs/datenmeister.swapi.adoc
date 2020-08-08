@@ -1,0 +1,25 @@
+= SW-API
+
+== DatenMeister.dll
+
+=== Module Runtime.ExtentStorage
+
+Prinzipiell ist der DatenMeister in der Lage mit entkoppelten Extents zu arbeiten. Dies bedeutet, dass man Extents laden kann, die ohne zentralisierte Registrierung genutzt, bearbeitet und wieder gespeichert werden können. 
+
+Der DatenMeister unterstützt aber parallel eine zentrale Registrierung über den *ExtentManager*, welcher das Laden, das Sperren und das abgesicherte Abspeichern bei Beendigung der Applikation unterstützt. 
+
+Es gibt damit insgesamt zwei Datenbanken in den die Extents gespeichert werden. 
+
+. Innerhalb der Workspaces (_WorkspaceLogic.GetWorkspaces()_) sind die Extents eingefügt. Hierüber können Extents im normalen Datenbankprinzip gefunden werden. Hier ist aber nicht bekannt über welchen ProviderLoader das Extent von welcher Quelle geladen worden ist. 
+
+. Über die Registrierung des ExtentManager (_ExtentStorageData_) werden geladene Extents zum Zwecke der Nachverfolgung bein Locking und Speichern gespeichert. Der ExtentManager weist auch die genutzter ProviderLoader Config dem Extent zu. 
+
+Folgende Methoden werden bei der Verwendung von Extents genutzt: 
+
+* Beim Einladen über _LoadExtent_ wird das Extent eingeladen und registriert. Beim Einladen wird das Extent über seinen Provider auch gesperrt.
+
+* Beim Entladen über _DetachExtent_ wird das Extent deregistriert, aber nicht gespeichert. Das Extent wird über seinen Provider auch wieder entsperrt. 
+
+* Über _LoadAllExtents_ findet das Einladen der ExtentLoaderConfig statt, die von der vorherigen Instanz speichert, welche Extents beim Hochfahren einzuladen sind. Das Einladen erfolgt dann auch über _LoadExtent_ und führt damit zu einer Sperrung der Extents. 
+
+* Über _DeleteExtent_ wird das Extent nicht nur aus der Registrierung entfernt, sondern auch aus dem Workspace genommen. 
