@@ -12,4 +12,12 @@ Jedes Feature wird in einem Kapitel des Dokumentes behandelt und ist in jeweils 
 . Eine Beschreibung für den Endnutzer
 . Eine Beschreibung für den Modellierer des Datenmodells
 . Eine Beschreibung des internen Verhaltens des DatenMeisters für Entwickler
+. Eine Beschreibung der Software-Architektur und des Sourcecodes
 
+include::datenmeister.enduser.adoc[leveloffset=+1]
+
+include::datenmeister.modeller.adoc[leveloffset=+1]
+
+include::datenmeister.developer.adoc[leveloffset=+1]
+
+include::datenmeister.swapi.adoc[leveloffset=+1]
