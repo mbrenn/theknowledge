@@ -21,6 +21,8 @@ Aber nun... lass uns einfach starten!
 
 include::cooletools.adoc[leveloffset=+1]
 
+include::rating.food.alcoholfree.adoc[leveloffset=+1]
+
 include::systemengineering.adoc[leveloffset=+1]
 
 include::datenmeister.adoc[leveloffset=+1]
