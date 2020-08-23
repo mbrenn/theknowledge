@@ -22,4 +22,22 @@ Folgende Methoden werden bei der Verwendung von Extents genutzt:
 
 * Über _LoadAllExtents_ findet das Einladen der ExtentLoaderConfig statt, die von der vorherigen Instanz speichert, welche Extents beim Hochfahren einzuladen sind. Das Einladen erfolgt dann auch über _LoadExtent_ und führt damit zu einer Sperrung der Extents. 
 
+* Über _StoreAllExtents_ findet ein Write Trigger über alle geladenen und registrierten Events statt. 
+
 * Über _DeleteExtent_ wird das Extent nicht nur aus der Registrierung entfernt, sondern auch aus dem Workspace genommen. 
+
+* Über _UnloadManager_ werden die Extents entladen und der Zugriff auf die Registrierungs-Datei komplett aufgehoben. Die Extents selbst sind noch in den Workspaces, werden aber nicht mehr über den ExtentManager nachverfolgt. 
+
+
+== Module.Reports
+
+Die Generierung von Reports wird von zwei Report Generatoren unterstützt: 
+
+* SimpleReport
+* TextReport
+
+=== Simple Report
+
+Implementiert in den Klassen _SimpleReportConfiguration_ und _SimpleReportCreator_
+
+=== Text Report
