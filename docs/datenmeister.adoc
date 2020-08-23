@@ -1,16 +1,23 @@
-Welcome to the DatenMeister. 
+= Der DatenMeister
 
-http://www.datenmeister.net [Website of DatenMeister]
+* http://www.datenmeister.net [Website of DatenMeister]
+* http://github.com/mbrenn/datenmeister-new [Source of DatenMeister]
 
-http://github.com/mbrenn/datenmeister-new [Source of DatenMeister]
+== Inhalte 
 
-This document gives you a short, unsorted overview through certain properties of the DatenMeister. 
+Dieses Dokument gibt dir einen kurzen, ungeordneten Überblick über verschiedene Aspekte des DatenMeisters. 
 
-Each feature will be handled within a chapter in this document. 
-The document is splitted into three main chapters: 
+Jedes Feature wird in einem Kapitel des Dokumentes behandelt und ist in jeweils drei Unterbereiche unterteilt: 
 
-1. A description for the user of the DatenMeister in chapter 2.
-2. A description for the modeler of the DatenMeister in chapter 3.
-3. A description of the internal behavior of DatenMeister for developers in chapter 4. 
+. Eine Beschreibung für den Endnutzer
+. Eine Beschreibung für den Modellierer des Datenmodells
+. Eine Beschreibung des internen Verhaltens des DatenMeisters für Entwickler
+. Eine Beschreibung der Software-Architektur und des Sourcecodes
 
-include::datenmeister.usermanual.adoc[]
+include::datenmeister.enduser.adoc[leveloffset=+1]
+
+include::datenmeister.modeller.adoc[leveloffset=+1]
+
+include::datenmeister.developer.adoc[leveloffset=+1]
+
+include::datenmeister.swapi.adoc[leveloffset=+1]

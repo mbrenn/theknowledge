@@ -1,0 +1,33 @@
+= Endbenutzer
+
+== Reports
+
+Prinzipiell gibt es zwei verschiedene Arten von Reports für den Nutzer: 
+
+. Die einfachen Reports (_SimpleReports_)
+. Der vollständige Html Report (_HtmlReportCreator_)
+
+=== Einfache Reports
+
+Von jedem beliebigen Extent kann über das Auswählen des Menüs 'Create Report' ein einfacher Report über die aktuelle Ansicht generiert werden. 
+
+TODO: BILD
+
+Alternativ kann der Nutzer eine Instanz des Elements 'SimpleRpeortConfiguration' anlegen. In der Detailansicht des Elements wird ein Knopf 'Create Report' angelegt. Über diesen kann der Nutzer dann den Extent oder das Element auswählen über den der Report erzeugt werden soll. 
+
+TODO: Bild
+
+Es wird eine zufällige Datei auf der Festplatte erzeugt, die dann über den Standardbrowser angezeigt wird. 
+
+=== Der Html Report
+
+Ein Report wird über zwei Konfiguration definiert: 
+
+. Über einer ReportDefinition kann der Nutzer das Format und die Elemente des Reports definieren. Dieses ist noch nicht mit den Datenquellen gekoppelt. 
+. Über die ReportInstance wird dann der eigentliche Report instanziiert. Hier werden die Datenquellen mit der Report Definition verknüpft. 
+
+==== Report Definition
+
+==== Report Instance
+
+Die Report Instance besteht aus einer Referenz zur ReportDefinition und den Quellen der Daten. Diese verbinden den Namen der Quelle zu einer Url über die der DatenMeister die Daten einliest. 
