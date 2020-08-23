@@ -3,16 +3,67 @@
 
 Lass uns mit den Objekten starten. In diesen Kapitel lernen wir etwas über die Schwierigkeite Dinge zu Objekten zu machen und zwar in einer Art und Weise, dass die beabsichtigte Aussage über das Objekt auch deutlich kommunizierbar ist. 
 
-Fragt man 10 verschiedene Persoenen über die Definition eines konkreten Objektes, kann man, vereinfacht gesagt, 10 verschiednee Antworten erhalten, die sich teilweise überlappen, aber auch teilweise völlig widersprechen. 
+Fragt man 10 verschiedene Persoenen über die Definition eines konkreten Objektes, kann man, vereinfacht gesagt, 10 verschiedene Antworten erhalten, die sich teilweise überlappen, aber auch teilweise völlig widersprechen. 
 
 Wir werden hier auch eine angemessene Definition des Terminus "Objekt" reden. Aber bevor wir das tun sollten wir darüber nachdenken, ob es überhaupt Sinn ergibt, eine Definition für das "Objekt" suchen. Wäre das Leben nicht schön, wenn wir einfach die Nicht-Definition akzeptieren und jeden mit seine eigenen Mindset denken, reden und handeln lassen. 
 
-Ja, das Leben ist schön... je unkonkreter, des besser... allerdings fangen die Schwierigkeiten an, wenn wir mit Menschen zusammenarbeiten und jeder versteht, warum man ein Objekt genau so beschreibt, wie man es tut und wie man es am Besten beschreiben soll und warum es für eine sachliche Diskusssion wichtig ist, ein Objekt sauber zu beschreiben und abzugrenzen. 
+Ja, das Leben ist schön... je unkonkreter, des besser... allerdings fangen die Schwierigkeiten an, wenn wir mit Menschen zusammenarbeiten. Für eine gute Zusammenarbeit ist es wichtig ein Objekt beschreiben zu können und man versteht, warum man ein Objekt in einer Art und Weise so beschreibt, wie man es tut und wie man es am Besten beschreiben soll und warum es für eine sachliche Diskusssion wichtig ist, ein Objekt sauber zu beschreiben und abzugrenzen. 
 
 Einige Dinge sind einfach... Wie ein Fahrzeug, aber selbst ein Fahrzeug kann in völlig unterschiedlichen Formen auftreten. Ist ein Auto ein Fahrzeug? Ist ein Fahrrad ein Fahrzeug oder ist ein Inline-Skater ein Fahrzeug? Oder reden wir über ein 'Eis'. Ist eine Eis zum Schlecken oder Gletscher-Eis genannt? 
 
-Hier gibt es eine Definition: 
+Was werden wir in unserem fachlichen Leben alles beschreiben wollen? Gibt es überhaupt eine Unschärfe zum privaten Leben? Während man im privaten Leben gerne mit der Ungenauigkeit auskommt und dies auch den Reiz des Zwischenmenschlichen ausmachen kann, führen Ungenauigkeiten spätestens bei der Auslieferung zu Konflikten... Dann ist es nämlich nicht süß, dass der andere komplett daneben lag, sondern für ein Projekt und damit dem schnöden Mammon gegebenenfalls fatal!
 
-Some 'things' are obvious... Like a car, but even a car can have a total different shapes. Some 'things' seem to be clear for everyone. Talking about 'ice' has a different meaning while sitting on the beach and looking for a good and tasteful icecream or sitting in the antarctis and analysing glaciers.
+Zurück... was wollen wir eigentlich beschreiben? 
 
-Hier haben wir eine Definition: https://de.wikipedia.org/wiki/Ding_an_sich
+* Dinge und Sachen... klar!
+* Menschen, Tiere, Pflanzen... Würde schon sagen. Wenn man sagt, dass eine Sache einem Menschen gehört, muss klar sein, was ein Mensch ist und welche Eigenschaften er gegebenenfalls hat, da das Alter darlegt, ob dieser Mensch dies überhaupt besitzen darf.
+* Geometrische Figuren, Flächen, Volumen... Hört sich erstmal abstrakt an, aber das Volumen ist auch etwas, was man beschreiben muss. Oder ist es mehr eine Eigenschaft? Dazu später, aber spätestens wenn man ein Grundstück definiert, kommt man um die flächige Eigenschaft nicht drum herum. 
+* Emotionen, Liebe und Gefühle... Wäre schön... Aber zu welchem Zweck im fachlichen Leben? In der Entertainmentbranche wäre es wahrscheinlich sinnig, wenn man die Wirkung eines Films messen und erfassen können
+* Handlungen, Taten... Nun wird es wirklich abstrakt, aber in meinen Augen ganz wichtig. Einer handelnden Person im Auftrag ist es je nach Arbeitsmodell sehr wichtig, was zu handeln ist. 
+* Wetter, Schneefall, Sonnenstand... Ok, an Beispielen kommen wir nicht wirklich weiter. 
+* ... Es gibt hier noch ganz viele Dinge. 
+
+== Wikipedia: Objekt
+
+Nutzen wir mal Wikipedia... https://de.wikipedia.org/wiki/Objekt[Objekt] hilft eigentlich gar nicht. Hier fangen wir maximal die ersten zwei Punkte der obigen Liste, die wir beschreiben wollen. 
+
+== Das Ding an sich
+Hier haben wir eine Definition: https://de.wikipedia.org/wiki/Ding_an_sich[Ding an sich] - OK, die Definition ist so "hübsch", dass sie anstrengend ist... gehen wir mal weiter.
+
+== Res
+Suchen wir was Anderes: https://de.wikipedia.org/wiki/Res[Res]. Gefällt mir irgendwie, holen wir das für uns Relevante heraus:
+
+* Eine Sache kann körperlich oder unkörperlich sein
+* Eine Sache kann beschrieben werden
+* Der Name einer Sache ist zweitrangig zu der Sache selbst
+
+Damit kann man schon ein wenig anfangen, aber reicht mir noch nicht. 
+
+== Die Sache im rechtlichen Sinne
+Auf zum Nächsten: https://de.wikipedia.org/wiki/Sache_(Recht)
+
+Man denkt immer, dass im Recht viele Dinge sauber definiert sind... Aber das BGB ist in meinen Augen eine Besonderheit, da man hier in vielen Dingen vom gesunden Menschenverstand ausgehent. Wie ist die Sache hier definiert:
+
+§90 BGB sagt: "Sachen im Sinne des Gesetzen sind nur körperliche Gegenstände"
+
+Macht mich nicht glücklich, denn ich möchte ja auch Personen, nichtkörperliche Dinge, Grundstücke, Flächen, aber auch Tier bezeichnen (§90a BGB: Tiere sind keine Sachen, sie werden nur so behandelt, wenn es kein besonderes Recht gibt).
+
+Ach ja, das Recht... 
+
+== Die Entität - Axiom
+
+Drehen wir den Spieß mal um. Was ergibt denn überhaupt Sinn zu beschreiben, damit man in der fachlichen Welt damit umgehen kann? 
+
+* Das Objekt muss beschreibbar sein... Bekloppte Forderung, aber wichtig. Nichtbeschreibbare Phantasie-Wesen, wie Gott [Sorry], sind nicht beschreibbar und lässt sich nur schwer arbeiten. 
+* Das Objekt muss abgrenzbar sein. Das heißt, dass ganz klar ersichtlich ist, was in dem Objekt inkludiert und was nicht. Nur so wissen wir, ob jedes Teilelement beschrieben, übergeben oder erfasst worden ist.
+
+
+Daraus entwicklen wir mal folgendes Axium zur Objekt-Definition und nennen sie Entität. (Ich war nicht der Erste!)
+
+[IMPORTANT]
+==== 
+Eine Entität ist von außen durch seine Beschreibung abgrenzbar.
+====
+
+BÄNG!
+
