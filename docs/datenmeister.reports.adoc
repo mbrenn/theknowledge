@@ -52,6 +52,18 @@ Drückt einen Absatz im Report aus. Dieser kann einen statischen Text beinhalten
 |name|Name des Elements
 |paragraph|Standardtext, der angezeigt wird
 |viewNode|Falls eine Evaluierung stattfindet, beschreibt die ViewNode-Abfrage welches Objekt selektiert wurde. Das selektierte Objekt ist über die Instanz 'i' in den Parsern verfügbar. 
-|cssClass|CSS class for the paragrah
+|cssClass|CSS-Klasse der Tabelle
 |evalParagraph|Wird gesetzt, wenn der Absatztext dynamisch erzeugt wird. 
-|evalProperties|Wird gesetzt, wenn über den TemplateParser die Eigenschaften der Ansicht geändert werden soll. Das Ansichtsobjekt selbst ist über 'v' erreichbar. 
+|evalProperties|Wird gesetzt, wenn über den TemplateParser die Eigenschaften der Ansicht geändert werden soll. Die Definition des Absatz selbst ist über 'v' erreichbar. 
+|===
+
+=== ReportTable
+Beschreibt eine Tabelle, die die Elemente eines ViewNodes ausdrückt. Über eine Formulardefinition werden die Spalten der Tabelle definiert. 
+
+|===
+|name|Name des Elements
+|viewNode|Beschreibt die dynamische Abfrage, die die Elemente selektiert, die in der Tabelle angezeigt werden sollen
+|form|Definiert das Formular
+|cssClass|CSS-Klasse der Tabelle
+|evalProperties|Führt eine Evaluierung aus. Die Elemente selbst sind über 'items' abrufbar. 
+|===

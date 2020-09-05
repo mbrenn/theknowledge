@@ -12,5 +12,5 @@ Typischerweise kann die Evaluierung eines Texts über die Eigenschaft 'eval{Prop
 |===
 |Item Name|Description
 |i|Das Element, welches im Parser genutzt wird. Je nach Kontext kann dies ein Extent, eine Sammlung oder ein Element selbst sein. 
-|v|Befindet sich der Parser gerade im Kontext eines Ansichtsobjektes, so enthält die Variable 'v' die Instanz des Ansicht. |
+|v|Befindet sich der Parser gerade im Kontext eines Ansichtsobjektes, so enthält die Variable 'v' die Instanz des Ansicht. Dies kann zum Beispiel der Absatz sein, die Tabellen- oder Zellenbeschreibung. 
 |===
