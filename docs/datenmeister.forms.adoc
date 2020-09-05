@@ -1,0 +1,23 @@
+= Formulare
+
+Es gibt drei Arten von Hauptformularen: 
+
+* Detail-Formular
+* Listen-Formular
+* Extent-Formular (eigentlich sollte es Objekt-Formular heißen)
+
+== ExtentForm
+
+Ein Extent Form ist enthält einen Satz von Formularen um ein konkretes Objekt anzuzeigen. 
+
+Das Extent Form wird prinzipiell im Hauptfenster bei der Ansicht der Elemente eines Extents genutzt oder auch wenn der Nutzer im Hauptfenster ein konkretes Objekt ausgewählt hat. 
+
+
+=== Package Form
+Ein besonderes Formular ist die Listenansicht der Package-Objekte. Hier kann der Nutzer über die 'Eigenschaft' der preferredTypes festlegen, welche Klasseninstanzen bevorzugt in diesem Package angelegt werden können. 
+
+==== Implementierung
+Die Evaluierung erfolg im FormsPlugin per FormsModificationPlugin, welcher hier ein besonderes Regelwerk enthält. 
+
+Es können sich hier verschiedene Plugins registrieren, die nachträglich nochmals ein Formular verändern dürfen. 
+

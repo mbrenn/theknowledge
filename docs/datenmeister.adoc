@@ -14,10 +14,16 @@ Jedes Feature wird in einem Kapitel des Dokumentes behandelt und ist in jeweils 
 . Eine Beschreibung des internen Verhaltens des DatenMeisters für Entwickler
 . Eine Beschreibung der Software-Architektur und des Sourcecodes
 
-include::datenmeister.enduser.adoc[leveloffset=+1]
+Jedes Feature wird in Bezug auf diese vier Aspekte durchgegangen. Im Abschluss wird nochmals insgesamt über die SW-Architektur diskutiert. 
 
-include::datenmeister.modeller.adoc[leveloffset=+1]
+include::datenmeister.dataviews.adoc[leveloffset=+1]
 
-include::datenmeister.developer.adoc[leveloffset=+1]
+include::datenmeister.evaluation.adoc[leveloffset=+1]
+
+include::datenmeister.forms.adoc[leveloffset=+1]
+
+include::datenmeister.reports.adoc[leveloffset=+1]
 
 include::datenmeister.swapi.adoc[leveloffset=+1]
+
+include::datenmeister.translation.adoc[leveloffset=+1]

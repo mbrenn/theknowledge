@@ -1,0 +1,10 @@
+= Datenansichten (DataViews)
+
+Über Datenansichten erhält der Modellierer und Nutzer Zugriff auf Sammlungen von Objekten oder Instanzen von Objekten. 
+
+Die Datenansichten sind im Namespace _DatenMeister.Models.Namespace_ definiert. 
+
+Eine Datenansicht referenziert einen Ansichtsknoten (ViewNode), der eines oder mehrere Objekte zurückgibt. Dieser Knoten können miteinander verkettet werden, damit auch komplexe Datenaggregationen möglich sind. 
+
+Wenn ein Datenknoten ein Objekt repräsentiert, so ist es alleinig in der Datensammlung vorhanden.
+

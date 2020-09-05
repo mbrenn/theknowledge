@@ -1,0 +1,16 @@
+= Evaluierte Texte
+
+Der DatenMeister bietet neben der statischen Zuordnung von Inhalten von Objekteigenschaften zu Texten auch eine Möglichkeit diese Eigenschaften mit Hilfe des https://github.com/lunet-io/scriban[Scriban] Frame-Works zu evaluieren und so dynamischer die Inhalte der Objekte darstellen. 
+
+Das Scriban-Objekt {{i}} enthält das aktuelle Element, welche bearbeitet wird. Ist das aktuelle Objekt eine Person, so erhält man über "{{i.name}}"" den Namen der Person zurück. Über "Hallo {{i.prename}} {{i.name}}" begrüßt man ihn. 
+
+Das Präfix <% ist reserviert, um zukünftige Alternativen Evaluierer zu unterstützen. 
+
+Typischerweise kann die Evaluierung eines Texts über die Eigenschaft 'eval{Property}' gesteuert werden, wobei Property der Name der Eigenschaft ist, die üblicherweise die statische Zuordnung zwischen anzuzeigenden Inhalt und Objekt-Eigenschaft festlegt. 
+
+[%header,cols="1,5"]
+|===
+|Item Name|Description
+|i|Das Element, welches im Parser genutzt wird. Je nach Kontext kann dies ein Extent, eine Sammlung oder ein Element selbst sein. 
+|v|Befindet sich der Parser gerade im Kontext eines Ansichtsobjektes, so enthält die Variable 'v' die Instanz des Ansicht. |
+|===
