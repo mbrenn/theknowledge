@@ -63,7 +63,7 @@ Beschreibt eine Tabelle, die die Elemente eines ViewNodes ausdrückt. Über eine
 |===
 |name|Name des Elements
 |viewNode|Beschreibt die dynamische Abfrage, die die Elemente selektiert, die in der Tabelle angezeigt werden sollen
-|form|Definiert das Formular
+|form|Definiert das Formular. Dieses Formular soll vom Type _ListForm_ instanziiert sein. 
 |cssClass|CSS-Klasse der Tabelle
 |evalProperties|Führt eine Evaluierung aus. Die Elemente selbst sind über 'items' abrufbar. 
 |===

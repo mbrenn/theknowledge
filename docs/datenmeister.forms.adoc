@@ -6,6 +6,20 @@ Es gibt drei Arten von Hauptformularen:
 * Listen-Formular
 * Extent-Formular (eigentlich sollte es Objekt-Formular heißen)
 
+== Form
+
+Das Formular im Allgemeinen unterstützt folgende Eigenschaften. Alle Ableitungen haben auch diese Eigenschaften zu unterstützen. 
+
+[%header,cols="1,5"]
+|===
+|Name|Bedeutung
+|name|Name des Formulars
+|title|Titel, wie er angezeigt wird
+|isReadOnly|Flag, ob das Formular im schreibgeschützten Modus angezeigt wird
+|hideMetaInformation|Wahr, wenn im Formular nicht automatisch die Meta-Informationen eines Objektes angezeigt werden soll. 
+|originalUri|Da das Formular bei der Anzeige geklont wird, enthält diese Eigenschaft die Url vor dem Klonvorgang. 
+|===
+
 == ExtentForm
 
 Ein Extent Form ist enthält einen Satz von Formularen um ein konkretes Objekt anzuzeigen. 
@@ -21,6 +35,24 @@ Die Evaluierung erfolg im FormsPlugin per FormsModificationPlugin, welcher hier 
 
 Es können sich hier verschiedene Plugins registrieren, die nachträglich nochmals ein Formular verändern dürfen. 
 
+== ListForm
+Das Listenformular beschreibt eine Tabelle bzw. reine Auflistung einer Sammlung von Objekten: 
+
+[%header,cols="1,5"]
+|===
+|Name|Bedeutung
+|property|k.A.
+|metaClass|k.A.
+|includeDescendents|k.A.
+|noItemsWithMetaClass|k.A.
+|inhibitNewItems|k.A.
+|inhibitDeleteItems|k.A.
+|defaultTypesForNewElements|k.A.
+|fastViewFilters|k.A.
+|field|Diese Auflistung enthält die Felder, die in der Liste angezeigt werden sollen. Üblicherweise sind dies die Spalten der Tabelle
+|sortingOrder|Die Reihenfolge in der die Items angezeigt werden sollen.
+|viewNode|In diesem Formular kann nochmals konkreter über eine Datenansicht gefiltert oder verändert werden. Die eigentliche Liste wird als dynamische Datensammlung _input_ übergeben. 
+|===
 
 
 == Feld-Typen
@@ -63,5 +95,11 @@ Nebenn der Eigenschaften der TextFieldData werden folgende Eigenschaften unterst
 [%header,cols="1,5"]
 |===
 |Name|Bedeutung
-|evalCellProperties|Das Skript, das zur Erstellung der Zelle ausgewertet wird. Bei der Auswertung des Skriptes beschreibt die Variable 'i' das aktuell betrachtete Element und das Element 'c' die aktuelle Zelle. Die Eigenschaften des Zelle sind abhängig von verwendeten Report
+|evalCellProperties|Das Skript, das zur Erstellung der Zelle ausgewertet wird. 
+
+--Die Variable 'i' beschreibt das aktuell betrachtete Element 
+
+- Die Variable 'c' die aktuelle Zelle. Die Eigenschaften des Zelle sind abhängig von verwendeten Report.
+
+- Die Variable 'r' der Zustand der aktuellen Zeile, wie sie im ListForm in der Eigenschaft 'evalRowProperties' definiert werden kann. 
 |===
