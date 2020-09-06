@@ -21,3 +21,47 @@ Die Evaluierung erfolg im FormsPlugin per FormsModificationPlugin, welcher hier 
 
 Es können sich hier verschiedene Plugins registrieren, die nachträglich nochmals ein Formular verändern dürfen. 
 
+
+
+== Feld-Typen
+
+Jedes Formular besteht aus einer Sammlung von Feldern. Hier werden folgende Felder unterstützt
+
+=== FieldData
+
+Diese Basis-Klasse stellt die generischen Eigenschaften zur Verfügung, die von jedem Feld unterstützt werden sollten. 
+
+[%header,cols="1,5"]
+|===
+|Name|Bedeutung
+|name|Name des Feldes und der dahinterliegenden Eigenschaft des Objektes
+|title|Titel, der im Formular angezeigt wird
+|isEnumeration|Flag, ob die Inhalte hinter der Eigenschafte eine Aufzählung sind oder ein einzelnes Element. Diese Eigenschaft wird von manchen Feldtypen zur automatischen Gestatung genutzt. 
+|defaultValue|Falls der Wert nicht gesetzt ist, kann hier der Wert der Standard-Eigenschaft definiert werden. 
+|isReadOnly|Flag, ob das Feld nicht beschreibbar ist. 
+|===
+
+=== TextFieldData
+
+Dieses Feld drückt ein Text-Eingabefeld aus in dem der Nutzer einen freien Text eintragen kann. 
+
+Neben der Eigenschaften der FieldData werden noch folgende Eigenschaften unterstützt: 
+
+[%header,cols="1,5"]
+|===
+|Name|Bedeutung
+|lineHeight|Anzahl der Zeilen, die angezeigt standardmäßig angezeigt werden sollen
+|width|Breite in logischen Pixeln, die das Feld standardmäßig haben soll. 
+|===
+
+
+=== EvalTextFieldData
+
+Diese Erweiterung des Textfelds unterstützt die dynamische Auswertung von Inhalten. Dies ist im besonderen relevant bei der Report-Erstellung, da hier das Format und andere Eigenschaften dynamisch ausgewertet werden können. 
+
+Nebenn der Eigenschaften der TextFieldData werden folgende Eigenschaften unterstützt:
+[%header,cols="1,5"]
+|===
+|Name|Bedeutung
+|evalCellProperties|Das Skript, das zur Erstellung der Zelle ausgewertet wird. Bei der Auswertung des Skriptes beschreibt die Variable 'i' das aktuell betrachtete Element und das Element 'c' die aktuelle Zelle. Die Eigenschaften des Zelle sind abhängig von verwendeten Report
+|===
