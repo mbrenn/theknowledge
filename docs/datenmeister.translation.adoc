@@ -1,0 +1,9 @@
+= Übersetzungen
+
+Folgende Übersetzungen gelten zwischen dem Deutschen und dem Englischen
+
+[%header]
+|===
+|Deutsch|Englisch
+|Arbeitsbereich|Workspace
+|Datenansicht|Dataview
