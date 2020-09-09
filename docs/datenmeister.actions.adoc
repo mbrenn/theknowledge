@@ -1,0 +1,39 @@
+= Aktionen und Aktionssammlungen
+
+Über die Aktionen kann der Nutzer des Datenmeister eine Sequenz von Aktivitäten definieren, die im DatenMeister-Kontext ausführbar sind. 
+
+Hierzu gibt es die beiden Basisklassen: 
+. Action
+. ActionSet
+
+== ActionSet
+
+Ein ActionSet (Aktionssammlung) sammelt verschiedene Aktionen. 
+
+[%header,cols="1,5"]
+|===
+|Name|Beschreibung
+|name|Name der Aktionssammlung
+|===
+== Action
+
+Die Basisklasse Action repräsentiert eine Aktion. Allerdings muss diese Klasse abgeleitet werden, damit die Aktion konkretisiert wird.
+
+
+[%header,cols="1,5"]
+|===
+|Name|Beschreibung
+|name|Name der Aktion
+|===
+
+== LoggingWriterAction
+
+Schreibt einen fixen Text in das konfigurierte Logging.
+
+Neben der Eigenschaften der Klasse _Action_ werden folgende Eigenschaften unterstützt
+
+[%header,cols="1,5"]
+|===
+|Name|Beschreibung
+|message|Nachricht, die in das Log geschrieben werden soll.
+|===
