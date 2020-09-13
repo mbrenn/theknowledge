@@ -37,3 +37,16 @@ Neben der Eigenschaften der Klasse _Action_ werden folgende Eigenschaften unters
 |Name|Beschreibung
 |message|Nachricht, die in das Log geschrieben werden soll.
 |===
+
+== CommandExecutionHandler
+
+Führt einen Prozess aus und wartet bis der Prozess abgeschlossen worden ist. 
+
+Neben der Eigenschaften der Klasse _Action_ werden folgende Eigenschaften unterstützt
+
+[%header,cols="1,5"]
+|===
+|Name|Beschreibung
+|command|Prozess, der gestartet wird. Der Prozess wird über System.Diagnostics.Process gestartet und sollte eine ausführbare Datei bezeichnen
+|arguments|Argumente, die dem Prozess mitgegeben werden
+|===
