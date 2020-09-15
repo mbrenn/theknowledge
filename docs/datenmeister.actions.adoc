@@ -50,3 +50,43 @@ Neben der Eigenschaften der Klasse _Action_ werden folgende Eigenschaften unters
 |command|Prozess, der gestartet wird. Der Prozess wird über System.Diagnostics.Process gestartet und sollte eine ausführbare Datei bezeichnen
 |arguments|Argumente, die dem Prozess mitgegeben werden
 |===
+
+== DropExtentAction
+
+Löscht einen Extent aus der Datenbank.
+
+Neben der Eigenschaften der Klasse _Action_ werden folgende Eigenschaften unterstützt
+
+[%header,cols="1,5"]
+|===
+|Name|Beschreibung
+|workspace|Workspace aus dem der Extent gelöscht werden soll.
+|extentUri|Uri des Extents welches gelöscht werden soll.
+|===
+
+
+== CreateWorkspaceAction
+
+Erstellt einen neuen Workspace.
+
+Neben der Eigenschaften der Klasse _Action_ werden folgende Eigenschaften unterstützt
+
+[%header,cols="1,5"]
+|===
+|Name|Beschreibung
+|workspace|Name des Workspaces welcher erzeugt werden soll.
+|annotation|Beschreibung des Workspaces
+|===
+
+
+== DropWorkspaceAction
+
+Löscht einen Arbeitsbereich aus der Datenbank.
+
+Neben der Eigenschaften der Klasse _Action_ werden folgende Eigenschaften unterstützt
+
+[%header,cols="1,5"]
+|===
+|Name|Beschreibung
+|workspace|Workspace aus  der Datenbank gelöscht werden soll.
+|===
