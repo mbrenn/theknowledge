@@ -1,0 +1,69 @@
+= Extents
+
+== Das Laden von Extents
+
+=== Konfigurationen
+
+==== ExtentLoaderConfig
+
+==== ExtentFileLoaderConfig 
+
+|====
+|Abgeleitet|ExtentLoaderConfig
+|Registriert über|_Abstrakte Konfiguration_
+|====
+
+==== ExcelExtentLoaderConfig
+
+|====
+Abgeleitet|ExtentFileLoaderConfig
+|Registriert über|_Abstrakte Konfiguration_
+|====
+
+
+==== ExcelImportExtentLoaderConfig
+
+|====
+Abgeleitet|ExcelExtentLoaderConfig
+|Registriert über|DatenMeister.Excel.Integration.ExcelPlugin
+|====
+
+
+==== ExcelReferenceExtentLoaderConfig
+
+|====
+|Abgeleitet|ExcelExtentLoaderConfig
+|Registriert über|DatenMeister.Excel.Integration.ExcelPlugin
+|====
+
+
+
+==== InMemoryLoaderConfig
+
+|====
+|Abgeleitet|ExtentLoaderConfig
+|Registriert über|DatenMeister.Integration.Integrator
+|====
+
+
+==== XmiStorageLoaderConfig
+
+|====
+|Abgeleitet|ExtentFileLoaderConfig
+|Registriert über|DatenMeister.Provider.XMI.XmiPlugin
+|====
+
+
+==== XmlReferenceLoaderConfig
+
+|====
+|Abgeleitet|ExtentFileLoaderConfig
+|Registriert über|DatenMeister.Integration.Integrator
+|====
+
+==== CsvExtentLoaderConfig
+
+|====
+|Abgeleitet|ExtentFileLoaderConfig
+|Registriert über|DatenMeister.Provider.CSV.CsvPlugin
+|====
