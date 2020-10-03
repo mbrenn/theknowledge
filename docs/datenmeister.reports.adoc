@@ -24,6 +24,8 @@ Ein Report wird über zwei Konfiguration definiert:
 . Über einer ReportDefinition kann der Nutzer das Format und die Elemente des Reports definieren. Dieses ist noch nicht mit den Datenquellen gekoppelt. 
 . Über die ReportInstance wird dann der eigentliche Report instanziiert. Hier werden die Datenquellen mit der Report Definition verknüpft. 
 
+image::images/reports_classes.uxf.png[]
+
 === Report Definition
 
 === Report Instance
