@@ -1,4 +1,5 @@
 asciidoctor -D ../output ../docs/index.adoc
-cp ../docs/images/* ../docs/
+mkdir -p ../output/images
+cp ../docs/images/* ../output/images/
 
 
