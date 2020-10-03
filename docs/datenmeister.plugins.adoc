@@ -6,4 +6,5 @@
 |BeforeBootstrapping|Bevor der MOF und UML-Extent eingeladen wird und die Workspaces for MOF und UML zur Verfügung stehen
 |AfterBootstrapping|Nachdem die Workspaces for MOF und UML zur Verfügung stehen
 |AfterInitialization|Nachdem die internen Datentypen und der Extent Manager initialisiert worden sind.
-|AfterLoadingOfExtents|Nachdem der ExtentManager alle aktiven Extents eingeladen hat. 
+|AfterLoadingOfExtents|Nachdem der ExtentManager alle aktiven Extents eingeladen hat.
+|===
