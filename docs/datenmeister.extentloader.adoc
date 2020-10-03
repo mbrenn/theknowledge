@@ -16,7 +16,7 @@
 ==== ExcelExtentLoaderConfig
 
 |===
-Abgeleitet|ExtentFileLoaderConfig
+|Abgeleitet|ExtentFileLoaderConfig
 |Registriert über|_Abstrakte Konfiguration_
 |===
 
@@ -24,7 +24,7 @@ Abgeleitet|ExtentFileLoaderConfig
 ==== ExcelImportExtentLoaderConfig
 
 |===
-Abgeleitet|ExcelExtentLoaderConfig
+|Abgeleitet|ExcelExtentLoaderConfig
 |Registriert über|DatenMeister.Excel.Integration.ExcelPlugin
 |===
 
