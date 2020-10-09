@@ -14,6 +14,22 @@ Diese Tabelle wird in eine Baumstruktur mit drei Ebenen umgewandelt:
 
 Dazu dient folgende Konfiguration
 
+=== ExcelLoaderConfig
+
+[%header,cols="1,5"]
+|===
+|Name|Bedeutung
+|filePath|Dateiname über den importiert wird
+|extentUri|Uri des entstehenden Extents
+|workspaceId|Id des Arbeitsbereiches in dem der entstehende Extent eingefügt wird
+|sheetName|Name des Excel-Sheets aus dem importiert wird
+|hasHeader|Flag, ob die erste Spalte des Excelsheets Überschriften bezeichnet
+|idColumnName|Name der Spalte, die gegebenenfalls die Id beinhaltet
+|countRows|Anzahl der Zeilen, die einzulesen sind. Wenn 0 oder negativ wird versucht automatisch zu ermitteln wieviel Zeilen abzuarbeiten sind
+|countColumns|Anzahl der Spalten, die einzulesen sind. Wenn 0 oder negativ wird versucht automatisch zu ermitteln wieviel Spalten abzuarbeiten sind
+|offsetRow|Anzahl der Zeilen, die zuerst übersprungen werden um das Excel einzulesen. Damit muss das Excel nicht zwingend bei A1 beginnen. 
+|offsetColumn|Anzahl der Spalten, die zuerst übersprungen werden um das Excel einzulesen. Damit muss das Excel nicht zwingend bei A1 beginnen.
+|===
 === ExcelHierarchicalLoaderConfig
 
 Abgeleitet von ExcelLoaderConfig
