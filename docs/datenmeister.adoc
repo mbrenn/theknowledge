@@ -16,6 +16,8 @@ Jedes Feature wird in einem Kapitel des Dokumentes behandelt und ist in jeweils 
 
 Jedes Feature wird in Bezug auf diese vier Aspekte durchgegangen. Im Abschluss wird nochmals insgesamt über die SW-Architektur diskutiert. 
 
+include::datenmeister.extent.adoc[leveloffset=+1]
+
 include::datenmeister.actions.adoc[leveloffset=+1]
 
 include::datenmeister.plugins.adoc[leveloffset=+1]

@@ -1,0 +1,31 @@
+= Extents
+
+Ein Extent ist eine Sammlung von Objekten in einem abgeschlossenen Container. Innerhalb des DatenMeister ist dies eine Datei, eine Datenbank oder eine dynamische Objektsammlung, die jeweilig über eine Konfiguration (LoaderConfig) eingeladen worden ist. 
+
+== Das Auflösen (Resolving) von Objekten
+
+Jeder UriExtent besitzt eine oder mehrere Adressen über das er gefunden werden kann. 
+
+Elemente können über eine ID abgerufen werden kann. 
+
+Das UriExtent unterstützt folgende Abfrageschema: 
+
+[%header, cols="2,5"]
+|===
+|Typ|Beschreibung
+|Abfrage per ID a|Der Uri des Extents wird über ein '#' die Objekt-ID angehängt. Der Text hinter diesem identifiziert das Object per ID
+
+- dm:///datenbank/#objectid
+|Abfrage per Name a|Der Uri des Extents wird über ein '?fn=' der volle NAme des Objekts angehängt
+
+- dm:///datenbank/?fn=team_Frankfurt::player_1
+|Abfrage einer Eigenschaft a|Nachdem das Element über einer der obigen Verfahren identifiziert worden ist, kann über den QueryString-Parameter 'prop' eine Eigenschaft des Objektes selektiert werden. Der Inhalt der Eigenschaft wird zurückgegeben
+
+- dm:///datenbank/?fn=team_Frankfurt::player_1&prop=age
+- dm:///datenbank/?prop=age#objectid
+|Abfrage einer Datenansicht a|Nachdem eine reflektive Auflistung (reflectiveCollection) über eines der obigen Schemas selektiert worden ist, kann dieses über eine Datenansicht modifiziert werden. Die Auflistung wird dieser Datenansicht als 'input'-Knoten übergeben.
+
+Hinweis: Die Daten 
+
+- dm:///datenbank/?fn=team_Frankfurt::player_1&prop=children&dataview=dm:///views/%23childrenView
+|===
