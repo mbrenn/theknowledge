@@ -41,7 +41,15 @@ Definition *ReportInstance*:
 |sources|Sammlung von ReportInstanceSources, die dem Nutzer pro Report erlauben unterschiedliche Quellen anzugeben. 
 |===
 
-Definition *ReportInstanceSource*:
+==== HtmlReportInstance 
+
+Abgeleitet aus der ReportInstance und ermöglicht den Export eines Html-Dokuments aus der ReporttDefinition. 
+
+==== AdocReportInstance 
+
+Abgeleitet aus der ReportInstance und ermöglicht den Export eines ADoc-Dokuments aus der ReportDefinition. 
+
+=== ReportInstanceSource
 |===
 |name|Name der Quelle
 |url|Url um das Extent, die Sammlung oder das Objekt zu referenzieren. 

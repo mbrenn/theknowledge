@@ -117,3 +117,42 @@ Neben der Eigenschaften der Klasse _Action_ werden folgende Eigenschaften unters
 |Name|Beschreibung
 |workspace|Workspace aus  der Datenbank gelöscht werden soll.
 |===
+
+== CopyElementsAction
+
+Kopiert alle Unterelemente von einem Objekt oder Extent zu einem anderen Extent. 
+
+Abgeleitet von Action 
+
+[%header,cols="1,5"]
+|===
+|Name|Beschreibung
+|sourceWorkspace|Der Arbeitsbereich in dem die Quell-Elemente gefunden werden
+|targetWorkspace|Der Arbeitsbereich zu dem die Ziel-Elemente kopiert werden
+|sourcePath|Der Pfad in dem Quell-Arbeitsbereich aus dem die Elemente geholt werden.
+|targetPath|Der Pfad in dem die Elemente kopiert werden. 
+|===
+
+=== Regeln für Quell-Elemente
+
+- Wenn der Pfad zum Quell-Element eine ReflectiveCollection ist, werden alle Elemente dieser kopiert oder verschoben. 
+- Wenn der Pfad zum Quell-Element ein Extent ist, werden alle Elemente des Extents kopiert oder verschoben. 
+- Wenn der Pfad zum Quell-Element ein Objekt selbst ist, wird nur dieses kopiert oder verschoben. 
+
+=== Regeln für Ziel-Elemente
+
+- Wenn der Pfad zum Ziel-Element eine ReflectiveCollection ist, werden alle Elemente in diese kopiert oder verschoben. 
+- Wenn der Pfad zum Ziel-Element ein Extent ist, werden alle Elemente in diese kopiert oder verschoben. 
+- Wenn der Pfad zum Ziel-Element ein Objekt selbst ist, werden die Elemente in die Standard-Eigenschaft (meist 'packagedElement') des Elements geschoben. 
+
+== ExportToXmiAction
+
+Nimmt eine Sammlung von Objekten, kopiert diese in einen Xmi-Extent und exportiert die dahinterliegende Xml-Datei als Xml.
+
+[%header,cols="1,5"]
+|===
+|Name|Beschreibung
+|sourceWorkspaceId|Definiert den Quell-Arbeitsbereich aus dem die Daten für den Export vorbereitet werden. 
+|sourcePath|Definiert den Quell-Pfad der zum Auffinden der Daten genutzt wird. 
+|filePath|Pfad in dem das Xmi exportiert wird.
+|===
