@@ -1,5 +1,6 @@
 :doctype: book
 :toc: left
+:toclevels: 4
 :listing-caption: Listing
 
 = Das Wissen
