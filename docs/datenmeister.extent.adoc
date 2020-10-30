@@ -25,7 +25,7 @@ Das UriExtent unterstützt folgende Abfrageschema:
 - dm:///datenbank/?prop=age#objectid
 |Abfrage einer Datenansicht a|Nachdem eine reflektive Auflistung (reflectiveCollection) über eines der obigen Schemas selektiert worden ist, kann dieses über eine Datenansicht modifiziert werden. Die Auflistung wird dieser Datenansicht als 'input'-Knoten übergeben.
 
-Hinweis: Die Daten 
+Hinweis: Die Url der Datenansicht muss Urlcodiert übergeben werden. 
 
 - dm:///datenbank/?fn=team_Frankfurt::player_1&prop=children&dataview=dm:///views/%23childrenView
 |===

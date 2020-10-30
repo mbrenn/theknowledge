@@ -1,6 +1,6 @@
 = Das Wissen
 
-:toc:
+:toc: left
 
 == Was soll denn dieses Buch? 
 

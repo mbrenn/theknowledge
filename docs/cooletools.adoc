@@ -14,7 +14,7 @@ Ein sehr populärer Editor zum Bearbeiten von Code-, Markup und Daten-Dateien we
 
 Visual Studio:: https://visualstudio.microsoft.com/de/
 +
-Das Tool für Windows-Entwicklung, allerdings für C# nutze ich persönlich den Rider
+Das Tool für Windows-Entwicklung, allerdings für C# nutze ich persönlich den Rider.
 
 JetBrains Rider:: https://www.jetbrains.com/de-de/rider/
 +

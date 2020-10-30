@@ -118,6 +118,19 @@ Neben der Eigenschaften der Klasse _Action_ werden folgende Eigenschaften unters
 |workspace|Workspace aus  der Datenbank gelöscht werden soll.
 |===
 
+== ClearCollectionAction
+
+Löscht alle Elemente einer Sammlung. 
+Dies kann ein komplettes Extent sein oder auch die Eigenschaft eines Objektes welches die Sammlung enthält. 
+
+
+[%header,cols="1,5"]
+|===
+|Name|Beschreibung
+|workspace|Der Arbeitsbereich in dem das Objekt gefunden wird. Standard ist 'Data'
+|path|Der Pfad, der auf eine Sammlung verweist. Dies kann ein Extent oder eine Eigenschaft eines Objektes sein 
+|===
+
 == CopyElementsAction
 
 Kopiert alle Unterelemente von einem Objekt oder Extent zu einem anderen Extent. 
