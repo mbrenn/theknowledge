@@ -13,7 +13,7 @@ Fokussiert wird sich hier auf das Systems Engineering, die Modellierung von Elem
 
 Das komplette Buch ist zur besseren Verständlichkeit in deutsch geschrieben. Erreiche ich nicht das weltweite Publikum besser? Darüber habe ich lange nachgedacht, aber mich aus folgenden Gründen doch für die deutsche Sprache entschieden: 
 
-* Ich schreibe eleganter uns effizienter
+* Ich schreibe eleganter und effizienter
 * Die Erläuterungen sind plastischer und besser verständlich
 * Es gibt ausreichend gute Übersetzungsmaschinen
 
