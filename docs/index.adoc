@@ -4,8 +4,6 @@
 
 = Das Wissen
 
-
-
 == Was soll denn dieses Buch? 
 
 Dieses Buch sammelt verschieden Ideen, Aspekte und Themen resultierend aus meiner täglichen Arbeit im Büro und Gedanken von zu Hause. Dieses Buch enthält natürlich keine konkreten Interna meines Arbeitgebers oder identifizierbare Anekdoten. 

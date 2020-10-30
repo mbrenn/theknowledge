@@ -1,3 +1,32 @@
 = Das Finden von Formularen
 
-Wie im vorherigen Kapital beschrieben ist die Ansicht von den 
+Wie im vorherigen Kapital beschrieben sind die Formulare von den eigentlichen Daten entkoppelt. Um das Formular, gegebenenfalls bestehend aus Unterformularen, auswählen zu können, gibt es die _FormAssociation_, die einen Regelsatz festlegt über den das Formular einer Liste, einem Objekt oder einen Extent zugeordnet wird. 
+
+== Die Modelle
+=== FormAssociation
+
+In dieser Instanz der Formular-Zuordnung  wird das Regelwerk festgelegt
+
+[%header,cols="1,5"]
+|===
+|Name|Bedeutung
+|name|Name der Formular-Zuordnung
+|formType|Typ des Formulars welches zugeordnet werden kann. Die möglichen Typen finden sich in der Tabelle unten wirder
+|metaClass|Wenn das selektierte Objekt oder die Liste dahinter von diesem Objekttyp ist, kann diese Zurodnung ausgewählt werden
+|extentType|Wenn das Extent von diesem Typ ist, kann dise Zuordnung ausgewählt werden. 
+|viewModeId|Wenn der Nutzer in dieser Ansicht ist, kann diese Zuordnung ausgewählt werden
+|parentMetaClass|Wenn die Elemente einer Liste ausgewählt werden und das besitzende Objekt von diesem Typ ist, kann dieses ausgewählt erden. 
+|parentProperty|Wenn die Elemente einer Liste ausgewählt werden und sich diese Liste in dieser Eigenschaft des besitzenden Objektes befindet, kann dieses ausgewählt ewrden. 
+|form|Dies beschreibt das Formular welches ausgewählt werden kann, wenn die Eigenschaften oben zustimmen, soweit sie gewählt sind. 
+|===
+
+=== Die Formulartypen
+
+[%header,cols="1,5"]
+|===
+|Name|Bedeutung
+|Detail
+|TreeItemExtent
+|TreeItemDetail
+|ObjectList
+|===
