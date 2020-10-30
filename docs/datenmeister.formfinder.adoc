@@ -22,11 +22,13 @@ In dieser Instanz der Formular-Zuordnung  wird das Regelwerk festgelegt
 
 === Die Formulartypen
 
-[%header,cols="1,5"]
+[%header,cols="1,4,1"]
 |===
-|Name|Bedeutung
-|Detail
-|TreeItemExtent
-|TreeItemDetail
-|ObjectList
+|Name|Bedeutung|Formular
+|Detail|Das Formular wird für die Detail-Ansicht eines Items angezeigt.|DetailForm, ExtentForm
+|TreeItemExtent|Das Formular wird angezeigt wenn der Nutzer ein bestimmtes Extent ausgewählt hat und alle Elemente des Extents angezeigt werden sollen. |ExtentForm
+|TreeItemDetail|Das Formular wird angezeigt wenn der Nutzer ein bestimmtes Element ausgewählt hat und nun in der Baumansicht dieses Element angezeigt werden soll. Dieser typ unterscheidet sich vom Detail, dass das Fenster nicht dediziert für das Element angelegt worden ist. |ExtentForm
+|ObjectList|Das Formular wird angezeigt, wenn alle Elemente einer bestimmten Eigenschaft in einer Subliste (SubElementField) angezeigt werden sollen.|ListForm
+|TreeItemExtentExtension|Dieses Formular wird dem ExtentForm hinzugefügt, wenn die Beschreibung der Formular-Zuordnung zu dem angezeigtne Formular passt.|Listform, DetailForm
+|TreeItemDetailExtension|Dieses Formular wird dem ExtentForm hinzugefügt, wenn die Beschreibung der Formular-Zuordnung zu dem angezeigtne Formular passt.|Listform, DetailForm
 |===
