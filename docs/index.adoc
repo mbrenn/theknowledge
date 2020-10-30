@@ -1,6 +1,9 @@
-= Das Wissen
-
+:doctype: book
 :toc: left
+:toclevels: 4
+:listing-caption: Listing
+
+= Das Wissen
 
 == Was soll denn dieses Buch? 
 

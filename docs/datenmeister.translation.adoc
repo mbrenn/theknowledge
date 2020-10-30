@@ -7,4 +7,5 @@ Folgende Übersetzungen gelten zwischen dem Deutschen und dem Englischen
 |Deutsch|Englisch
 |Arbeitsbereich|Workspace
 |Datenansicht|Dataview
+|Formular-Zuordnung|FormAssociation
 |===

@@ -1,0 +1,34 @@
+= Das Finden von Formularen
+
+Wie im vorherigen Kapital beschrieben sind die Formulare von den eigentlichen Daten entkoppelt. Um das Formular, gegebenenfalls bestehend aus Unterformularen, auswählen zu können, gibt es die _FormAssociation_, die einen Regelsatz festlegt über den das Formular einer Liste, einem Objekt oder einen Extent zugeordnet wird. 
+
+== Die Modelle
+=== FormAssociation
+
+In dieser Instanz der Formular-Zuordnung  wird das Regelwerk festgelegt
+
+[%header,cols="1,5"]
+|===
+|Name|Bedeutung
+|name|Name der Formular-Zuordnung
+|formType|Typ des Formulars welches zugeordnet werden kann. Die möglichen Typen finden sich in der Tabelle unten wirder
+|metaClass|Wenn das selektierte Objekt oder die Liste dahinter von diesem Objekttyp ist, kann diese Zurodnung ausgewählt werden
+|extentType|Wenn das Extent von diesem Typ ist, kann dise Zuordnung ausgewählt werden. 
+|viewModeId|Wenn der Nutzer in dieser Ansicht ist, kann diese Zuordnung ausgewählt werden
+|parentMetaClass|Wenn die Elemente einer Liste ausgewählt werden und das besitzende Objekt von diesem Typ ist, kann dieses ausgewählt erden. 
+|parentProperty|Wenn die Elemente einer Liste ausgewählt werden und sich diese Liste in dieser Eigenschaft des besitzenden Objektes befindet, kann dieses ausgewählt ewrden. 
+|form|Dies beschreibt das Formular welches ausgewählt werden kann, wenn die Eigenschaften oben zustimmen, soweit sie gewählt sind. 
+|===
+
+=== Die Formulartypen
+
+[%header,cols="1,4,1"]
+|===
+|Name|Bedeutung|Formular
+|Detail|Das Formular wird für die Detail-Ansicht eines Items angezeigt.|DetailForm, ExtentForm
+|TreeItemExtent|Das Formular wird angezeigt wenn der Nutzer ein bestimmtes Extent ausgewählt hat und alle Elemente des Extents angezeigt werden sollen. |ExtentForm
+|TreeItemDetail|Das Formular wird angezeigt wenn der Nutzer ein bestimmtes Element ausgewählt hat und nun in der Baumansicht dieses Element angezeigt werden soll. Dieser typ unterscheidet sich vom Detail, dass das Fenster nicht dediziert für das Element angelegt worden ist. |ExtentForm
+|ObjectList|Das Formular wird angezeigt, wenn alle Elemente einer bestimmten Eigenschaft in einer Subliste (SubElementField) angezeigt werden sollen.|ListForm
+|TreeItemExtentExtension|Dieses Formular wird dem ExtentForm hinzugefügt, wenn die Beschreibung der Formular-Zuordnung zu dem angezeigtne Formular passt.|Listform, DetailForm
+|TreeItemDetailExtension|Dieses Formular wird dem ExtentForm hinzugefügt, wenn die Beschreibung der Formular-Zuordnung zu dem angezeigtne Formular passt.|Listform, DetailForm
+|===
