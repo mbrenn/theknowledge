@@ -1,6 +1,10 @@
+:doctype: book
+:toc: left
+:listing-caption: Listing
+
 = Das Wissen
 
-:toc: left
+
 
 == Was soll denn dieses Buch? 
 
