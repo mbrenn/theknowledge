@@ -1,4 +1,4 @@
-asciidoctor -D ../output ../docs/index.adoc
+asciidoctor -a toc left -D ../output ../docs/index.adoc
 mkdir -p ../output/images
 cp -r ../docs/images/* ../output/images/
 
