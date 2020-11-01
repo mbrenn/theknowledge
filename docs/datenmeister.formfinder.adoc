@@ -30,5 +30,5 @@ In dieser Instanz der Formular-Zuordnung  wird das Regelwerk festgelegt
 |TreeItemDetail|Das Formular wird angezeigt wenn der Nutzer ein bestimmtes Element ausgewählt hat und nun in der Baumansicht dieses Element angezeigt werden soll. Dieser typ unterscheidet sich vom Detail, dass das Fenster nicht dediziert für das Element angelegt worden ist. |ExtentForm
 |ObjectList|Das Formular wird angezeigt, wenn alle Elemente einer bestimmten Eigenschaft in einer Subliste (SubElementField) angezeigt werden sollen.|ListForm
 |TreeItemExtentExtension|Dieses Formular wird dem ExtentForm hinzugefügt, wenn die Beschreibung der Formular-Zuordnung zu dem angezeigtne Formular passt.|Listform, DetailForm
-|TreeItemDetailExtension|Dieses Formular wird dem ExtentForm hinzugefügt, wenn die Beschreibung der Formular-Zuordnung zu dem angezeigtne Formular passt.|Listform, DetailForm
+|TreeItemDetailExtension|Dieses Formular wird dem ExtentForm hinzugefügt, wenn die Beschreibung der Formular-Zuordnung zu dem angezeigten Formular passt.|Listform, DetailForm
 |===
