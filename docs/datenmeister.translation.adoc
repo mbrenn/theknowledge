@@ -8,4 +8,5 @@ Folgende Übersetzungen gelten zwischen dem Deutschen und dem Englischen
 |Arbeitsbereich|Workspace
 |Datenansicht|Dataview
 |Formular-Zuordnung|FormAssociation
+|Öffentliche Einstellung|Public Setting
 |===

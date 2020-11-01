@@ -24,6 +24,8 @@ include::datenmeister.plugins.adoc[leveloffset=+1]
 
 include::datenmeister.excelimport.adoc[leveloffset=+1]
 
+include::datenmeister.publicsettings.adoc[leveloffset=+1]
+
 include::datenmeister.extentloader.adoc[leveloffset=+1]
 
 include::datenmeister.dataviews.adoc[leveloffset=+1]

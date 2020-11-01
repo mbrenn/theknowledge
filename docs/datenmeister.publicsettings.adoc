@@ -1,0 +1,29 @@
+= Öffentliche Einstellungen
+
+Die öffentlichen Einstellungen (PublicSettings) wird über die Datei 'DatenMeister.Settings.xmi' konfiguriert, die im Verzeichnis der ausführbaren Datei (.exe) liegen muss. 
+
+Diese Datei ist eine Xmi-Datei mit einem settings-Knoten und sieht beispielhaft folgendermaßen aus: 
+
+ <xmi>
+     <settings
+ 		 windowTitle = "The IssueMeister" 
+         databasePath="%LOCALAPPDATA%/IssueMeister">
+     </settings>
+ </xmi>
+
+Folgende Eigenschaften werden unterstützt: 
+
+[%header,cols="1,5"]
+|===
+|Name|Eigenschaft
+|windowTitle|Name des Hauptfensters. Standardmäßig 'DatenMeister'
+|databasePath|Pfad in dem die Hauptkonfiguration gespeichert wird. Dies sind üblicherweise die benutzerdefinierten Typen und Formulare, aber auch die Registrierung von Workspaces und Arbeitsbereichen
+|isReadOnly|Flag, ob der DatenMeister im Read-Only Modus gestartet werden soll
+|logLocation a|Definiert an welcher Stelle das Logging durchgeführt werden soll. 
+
+* Application: Im Applikationsverzeichnis (Standard)
+* LocalAppData: Im Unterverzeichnis 'DatenMeister' der LocalAppData
+* Desktop: Direkt auf dem Desktop
+* None: Es findet kein Logging in einer Datei statt. 
+|===
+
