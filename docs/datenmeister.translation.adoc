@@ -9,4 +9,5 @@ Folgende Übersetzungen gelten zwischen dem Deutschen und dem Englischen
 |Datenansicht|Dataview
 |Formular-Zuordnung|FormAssociation
 |Öffentliche Einstellung|Public Setting
+|Reiter|Tab
 |===

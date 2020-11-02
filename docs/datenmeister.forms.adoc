@@ -95,9 +95,9 @@ Nebenn der Eigenschaften der TextFieldData werden folgende Eigenschaften unterst
 [%header,cols="1,5"]
 |===
 |Name|Bedeutung
-|evalCellProperties|Das Skript, das zur Erstellung der Zelle ausgewertet wird. 
+|evalCellProperties a|Das Skript, das zur Erstellung der Zelle ausgewertet wird. 
 
---Die Variable 'i' beschreibt das aktuell betrachtete Element 
+- Die Variable 'i' beschreibt das aktuell betrachtete Element 
 
 - Die Variable 'c' die aktuelle Zelle. Die Eigenschaften des Zelle sind abhängig von verwendeten Report.
 
