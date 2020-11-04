@@ -88,7 +88,7 @@ Selektiert der Nutzer ein Element in der Baumansicht, so wird die Formular-Zuord
 |formType|TreeItemDetail
 |extentType|Typen des anzuzeigenden Extents
 |metaClass|Meta-Klasse des anzuzeigenden Objektes
-|viewModeId|Die vom Nuutzer ausgewählte Ansicht
+|viewModeId|Die vom Nutzer ausgewählte Ansicht. Ist im Package ein ViewMode als Eigenschaft angegeben, so 
 |===
 
 

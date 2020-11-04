@@ -6,7 +6,7 @@ Diese Datei ist eine Xmi-Datei mit einem settings-Knoten und sieht beispielhaft 
 
  <xmi>
      <settings
- 		 windowTitle = "The IssueMeister" 
+ 		windowTitle = "The IssueMeister" 
          databasePath="%LOCALAPPDATA%/IssueMeister">
      </settings>
  </xmi>
@@ -25,5 +25,16 @@ Folgende Eigenschaften werden unterstützt:
 * LocalAppData: Im Unterverzeichnis 'DatenMeister' der LocalAppData
 * Desktop: Direkt auf dem Desktop
 * None: Es findet kein Logging in einer Datei statt. 
+|environmentVariable a|Weitere Umgebungsvariablen können hier eingefügt werden. Diese werden ohne Präfix direkt in die Umgebungsvariablen des Prozesses eingefügt. 
+
+Es können mehrer Umgebungsvariablen angegeben werden, die folgende Eigenschaften haben können: 
+
+* key: Name der Variable
+* value: Wert der Variablen
 |===
 
+== Umgebungsvariablen
+
+Beim Einladen der öffentlichen Einstellungen wird der Datenbankpfad in die Umgebungsvariable "dm_databasepath" übertragen und ist damit für das Einladen der Extents verfügbar. 
+
+Weiterhin werden die Umgebungsvariablen gemäß der Eigenschaften der 'environmentVariable' übertragen. 
