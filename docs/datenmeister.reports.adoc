@@ -58,6 +58,7 @@ Abgeleitet aus der ReportInstance und ermöglicht den Export eines ADoc-Dokument
 === ReportParagraph:
 Drückt einen Absatz im Report aus. Dieser kann einen statischen Text beinhalten oder auch dynamisch über evalParagraph oder evalProperties erzeugt werden. 
 
+[%header,cols="1,5"]
 |===
 |name|Name des Elements
 |paragraph|Standardtext, der angezeigt wird
@@ -70,10 +71,22 @@ Drückt einen Absatz im Report aus. Dieser kann einen statischen Text beinhalten
 === ReportTable
 Beschreibt eine Tabelle, die die Elemente eines ViewNodes ausdrückt. Über eine Formulardefinition werden die Spalten der Tabelle definiert. 
 
+[%header,cols="1,5"]
 |===
 |name|Name des Elements
 |viewNode|Beschreibt die dynamische Abfrage, die die Elemente selektiert, die in der Tabelle angezeigt werden sollen
 |form|Definiert das Formular. Dieses Formular soll vom Type _ListForm_ instanziiert sein. 
 |cssClass|CSS-Klasse der Tabelle
 |evalProperties|Führt eine Evaluierung aus. Die Elemente selbst sind über 'items' abrufbar. 
+|===
+
+==== Tabellenzelle des EvalTextFieldData
+
+Eine Tabellenzelle unterstützt folgende Eigenschaften:
+
+[%header,cols="1,5"]
+|===
+|name|Name des Elements
+|text|Textinhalt der Zelle
+|cssClass|Im Falle des Html-Reports, die CSS-Klasse der Zelle
 |===
