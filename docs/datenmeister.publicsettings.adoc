@@ -8,6 +8,7 @@ Diese Datei ist eine Xmi-Datei mit einem settings-Knoten und sieht beispielhaft 
      <settings
  		windowTitle = "The IssueMeister" 
          databasePath="%LOCALAPPDATA%/IssueMeister">
+         <environnemtVariable key="import_path" value="c:\import-folder" />
      </settings>
  </xmi>
 
