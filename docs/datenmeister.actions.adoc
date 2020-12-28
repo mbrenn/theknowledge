@@ -91,7 +91,6 @@ Neben der Eigenschaften der Klasse _Action_ werden folgende Eigenschaften unters
 |extentUri|Uri des Extents welches gelöscht werden soll.
 |===
 
-
 == CreateWorkspaceAction
 
 Erstellt einen neuen Workspace.
@@ -168,4 +167,19 @@ Nimmt eine Sammlung von Objekten, kopiert diese in einen Xmi-Extent und exportie
 |sourceWorkspaceId|Definiert den Quell-Arbeitsbereich aus dem die Daten für den Export vorbereitet werden. 
 |sourcePath|Definiert den Quell-Pfad der zum Auffinden der Daten genutzt wird. 
 |filePath|Pfad in dem das Xmi exportiert wird.
+|===
+
+== ItemTransformationAction
+
+Nimmt jedes einzelne Objekt des gewählten Extents und übergibt es dem Transformationsobjekt welche die Schnittstelle IItemTransformation implementiert. 
+
+Das gewählte Objekt und all seine Unterelemente (rekursiv) werden übergeben.
+
+[%header,cols="1,5"]
+|===
+|Name|Beschreibung
+|metaClass|
+|runtimeClass|
+|workspace|
+|path|
 |===
