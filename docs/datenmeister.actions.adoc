@@ -178,8 +178,21 @@ Das gewählte Objekt und all seine Unterelemente (rekursiv) werden übergeben.
 [%header,cols="1,5"]
 |===
 |Name|Beschreibung
-|metaClass|
-|runtimeClass|
-|workspace|
-|path|
+|metaClass|Ein optionaler Filter auf die Meta-Klassen auf die gefiltert werden kann. Nur Elemente dieser Metaklassen werden der Transformation übergeben. 
+|runtimeClass|Der volle Name der .Net Klasse, die instanziiert wird um die gewählten Objekten dieser zu übergeben. Diese Klassen kann dann die Transformation vornehmen. 
+|workspace|Arbeitsbereich in dem der Pfad ausgeführt wird. 
+|path|Uri, die das Extent oder die Objekte selektiert
+|excludeDescendents|True, falls nur die selektierten Objekte gewählt werden sollen und nicht die darunterliegenden Unterobjekte. 
 |===
+
+=== Schnittstelle IItemTransformation
+
+Diese Schnittstelle kann von den Implementierungen umgesetzt werden, die die ItemTransformation gemäß obiger Darstellung durchführen soll. 
+
+Diese besitzt folgende Methode
+
+ void TransformItem(IElement element, IElement actionConfiguration);
+
+* element: Beschreibt das Objekt welches transformiert wird. Dieses wird direkt bearbeitet
+* actionConfiguration: Erweiterte Konfiguration, die der Action-Instanz selbst entspricht. 
+

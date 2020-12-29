@@ -1,0 +1,44 @@
+= Dynamische Laufzeit Provider
+
+Ein dynamischer Laufzeit Extent (Dynamic Runtime Provider) ist ein programmierbarer Provider, dessen Inhalte über eine Klasse erzeugt werden und nicht über eine Datenbank. 
+
+Die Klasse selbst muss über die bestehende Plugin-Infrastruktur dem DatenMeister eingeladen sein,d as s
+
+== Konfiguration
+
+Die Konfiguration des Providers erfolgt über _DynamicRuntimeLoaderConfig_ und enthält folgende Eigenschaften: 
+
+[%header,cols="1,5"]
+|===
+|Name|Beschreibung
+|name|Name des Providers
+|extentUri|Uri des einzuladenen Extents
+|workspaceId|Id des Arbeitsbereiches in dem das zugehörige Extent eingeladen wird
+|runtimeClass|Voller Pfad (FullName) zur Klasse, die die Elemente enthält
+|configuration|Konfiguration, die dann dieser Klasse übergeben wird. Der Typ dieser Konfiguration ist nicht speziell definiert. 
+|===
+
+== Implementierung
+
+Der Laufzeitprovider wird über folgende eine Schnittstelle _IDynamicRuntimeProvider_ zur Verfügung gestellt. Diese enthält folgende Methode: 
+
+*IEnumerable<IProviderObject> Get(IElement configuration)*
+
+Hierbei enthält der Parameter _configuration_ den Konfigurationsparameter, der in der LoaderConfig über _configuration_ festgelegt wurde. 
+
+Der Laufzeitprovider gibt auf Aufruf eine Liste von Provider-Elementen zurück. Dieses können vereinfacht vom Typ _InMemoryProviderObject_ sein. 
+
+== Beispiel-Implementierungen
+
+=== Modules.DynamicRuntimeProvider.NumberProvider
+
+Nimmt eine Instanz von _NumberProviderSettings_ auf und gibt eine Auflistung von Zahlen in Binär (binary), Oktal (octal), Dezimal (decimal) und Hexadezimal (hexadecimal) zurück. 
+
+Die Eigenschaften der Settings: 
+
+[%header,cols="1,5"]
+|===
+|Name|Beschreibung
+|start|Erster Wert der Auflistung. Standardwert ist 0
+|end|Letzter Wert der Auflistung. Standardwert ist 100
+|===
