@@ -88,7 +88,7 @@ Volle Auflistung unter: https://docs.microsoft.com/de-de/visualstudio/msbuild/ms
 
 - $(OutputPath): Ausgabepfad von Visual Studio
 
-== Typische Elementes (Items)
+== Typische Elemente (Items)
 
 === Setzen
 
