@@ -1,6 +1,10 @@
 
 = MS Build
 
+* Standard Pfad: 
+
+ C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin
+
 == Typischer Aufbau
 
  <Project" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
@@ -48,7 +52,7 @@ Escaping:
 .. Umgebungsvariablen
 .. PropertyGroup
 
-=== Lesen: 
+=== Lesen
 
 - Lesen über '$(Property)'
 - Registrierung: $(registry:Hive\MyKey\MySubKey@Value))
