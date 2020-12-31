@@ -30,4 +30,4 @@ include::systemengineering.adoc[leveloffset=+1]
 
 include::datenmeister.adoc[leveloffset=+1]
 
-include::training.adoc
+include::training.adoc[leveloffset=+1]
