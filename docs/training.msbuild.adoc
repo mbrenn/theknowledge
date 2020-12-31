@@ -53,13 +53,11 @@ Escaping:
 - Lesen über '$(Property)'
 - Registrierung: $(registry:Hive\MyKey\MySubKey@Value))
 - Eigenschaftenfunktionen: $([System.DateTime]::Now.ToString("yyyy.MM.dd")) - https://docs.microsoft.com/de-de/visualstudio/msbuild/property-functions?view=vs-2019[Link]
-- Pfad-Zusammenführung: $([System.IO.Path]::Combine($(MSBuildProjectDirectory), +`BuildInfo.txt`+))
-- Anhängen des trailing Slashes: $([MSBuild]::EnsureTrailingSlash($(path)))
 
 ==== Relevante Eigenschaftfunktionen: 
 
-- $([MSBuild]::EnsureTrailingSlash('$(PathProperty)'))
-
+- Pfad-Zusammenführung: $([System.IO.Path]::Combine($(MSBuildProjectDirectory), +`BuildInfo.txt`+))
+- Anhängen des trailing Slashes: $([MSBuild]::EnsureTrailingSlash($(path)))
 
 ==== Transformieren
 
@@ -68,7 +66,6 @@ Basierend auf den Meta-Informationen
  @(RESXFile->'%(filename).resources') -> a.resx --> a.resources
 
 https://docs.microsoft.com/de-de/visualstudio/msbuild/msbuild-well-known-item-metadata?view=vs-2019[Typische Meta-ElementInformationen]
-
  
 
 === Bedingte Auswertung
@@ -86,7 +83,6 @@ Volle Auflistung unter: https://docs.microsoft.com/de-de/visualstudio/msbuild/ms
 - $(MSBuildProjectName): Name der MSBuild-Datei ohne Erweiterung. 
 
 - $(OutputPath): Ausgabepfad von Visual Studio
-
 
 == Typische Elementes (Items)
 
