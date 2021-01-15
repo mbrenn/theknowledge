@@ -6,6 +6,15 @@ Hierzu gibt es die beiden Basisklassen:
 . Action
 . ActionSet
 
+Jede Aktion hat folgende Eigenschaften:
+
+[%header,cols="1,5"]
+|===
+|Name|Beschreibung
+|name|Name der Aktion
+|isDisabled|Flag, ob die Aktion deaktiviert ist und damit in der Aktionssammlung übersprungen wird. 
+|===
+
 == ActionSet
 
 Ein ActionSet (Aktionssammlung) sammelt verschiedene Aktionen. 
@@ -195,4 +204,20 @@ Diese besitzt folgende Methode
 
 * element: Beschreibt das Objekt welches transformiert wird. Dieses wird direkt bearbeitet
 * actionConfiguration: Erweiterte Konfiguration, die der Action-Instanz selbst entspricht. 
+
+= SimpleReportAction
+
+Erzeugt einen einfachen Bericht. 
+
+[%header,cols="1,5"]
+|===
+|Name|Beschreibung
+|workspaceId|Id des Arbeitsbereiches 
+|path|Pfad der die Elemente identifiziert über die der Report erzeugt wird.
+|configuration|Konfiguration es einfachen Berichtes vom Typ 
+SimpleReportConfiguration.
+|filePath|Dateipfad in dem der Report abgelegt wird. Ist kein Pfad angegeben, so wird eine temporäre Datei auf dem Desktop erzeugt. 
+|===
+
+
 

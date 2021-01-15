@@ -5,7 +5,7 @@ Prinzipiell gibt es zwei verschiedene Arten von Reports für den Nutzer:
 . Die einfachen Reports (_SimpleReports_)
 . Der vollständige Html Report (_HtmlReportCreator_)
 
-== Einfache Reports
+== Einfacher Bericht
 
 Von jedem beliebigen Extent kann über das Auswählen des Menüs 'Create Report' ein einfacher Report über die aktuelle Ansicht generiert werden. 
 
@@ -16,6 +16,32 @@ Alternativ kann der Nutzer eine Instanz des Elements 'SimpleRpeortConfiguration'
 TODO: Bild
 
 Es wird eine zufällige Datei auf der Festplatte erzeugt, die dann über den Standardbrowser angezeigt wird. 
+
+=== Konfiguration
+
+Der einfache Bericht wird  über die Konfiguration _SimpleReportConfiguration_ eingestellt:
+
+
+[%header,cols="1,5"]
+|===
+|Name|Beschreibung
+|name|Name der Konfiguration
+|rootElement|Das Wurzelelement, dessen Eigenschaften angezeigt werden sollen.
+|showDecendents|true, falls auch dessen Kinder angezeigt werden sollen
+|showRootElements|true, wenn die Wurzelelemente angezeigt werden sollen
+|showMetaClasses|true, falls eine Spalte automatisch eingefügt werden soll, die die Meta-Klasse der Objekte anzeigt
+|showFullName|true, falls eine Spalte eingefügt werden soll, die den Pfad (voller Name) zum Objekt anzeugt
+|form|Falls kein automatisches Formular erzeugt werden soll, kann hier ein Formular angegeben werden. Dieser muss vom Type _ListForm_ sein.  
+|descendentMode|None, Inline, PerPackage
+|typeMode|PerType, AllModes
+|===
+
+Der DescendentMode legt fest, ob pro Package eine neue Tabelle im Bericht angelegt werden soll. 
+
+Der TypeMode legt fest, ob pro Typ eine neue Tabelle im Bericht angelegt werden soll. 
+
+
+
 
 == Der Html Report
 
