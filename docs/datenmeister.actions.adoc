@@ -61,7 +61,17 @@ Neben der Eigenschaften der Klasse _Action_ werden folgende Eigenschaften unters
 |workingDirectory|Das Arbeitsverzeichnis zu dem der Prozess wechseln soll. Dieser wird um die Umgebungsvariablen erweitert.
 |===
 
+== DocumentOpenAction
 
+Öffnet das Standardprogramm, welches hinter einem bestimmmten Programm steht.
+
+Neben der Eigenschaften der Klasse _Action_ werden folgende Eigenschaften unterstützt
+
+[%header,cols="1,5"]
+|===
+|Name|Beschreibung
+|filePath|Datei, die geöffnet werden soll.
+|===
 
 == PowershellExecutionAction
 

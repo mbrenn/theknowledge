@@ -27,7 +27,7 @@ Ein Extent Form ist enthält einen Satz von Formularen um ein konkretes Objekt a
 Das Extent Form wird prinzipiell im Hauptfenster bei der Ansicht der Elemente eines Extents genutzt oder auch wenn der Nutzer im Hauptfenster ein konkretes Objekt ausgewählt hat. 
 
 
-=== Package Form
+=== Extent Form für Package
 Ein besonderes Formular ist die Listenansicht der Package-Objekte. Hier kann der Nutzer über die 'Eigenschaft' der preferredTypes festlegen, welche Klasseninstanzen bevorzugt in diesem Package angelegt werden können. 
 
 ==== Implementierung
@@ -49,6 +49,7 @@ Das Listenformular beschreibt eine Tabelle bzw. reine Auflistung einer Sammlung 
 |inhibitDeleteItems|k.A.
 |defaultTypesForNewElements|k.A.
 |fastViewFilters|k.A.
+|duplicatePerType|Wert, ob das Listenitem für jeden Typ in der Liste dupliziert werden soll. Diese Eigenschaft wird für die ExtentForms genutzt, damit man die Listen pro Typ anzeigen kann. 
 |field|Diese Auflistung enthält die Felder, die in der Liste angezeigt werden sollen. Üblicherweise sind dies die Spalten der Tabelle
 |sortingOrder|Die Reihenfolge in der die Items angezeigt werden sollen.
 |viewNode|In diesem Formular kann nochmals konkreter über eine Datenansicht gefiltert oder verändert werden. Die eigentliche Liste wird als dynamische Datensammlung _input_ übergeben. 

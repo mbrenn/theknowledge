@@ -24,7 +24,7 @@ Der Laufzeitprovider wird über folgende eine Schnittstelle _IDynamicRuntimeProv
 
 *IEnumerable<IProviderObject> Get(IElement configuration)*
 
-Hierbei enthält der Parameter _configuration_ den Konfigurationsparameter, der in der LoaderConfig über _configuration_ festgelegt wurde. 
+Hierbei enthält der Parameter _configuration_ den Konfigurationsparameter, der in der LoaderConfig über _configuration_ festgelegt wurde. Dieser Wert kann auch null sein.
 
 Der Laufzeitprovider gibt auf Aufruf eine Liste von Provider-Elementen zurück. Dieses können vereinfacht vom Typ _InMemoryProviderObject_ sein. 
 

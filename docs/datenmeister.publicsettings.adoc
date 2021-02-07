@@ -8,7 +8,7 @@ Diese Datei ist eine Xmi-Datei mit einem settings-Knoten und sieht beispielhaft 
      <settings
  		windowTitle = "The IssueMeister" 
          databasePath="%LOCALAPPDATA%/IssueMeister">
-         <environnemtVariable key="import_path" value="c:\import-folder" />
+         <environmentVariable key="import_path" value="c:\import-folder" />
      </settings>
  </xmi>
 
@@ -39,3 +39,17 @@ Es können mehrer Umgebungsvariablen angegeben werden, die folgende Eigenschafte
 Beim Einladen der öffentlichen Einstellungen wird der Datenbankpfad in die Umgebungsvariable "dm_databasepath" übertragen und ist damit für das Einladen der Extents verfügbar. 
 
 Weiterhin werden die Umgebungsvariablen gemäß der Eigenschaften der 'environmentVariable' übertragen. 
+
+=== Standard-Umgebungsvariablen
+
+Folgende Umgebungsvariablen werden standardmäßig gesetzt unterstützt: 
+
+[%header,cols="1,5,3"]
+|===
+|Name|Zweck|Standard
+|dm_ImportPath|Vorgeschlagener Import-Pfad|{Desktop}/import 
+|dm_ReportPath|Vorgeschlagener Report-Pfad|{Desktop}/report 
+|dm_ExportPath|Vorgeschlagener Export-Pfad|{Desktop}/export 
+|dm_ApplicationPath|Pfad in der die Applikation ausgeführt worden ist.|---
+|dm_DatabasePath|Der Pfad in dem die Datenbank liegt|Gemäß der Konfiguration 'databasePath'.
+|===
