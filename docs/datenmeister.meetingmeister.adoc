@@ -1,0 +1,81 @@
+= The Meeting Meister
+
+
+== Terms 
+
+- Meeting Event: A gathering of people at a certain time at a certain physical or virtual location. 
+- Meeting: A meeting consists of several meeting events allowing to discuss a a group of topics in a more or less fixed team. 
+- Team: A bunch of people working together in a meeting
+- Team Member: A person working on the item.
+- Meeting Item: A point on which the team discusses during a meeting event. A meeting item is closed when no further discussion is requried. 
+- Task: A task being derived out of a meeting item and allocated to a team member
+
+== Requirements
+=== Use Cases 
+
+The following user stories are required to be supported by the Meeting Meister:
+
+# The Meeting Host can manage multiple meeetings within the tool. 
+# The Meeting Host can select a meeting and start a meeting event. 
+# The Meeting Host can document the attendees of the meeting as an option. 
+# The Meeting Host can create, modify and close Meeting Items during the Meeting. 
+# The Meeting Host can easily extract the meeting minutes of the Meeting to be sent out via mail. 
+
+=== System Requirements 
+
+# The system shall offer a special extent type to be used for the MeetingMeister.
+# The system shall open the extent with a Meeting Overview in which the user can select the current meeting. 
+# The system shall open the meeting in a meeting item overview. 
+# The system shall offer filters for the Meeting Overview by the following conditions: 
+## Overdue Items
+## Active Items
+## Items Selected for this meeting
+## Closed Items
+## Archived Items
+# The system shall allow creation of new items within the Meeting Overview.
+# The system shall allow editing of items within the Meeting Overview. 
+# The system shall allow closing and archiving of items within the Meeting Overview.
+# The system shall allow an extraction of items for the selected view as email export.
+
+=== Datamodel Requirements === 
+
+==== Person
+
+- name
+- prename
+
+==== Meeting
+
+- name
+- team [Person*]
+- items [MeetingItem*]
+
+==== MeetingEvent
+
+- name
+- date
+- attendees
+
+==== MeetingItem
+
+- name
+- description
+- state
+- assigned
+- isArchived
+- subitems
+
+== User Interfaces
+
+- Selection of Meeting
+- Create/Edit meeting event
+- Select attendees
+- Create/Edit new Meeting Event
+- Create/Edit Task
+- Export Meeting Items
+
+
+=== Implementation Requirements === 
+
+# The MeetingMeister shall be a plugin for DatenMeister.
+# The MeetingMeister shall be within the DatenMeister repository. 
