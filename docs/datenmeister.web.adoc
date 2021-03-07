@@ -1,0 +1,13 @@
+= Die Web-Schnittstelle
+
+image::images/datenmeister.web.navigation.uxf.png[]
+
+Der Nutzer hat folgende Hauptnavigationspunkte: 
+
+- Dashboard
+- Arbeitsbereiche
+- Daten-Arbeitsbereich
+- Einstellungen
+
+
+
