@@ -9,5 +9,7 @@ Der Nutzer hat folgende Hauptnavigationspunkte:
 - Daten-Arbeitsbereich
 - Einstellungen
 
+== Web-Oberfläche
 
+Das Hauptfenster soll folgende Bereiche beinhalten: 
 

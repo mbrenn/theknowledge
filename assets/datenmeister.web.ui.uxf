@@ -1,0 +1,10 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>180</x><y>98</y><w>730</w><h>450</h></coordinates><panel_attributes>DatenMeister</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>180</x><y>128</y><w>30</w><h>30</h></coordinates><panel_attributes>D</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>170</x><y>118</y><w>760</w><h>40</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;740;12</additional_attributes></element><element><id>UMLClass</id><coordinates><x>180</x><y>158</y><w>30</w><h>30</h></coordinates><panel_attributes>W</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>180</x><y>188</y><w>30</w><h>30</h></coordinates><panel_attributes>E</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>180</x><y>218</y><w>30</w><h>30</h></coordinates><panel_attributes>S</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>200</x><y>118</y><w>30</w><h>450</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;10;430</additional_attributes></element><element><id>UMLClass</id><coordinates><x>210</x><y>128</y><w>700</w><h>420</h></coordinates><panel_attributes>This is the main interface area
+halign=left</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>810</x><y>130</y><w>100</w><h>420</h></coordinates><panel_attributes>View
+-
+Context...
+Context 2...
+Context 3...
+Form
+-
+
+halign=left</panel_attributes><additional_attributes></additional_attributes></element></diagram>
