@@ -15,27 +15,27 @@
 
 The following user stories are required to be supported by the Meeting Meister:
 
-# The Meeting Host can manage multiple meeetings within the tool. 
-# The Meeting Host can select a meeting and start a meeting event. 
-# The Meeting Host can document the attendees of the meeting as an option. 
-# The Meeting Host can create, modify and close Meeting Items during the Meeting. 
-# The Meeting Host can easily extract the meeting minutes of the Meeting to be sent out via mail. 
+. The Meeting Host can manage multiple meeetings within the tool. 
+. The Meeting Host can select a meeting and start a meeting event. 
+. The Meeting Host can document the attendees of the meeting as an option. 
+. The Meeting Host can create, modify and close Meeting Items during the Meeting. 
+. The Meeting Host can easily extract the meeting minutes of the Meeting to be sent out via mail. 
 
 === System Requirements 
 
-# The system shall offer a special extent type to be used for the MeetingMeister.
-# The system shall open the extent with a Meeting Overview in which the user can select the current meeting. 
-# The system shall open the meeting in a meeting item overview. 
-# The system shall offer filters for the Meeting Overview by the following conditions: 
-## Overdue Items
-## Active Items
-## Items Selected for this meeting
-## Closed Items
-## Archived Items
-# The system shall allow creation of new items within the Meeting Overview.
-# The system shall allow editing of items within the Meeting Overview. 
-# The system shall allow closing and archiving of items within the Meeting Overview.
-# The system shall allow an extraction of items for the selected view as email export.
+. The system shall offer a special extent type to be used for the MeetingMeister.
+. The system shall open the extent with a Meeting Overview in which the user can select the current meeting. 
+. The system shall open the meeting in a meeting item overview. 
+. The system shall offer filters for the Meeting Overview by the following conditions: 
+.. Overdue Items
+.. Active Items
+.. Items Selected for this meeting
+.. Closed Items
+.. Archived Items
+. The system shall allow creation of new items within the Meeting Overview.
+. The system shall allow editing of items within the Meeting Overview. 
+. The system shall allow closing and archiving of items within the Meeting Overview.
+. The system shall allow an extraction of items for the selected view as email export.
 
 === Datamodel Requirements === 
 

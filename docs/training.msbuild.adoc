@@ -10,8 +10,12 @@
  <Project" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup></PropertyGroup>
   <ItemGroup></ItemGroup>
-  <Target></Target>
+  <Target>
+    <Message Text="Hallo" Importance="high" />
+  </Target>
  </Project>
+
+Message ist eine Action, die einem 'Echo' ähnelt. 
 
 == Sonderzeichen 
 
