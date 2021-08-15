@@ -1,0 +1,290 @@
+= DatenMeister Web-API
+
+Der DatenMeister-Web-Client kommuniziert neben den server-generierten Webseiten auch mit der Server-API, die im folgenden Absatz dokumentiert ist. 
+
+Jedes Kapitel beschreibt die API einer Datei.
+
+=== Hilfsklasse ItemWithNameAndId
+
+Die Hilfsklasse _ItemWithNameAndId_ (C#-Namespace DatenMeister.Json) fungiert als Transferobjeot von Web-*Server* zu Web-*Client* um ein Item ohne seine Properties als Proxy zu übergeben. Um unnötige Roundtrips zwischen Webserver und Webclient zu vermeiden, besteht das Objekt aus folgenden Eigenschaften. 
+
+* name: Name des Objektes, wie von NamedElementMethods.GetName zurückgeliefert
+* extentUri: Uri des Extents in dem sich das Objekt befindet
+* fullName: Der volle Namen, wie von NamedElementMethods.GetFullName zurückgeliefert
+* id: Die Id des Objektes
+
+Das Objekte ist über $"{extentUri}#{id}" vom Webserver abrufbar. 
+
+=== Hilfsklasse MofJsonObject
+
+Die Hilfsklasse _MofJsonObject_ (Über C#-Klasse MofJsonConverter generiert) fungiert als Transferobject von Web-*Client* zu Web-*Server* oder vom Web-*Server* zum Web-*Client* um ein Item mit all seinen Properties, notwendigen Meta-Informationen zu übergeben. 
+
+Dieses Objekt ist ein Json-Objekt und wird auf Client-Seite von der Methode _Mof.ts::createObjectFromJson_ verarbeitet. 
+
+* r: Falls das Objekt vom Server in dem jeweiligen Kontext nicht aufgelöst worden ist, so enthält diese Eigenschaft die Url des Objektes. Entspricht dem MofObjectShadow-Konzept. 
+* v: Enthält ein assoziatives Array von Eigenschaftsnamen zu Wert. Ist der Wert wieder ein MofObjekt, so wird wieder ein MofJsonObject gebildet.
+* m: ItemWithNameAndId-Instanz der Metaclass des Objektes
+* u: Url des Objektes
+
+== ElementsController
+
+Dieser Webcontroller unterscheidet sich vom Controllert 'ItemsController' darin, dass dieser Controller Hilfsmethoden für die Items beinhaltet, während der ItemsController die typischen CRUD-Methoden (Create, Read, Update, Delete) beinhaltet. 
+
+=== Get Name of element
+
+* Node: api/elements/get_name/{workspace}/{extenturi}/{itemid}
+** workspace: Arbeitsbereich des gesuchten Elements
+** extentUri: Extent des gesuchten Elements
+** itemid: Id des gesuchten Elements
+* Method: GET
+* Body: _keiner_
+* Return: 
+** name: Name des Elements
+
+*Beschreibung:*
+
+Gibt den Namen des gewählten Elements zurück. Der Name wird über NamedElementMethods.GetName ausgewählt. 
+
+=== Get Name of Element (per Uri)
+
+* Node: api/elements/get_name/{uri}/{workspace?}
+** uri: Uri des gesuchten Elements
+** workspace: (Optional) Arbeitsbereich des gesuchten Elements
+* Method: GET
+* Body: _keiner_
+* Return: 
+** name: Name des Elements
+
+*Beschreibung:*
+
+Gibt den Namen des gewählten Elements zurück. Der Name wird über NamedElementMethods.GetName ausgewählt. Ist kein Arbeitsbereich angegeben, so wird über die gesamte Datenbank gesucht. 
+
+== ExtentController
+
+=== Create new Xmi Extent
+
+* Node: api/extent/create_xmi/{workspace}
+** workspace: (Optional) Arbeitsbereich des gesuchten Elements
+* Method: POST
+* Body: 
+** filePath: Pfad in dem das Xmi erzeugt werden soll
+** extentUri: Name des Extents welches erzeugt werden soll
+* Return: 
+** success: true, falls das Extent erfolgreich erzeugt werden konnte. 
+
+*Beschreibung:*
+
+Erzeugt ein neues Extent an dem angegebenen Dateipfad {filePath} unter der Extent-URL {extentUri}. Dieses Extent ist ein Standard-XMI-Extent. 
+
+Warnung: Dieses Extent wird mit den Rechten des Webservers erzeugt und daher kann man per filePath an nahezu jeder beliebigen Stelle im Dateisystem des Servers dieses Extent erzeugen.  
+
+=== Delete Extent
+
+* Node: api/extent/delete
+* Method: DELETE
+* Body: 
+** workspace: Arbeitsbereich des zu löschenden Extents
+** extentUri: Name des Extents welches gelöscht werden soll
+* Return: 
+** success: true, falls das Extent erfolgreich gelöscht werden konnte. 
+
+*Beschreibung:*
+
+Löscht das angegebene Extent. Die dahinterliegenden Daten werden ebenfalls gelöscht. 
+
+== FormsController
+
+=== Get Default Form for Item 
+
+* Node: api/forms/default_for_item/{workspaceId}/{itemUrl}/{viewMode?}
+** workspaceId: Name des Arbeitsbereiches in dem sich das Objekt befindet
+** itemUrl: Url des Items
+** viewMode: (Optional) ViewMode für den das Formular geholt werden soll
+* Method: GET
+* Body: _keiner_
+* Return: 
+** item: Das Item als _MofJson-Object_. 
+** metaClass: Die MetaClass des Forms als _ItemWithNameAndId_.
+
+*Beschreibung:*
+
+Holt das Formular zu dem selektierten Item. Ist der ViewMode ebenfalls angegeben, so wird dieser von der Formsuche betrachtet. Die Formsuche selbst läuft über die C#-Klasse _FormFinder_. Siehe Kapitel "Formulare finden"
+
+=== Get Default Form for Extent
+
+* Node: api/forms/default_for_extent/{workspaceId}/{extentUrl}/{viewMode?}
+** workspaceId: Name des Arbeitsbereiches in dem sich das Objekt befindet
+** extentUrl: Url des Extents
+** viewMode: (Optional) ViewMode für den das Formular geholt werden soll
+* Method: GET
+* Body: _keiner_
+* Return: 
+** item: Das Item als _MofJson-Object_. 
+** metaClass: Die MetaClass des Forms als _ItemWithNameAndId_.
+
+*Beschreibung:*
+
+Holt das Formular zu dem selektierten Extent. Ist der ViewMode ebenfalls angegeben, so wird dieser von der Formsuche betrachtet. Die Formsuche selbst läuft über die C#-Klasse _FormFinder_. Siehe Kapitel "Formulare finden"
+
+
+== ItemsController
+
+=== Create Item in Extent
+
+* Node: api/items/create_in_extent/{workspaceId}/{extentUri}
+** workspaceId: Name des Arbeitsbereiches in dem sich das Objekt befindet
+** extentUri: Url des Extents
+* Method: POST
+* Body:
+** metaClass: Uri der MetaClass
+* Return: 
+** success: true, wenn erfolgreich
+** itemId: Id des neu erstellten Objektes
+
+*Beschreibung:* 
+
+Erstellt ein neues Objekt als Wurzelobjekt im Extent. Über die MetaClass kann die Metaklasse des neu erstellten Objektes angegeben werden. 
+
+== Create Item as Child
+
+* Node: api/items/create_child/{workspaceId}/{itemUri}
+** workspaceId: Name des Arbeitsbereiches in dem sich das Objekt befindet
+** itemUri: Url des Items in dem das neue Objekt als Kind erstellt wird 
+* Method: POST
+* Body:
+** property: Eigenschaft in dem das Kindobjekt erstellt wird. 
+** asList: true, falls das Objekte als Listeneintrag hinzugefügt werden soll. Ansonsten wird das Element als direkte Referenz hinzugefügt.
+** metaClass: Uri der MetaClass
+* Return: 
+** success: true, wenn erfolgreich
+** itemId: Id des neu erstellten Objektes
+
+*Beschreibung:* 
+
+Erstellt ein neues Objekt als Kind eines schon bestehendes Objektes. Über die property wird die Eigenschaft angegeben in der das Objekt gespeichert werden soll. Soll das Objekt direkt als Eigenschaft als alleiniges Eigenschaftsobjekt zugeordnet werden, kann _asList_ als False gesetzt werden. Soll das Objekt als Listeneintrag hinzugefügt werden, dann ist _asList_ als True zu setzen. 
+
+Über die MetaClass kann die Metaklasse des neu erstellten Objektes angegeben werden. 
+
+
+=== Delete Item
+
+* Node: api/items/delete_from_extent/{workspaceId}/{extentUri}/{itemId}
+** workspaceId: Name des Arbeitsbereiches in dem sich das Objekt befindet
+** extentUri: Uri des Extents
+** itemId: Id des Items in dem das neue Objekt als Kind erstellt wird 
+* Method: DELETE
+* Body: _keiner_
+* Return: 
+** success: true, wenn erfolgreich
+
+*Beschreibung:* 
+
+Löscht das Objekt aus der Wurzel des Extents. 
+
+=== Get Object
+
+* Node: api/items/get/{workspaceId}/{extentUri}/{item}
+** workspaceId: Name des Arbeitsbereiches in dem sich das Objekt befindet
+** extentUri: Uri des Extents
+** itemId: Id des Items in dem das neue Objekt als Kind erstellt wird 
+* Method: GET
+* Body: _keiner_
+* Return: 
+** item: _MofJsonObject_ des gefundenen Objektes
+
+*Beschreibung:*
+
+Holt die Eigenschaften des gewählten Objektes. 
+
+=== Set Property
+
+* Node: api/items/set_property/{workspaceId}/{itemUri}
+** workspaceId: Name des Arbeitsbereiches in dem sich das Objekt befindet
+** itemUri: Uri des Items in dem das neue Objekt als Kind erstellt wird 
+* Method: PUT
+* Body: 
+** key: Schlüssel der Eigenschaft
+** value: Wert der Eigenschaft
+* Return: 
+** success: true, falls erfolgreich
+
+*Beschreibung:*
+
+Setzt eine Eigenschaft des gewählten Objektes. 
+
+=== Set Properties
+
+* Node: api/items/set_properties/{workspaceId}/{itemUri}
+** workspaceId: Name des Arbeitsbereiches in dem sich das Objekt befindet
+** itemUri: Uri des Items in dem das neue Objekt als Kind erstellt wird 
+* Method: PUT
+* Body:
+** Array von Elementen mit folgenden Eigenschaften: 
+*** key: Schlüssel der Eigenschaft
+*** value: Wert der Eigenschaft
+* Return: 
+** success: true, falls erfolgreich
+
+*Beschreibung:*
+
+Setzt mehrere Eigenschaften des gewählten Objektes. 
+
+=== Set
+
+* Node: api/items/set/{workspaceId}/{itemUri}
+** workspaceId: Name des Arbeitsbereiches in dem sich das Objekt befindet
+** itemUri: Uri des Items in dem das neue Objekt als Kind erstellt wird 
+* Method: POST
+* Body:
+** _MofJsonObject_ mit den Eigenschaften, die zu setzen sind. 
+* Return: 
+** success: true, falls erfolgreich
+
+*Beschreibung:*
+
+Setzt mehrere Eigenschaften des gewählten Objektes. 
+
+== TypesController
+
+=== Get all types
+
+* Node: api/types/all
+* Method: GET
+* Body: _keiner_
+* Return: 
+** Array[] aller Typen. Jeder Typ ist in der Struktur _ItemWithNameAndId_ dargestellt 
+
+*Beschreibung: *
+
+Gibt eine Liste aller bekannten und selektierten Typen zurück. Hierzu wird die Methode LocalTypeSupport.GetAllTypes() genutzt.
+
+== WorkspaceController
+
+=== Delete Workspaces
+
+* Node: api/workspace/delete
+* Method: DELETE
+* Body: 
+** Workspace: Selektierter Arbeitsbereich
+* Return: 
+** success: true
+
+*Beschreibung:*
+
+Löscht den selektierten Arbeitsbereich. Diese Methode löscht auch alle darin befindlichen Extents. 
+
+== ZipController
+
+=== Create Zip Example
+
+* Node: api/zip/create
+* Method: POST
+* Body: 
+** Workspace: Selektierter Arbeitsbereich
+* Return: 
+** success: true
+** extentUri: URI des erzeugten Beispiels
+
+*Beschreibung:*
+
+Generiert ein neues Zip-Beispiel in dem selektierten Arbeitsbereich
