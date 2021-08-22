@@ -59,6 +59,22 @@ Gibt den Namen des gewählten Elements zurück. Der Name wird über NamedElement
 
 Gibt den Namen des gewählten Elements zurück. Der Name wird über NamedElementMethods.GetName ausgewählt. Ist kein Arbeitsbereich angegeben, so wird über die gesamte Datenbank gesucht. 
 
+=== Get Composites
+
+* Node api/elements/get_composites/{workspaceId?}/{itemUrl?}
+* Method: GET
+** workspaceId: (Optional) Name des selektierten Arbeitsbereich
+** itemUrl: (Optional) Url des selektierten Elemente 
+* Body: _keiner
+* Return: 
+** Array von _ItemWithNameAndId_-Elementen. Diese enthalten Namen und Url der Elemente. 
+
+*Beschreibung:*
+
+Gibt die Unterelemente des selektierten Arbeitsbereiches, bzw. des selektierten Items zurück. 
+
+Falls kein Arbeitsbereich angegeben wurde, werden die Arbeitsbereiche zurückgegeben. Falls ein Arbeitsbereich angegeben wurde, aber keine ItemUrl, so werden alle Wurzelelemente zurückgegeben, ansonsten werden die Unterelemente zurückgegeben. 
+
 == ExtentController
 
 === Create new Xmi Extent
