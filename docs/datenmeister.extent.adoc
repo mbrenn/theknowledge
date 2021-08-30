@@ -16,7 +16,7 @@ Das UriExtent unterstützt folgende Abfrageschema:
 |Abfrage per ID a|Der Uri des Extents wird über ein '#' die Objekt-ID angehängt. Der Text hinter diesem identifiziert das Object per ID
 
 - dm:///datenbank/#objectid
-|Abfrage per Name a|Der Uri des Extents wird über ein '?fn=' der volle NAme des Objekts angehängt
+|Abfrage per Name a|Der Uri des Extents wird über ein '?fn=' der volle Name des Objekts angehängt
 
 - dm:///datenbank/?fn=team_Frankfurt::player_1
 |Abfrage einer Eigenschaft a|Nachdem das Element über einer der obigen Verfahren identifiziert worden ist, kann über den QueryString-Parameter 'prop' eine Eigenschaft des Objektes selektiert werden. Der Inhalt der Eigenschaft wird zurückgegeben

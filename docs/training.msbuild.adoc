@@ -25,7 +25,8 @@ Message ist eine Action, die einem 'Echo' ähnelt.
 * ': Bedingungen
 * ;: Listentrennungen
 
-Escaping: 
+Escaping:
+
  <Compile Include="MyFile.cs;MyClass.cs"/>  --> <Compile Include="MyFile.cs%3BMyClass.cs"/>
  <Compile Include="$([MSBuild]::Escape('MyFile.cs;MyClass.cs'))" />
 
