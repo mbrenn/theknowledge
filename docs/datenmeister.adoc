@@ -36,6 +36,8 @@ include::datenmeister.forms.adoc[leveloffset=+1]
 
 include::datenmeister.formfinder.adoc[leveloffset=+1]
 
+include::datenmeister.forms.generator.adoc[leveloffset=+1]
+
 include::datenmeister.reports.adoc[leveloffset=+1]
 
 include::datenmeister.swapi.adoc[leveloffset=+1]

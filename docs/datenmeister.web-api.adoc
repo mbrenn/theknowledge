@@ -4,6 +4,8 @@ Der DatenMeister-Web-Client kommuniziert neben den server-generierten Webseiten 
 
 Jedes Kapitel beschreibt die API einer Datei.
 
+== Hilfsklassen
+
 === Hilfsklasse ItemWithNameAndId
 
 Die Hilfsklasse _ItemWithNameAndId_ (C#-Namespace DatenMeister.Json) fungiert als Transferobjeot von Web-*Server* zu Web-*Client* um ein Item ohne seine Properties als Proxy zu übergeben. Um unnötige Roundtrips zwischen Webserver und Webclient zu vermeiden, besteht das Objekt aus folgenden Eigenschaften. 
@@ -28,7 +30,7 @@ Dieses Objekt ist ein Json-Objekt und wird auf Client-Seite von der Methode _Mof
 
 == ElementsController
 
-Dieser Webcontroller unterscheidet sich vom Controllert 'ItemsController' darin, dass dieser Controller Hilfsmethoden für die Items beinhaltet, während der ItemsController die typischen CRUD-Methoden (Create, Read, Update, Delete) beinhaltet. 
+Dieser Webcontroller unterscheidet sich vom Controllert 'ItemsController' darin, dass dieser Controller erweiterte Methoden beinhaltet, während der  ItemsController die typischen CRUD-Methoden (Create, Read, Update, Delete) beinhaltet. 
 
 === Get Name of element
 
@@ -161,7 +163,7 @@ Holt das Formular zu dem selektierten Extent. Ist der ViewMode ebenfalls angegeb
 
 Erstellt ein neues Objekt als Wurzelobjekt im Extent. Über die MetaClass kann die Metaklasse des neu erstellten Objektes angegeben werden. 
 
-== Create Item as Child
+=== Create Item as Child
 
 * Node: api/items/create_child/{workspaceId}/{itemUri}
 ** workspaceId: Name des Arbeitsbereiches in dem sich das Objekt befindet
@@ -197,6 +199,20 @@ Erstellt ein neues Objekt als Kind eines schon bestehendes Objektes. Über die p
 
 Löscht das Objekt aus der Wurzel des Extents. 
 
+=== Get Root Elements
+
+* Node: api/items/get_root_elements/{workspaceId}/{extentUri}
+** workspaceId: Name des Arbeitsbereiches in dem sich das Objekt befindet
+** extentUri: Uri des Extents
+* Method: GET
+* Body: _keiner_
+* Return: 
+** item: Array von _MofJsonObject_ der Wurzelelemente
+
+*Beschreibung:*
+
+Listet alle Wurzel-Elemente des gewählten Extents aus. 
+
 === Get Object
 
 * Node: api/items/get/{workspaceId}/{extentUri}/{item}
@@ -211,6 +227,20 @@ Löscht das Objekt aus der Wurzel des Extents.
 *Beschreibung:*
 
 Holt die Eigenschaften des gewählten Objektes. 
+
+=== Get Parents
+
+* Node api/items/get_container/{workspaceId}/{itemUrl}
+* Method: GET
+** workspaceId: Name des selektierten Arbeitsbereich
+** itemUrl: Url des selektierten Elemente 
+* Body: _keiner
+* Return: 
+** Array von _ItemWithNameAndId_-Elementen. Das erste Element beinhaltet den direkten Container, während die weiteren Elemente jeweils dessen Container rekursiv beinhaltet. 
+
+*Beschreibung:*
+
+Gibt das Container Element des selektierten Elements und dessen Container rekursiv zurück. Diese Methode endet bei dem eigentlichen Extent. 
 
 === Set Property
 
@@ -245,7 +275,7 @@ Setzt eine Eigenschaft des gewählten Objektes.
 
 Setzt mehrere Eigenschaften des gewählten Objektes. 
 
-=== Set
+=== Set Object
 
 * Node: api/items/set/{workspaceId}/{itemUri}
 ** workspaceId: Name des Arbeitsbereiches in dem sich das Objekt befindet

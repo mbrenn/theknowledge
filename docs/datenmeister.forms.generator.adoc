@@ -1,0 +1,22 @@
+= Formular-Generatoren
+
+Es gibt folgende Formular-Generatoren: 
+
+. Für ein einzelnes Element: GetExtentFormForItem
+. Für ein einzelnes Element als DetailForm: GetDetailFormForItem
+. Für ein noch nicht-existentes Objekt einer bestimmten Meta-Klasse: GetExtentFormForItemsMetaClass
+. Für eine Liste von Items: GetListFormForCollection
+. Für eine Liste von Wurzelelementen: GetExtentFormForExtent
+. Für eine Liste von Elemente einer Eigenschaft: GetListFormForPropertyValues
+
+
+== Die Typen der Formular-Generatoren
+
+Es gibt den 
+
+. FormFinder: Sucht aus den vorhandenen Definitionen das beste Formular über die FormAssociation heraus
+. FormCreator: Erzeugt aus den verfügbaren Daten das beste Formular
+. FormFactory: Ruft zuerst den FormFinder auf, danach den FormCreator, falls das dazugehörige Formular nicht gefunden worden ist. 
+
+Zusätzlich gibt es noch die FormModifications, welche ein schon erzeugtes Formular nochmals nachträglich verändern
+
