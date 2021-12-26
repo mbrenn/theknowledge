@@ -9,6 +9,22 @@ Der Nutzer hat folgende Hauptnavigationspunkte:
 - Daten-Arbeitsbereich
 - Einstellungen
 
+== Web-Formulare
+
+Über das Web werden folgende zwei Formulare angefragt: 
+ 
+=== ItemsOverview.cshtml --> DetailFormCreator
+
+- Hier wird die Funktion des DetailFormCreator aufgerufen. 
+- Dieser ruft die Web-API forms/default_for_item auf
+- Diese ruft CreateExtentFormForItem mit dem Parameter: TreeItemDetail auf
+
+=== Items.cshtml
+
+- Hier wird die Funktion des CollectionFormCreator aufgerufen. 
+- Dieser ruft die Web-API forms/default_for_extent auf
+- Diese ruft CreateExtentFormForExtent mit dem Parameter: TreeItemExtent auf.
+
 == Web-Oberfläche
 
 Das Hauptfenster soll folgende Bereiche beinhalten: 
