@@ -46,7 +46,7 @@ Man denkt immer, dass im Recht viele Dinge sauber definiert sind... Aber das BGB
 
 §90 BGB sagt: "Sachen im Sinne des Gesetzen sind nur körperliche Gegenstände"
 
-Macht mich nicht glücklich, denn ich möchte ja auch Personen, nichtkörperliche Dinge, Grundstücke, Flächen, aber auch Tier bezeichnen (§90a BGB: Tiere sind keine Sachen, sie werden nur so behandelt, wenn es kein besonderes Recht gibt).
+Macht mich nicht glücklich, denn ich möchte ja auch Personen, nichtkörperliche Dinge, Grundstücke, Flächen, aber auch Tiere bezeichnen (§90a BGB: Tiere sind keine Sachen, sie werden nur so behandelt, wenn es kein besonderes Recht gibt).
 
 Ach ja, das Recht... 
 
@@ -55,7 +55,7 @@ Ach ja, das Recht...
 Drehen wir den Spieß mal um. Was ergibt denn überhaupt Sinn zu beschreiben, damit man in der fachlichen Welt damit umgehen kann? 
 
 * Das Objekt muss beschreibbar sein... Bekloppte Forderung, aber wichtig. Nichtbeschreibbare Phantasie-Wesen, wie Gott [Sorry], sind nicht beschreibbar und an ihnen lässt sich nur schwer arbeiten. 
-* Das Objekt muss abgrenzbar sein. Das heißt, dass ganz klar ersichtlich ist, was in dem Objekt inkludiert und was nicht. Nur so wissen wir, ob jedes Teilelement beschrieben, übergeben oder erfasst worden ist.
+* Das Objekt muss abgrenzbar sein. Das heißt, dass ganz klar ersichtlich ist, was dem Objekt zugeteilt wird und was nicht. Nur so wissen wir, ob jedes Teilelement beschrieben, übergeben oder erfasst worden ist.
 
 Daraus entwicklen wir mal folgendes Axiom zur Objekt-Definition und nennen sie Entität. (Ich war nicht der Erste!)
 

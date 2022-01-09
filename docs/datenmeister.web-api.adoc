@@ -67,8 +67,8 @@ Gibt den Namen des gewählten Elements zurück. Der Name wird über NamedElement
 * Method: GET
 ** workspaceId: (Optional) Name des selektierten Arbeitsbereich
 ** itemUrl: (Optional) Url des selektierten Elemente 
-* Body: _keiner
-* Return: 
+* Body: _keiner_
+* Return:
 ** Array von _ItemWithNameAndId_-Elementen. Diese enthalten Namen und Url der Elemente. 
 
 *Beschreibung:*
@@ -234,7 +234,7 @@ Holt die Eigenschaften des gewählten Objektes.
 * Method: GET
 ** workspaceId: Name des selektierten Arbeitsbereich
 ** itemUrl: Url des selektierten Elemente 
-* Body: _keiner
+* Body: _keiner_
 * Return: 
 ** Array von _ItemWithNameAndId_-Elementen. Das erste Element beinhaltet den direkten Container, während die weiteren Elemente jeweils dessen Container rekursiv beinhaltet. 
 
@@ -286,6 +286,21 @@ Setzt mehrere Eigenschaften des gewählten Objektes.
 * Return: 
 ** success: true, falls erfolgreich
 
+=== Add Reference To List 
+
+* Node: api/items/add_ref_to_collection/{workspaceId}/{itemUri}
+** workspaceId: Name des Arbeitsbereiches in dem das Objekt gefunden wird. 
+** itemUri: Uri des Items zu wessen Eigenschaft eine neue Referenz hinzugefügt werden soll. 
+* Method: POST
+* Body: 
+** property: Eigenschaft deren ein Objekt hinzugefügt werden soll: 
+** workspaceId: Optional, der Arbeitsbereich in dem die Referenz zu finden ist. 
+** referenceUri: Uri der Referenz, die hinzugefügt werden soll
+* return: 
+** success: true, falls erfolgreich
+
+Fügt eine neue Referenz zu einer Eigenschaft eines Objekts hinzu. Hierzu wird die Eigenschaft als Collection eingeladen und dann das gefundene Objekt hinzugefügt. 
+
 *Beschreibung:*
 
 Setzt mehrere Eigenschaften des gewählten Objektes. 
@@ -300,7 +315,7 @@ Setzt mehrere Eigenschaften des gewählten Objektes.
 * Return: 
 ** Array[] aller Typen. Jeder Typ ist in der Struktur _ItemWithNameAndId_ dargestellt 
 
-*Beschreibung: *
+*Beschreibung:*
 
 Gibt eine Liste aller bekannten und selektierten Typen zurück. Hierzu wird die Methode LocalTypeSupport.GetAllTypes() genutzt.
 
