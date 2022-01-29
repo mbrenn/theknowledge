@@ -327,6 +327,21 @@ Fügt eine neue Referenz zu einer Eigenschaft eines Objekts hinzu. Hierzu wird d
 * return: 
 ** success: true, falls erfolgreich
 
+=== SetMetaClass
+
+* Node api/items/set_metaclass/{workspaceId}/{itemUrl}
+* Method: POST
+** workspaceId: Name des selektierten Arbeitsbereich
+** itemUrl: Url des selektierten Elemente 
+* Body: 
+** metaClassUri: Ein Link auf die neue Metaclasse 
+* Return: 
+** success: true, falls erfolgreich
+
+*Beschreibung:*
+
+Gibt das Container Element des selektierten Elements und dessen Container rekursiv zurück. Diese Methode endet bei dem eigentlichen Extent. 
+
 == TypesController
 
 === Get all types
