@@ -286,6 +286,19 @@ Setzt mehrere Eigenschaften des gewählten Objektes.
 * Return: 
 ** success: true, falls erfolgreich
 
+=== Get Property of Object
+* Node: api/items/get_property/{workspaceId}/{itemUri}
+** workspaceId: Name des Arbeitsbereiches in dem das Objekt gefunden wird. 
+** itemUri: Uri des Items wessen Eigenschaft geladen werden soll
+* Method: GET
+** property: Name der Eigenschaft, die geladen werden soll.
+* Return:
+** v: Wert der geladenen Eigenschaft als MofJsonObject. Dies kann auch ein Array von Eigenschaften sein. 
+
+*Beschreibung:*
+
+Holt eine Eigenschaft eines Objektes ab.
+
 === Add Reference To List 
 
 * Node: api/items/add_ref_to_collection/{workspaceId}/{itemUri}
@@ -301,9 +314,18 @@ Setzt mehrere Eigenschaften des gewählten Objektes.
 
 Fügt eine neue Referenz zu einer Eigenschaft eines Objekts hinzu. Hierzu wird die Eigenschaft als Collection eingeladen und dann das gefundene Objekt hinzugefügt. 
 
-*Beschreibung:*
+=== Remove Reference from list
 
-Setzt mehrere Eigenschaften des gewählten Objektes. 
+* Node: api/items/remove_ref_to_collection/{workspaceId}/{itemUri}
+** workspaceId: Name des Arbeitsbereiches in dem das Objekt gefunden wird. 
+** itemUri: Uri des Items zu wessen Eigenschaft eine neue Referenz hinzugefügt werden soll. 
+* Method: POST
+* Body: 
+** property: Eigenschaft deren ein Objekt hinzugefügt werden soll: 
+** workspaceId: Optional, der Arbeitsbereich in dem die Referenz zu finden ist. 
+** referenceUri: Uri der Referenz, die entfernt werden soll
+* return: 
+** success: true, falls erfolgreich
 
 == TypesController
 
