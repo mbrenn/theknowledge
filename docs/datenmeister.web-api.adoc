@@ -173,6 +173,7 @@ Erstellt ein neues Objekt als Wurzelobjekt im Extent. Über die MetaClass kann d
 ** property: Eigenschaft in dem das Kindobjekt erstellt wird. 
 ** asList: true, falls das Objekte als Listeneintrag hinzugefügt werden soll. Ansonsten wird das Element als direkte Referenz hinzugefügt.
 ** metaClass: Uri der MetaClass
+** properties: MofObjectAsJson welche die Eigenschaften enthält, die gesetzt werden sollen
 * Return: 
 ** success: true, wenn erfolgreich
 ** itemId: Id des neu erstellten Objektes
