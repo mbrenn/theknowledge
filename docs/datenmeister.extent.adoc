@@ -19,7 +19,7 @@ Das UriExtent unterstützt folgende Abfrageschema:
 |Abfrage per Name a|Der Uri des Extents wird über ein '?fn=' der volle Name des Objekts angehängt
 
 - dm:///datenbank/?fn=team_Frankfurt::player_1
-|Abfrage einer Eigenschaft a|Nachdem das Element über einer der obigen Verfahren identifiziert worden ist, kann über den QueryString-Parameter 'prop' eine Eigenschaft des Objektes selektiert werden. Der Inhalt der Eigenschaft wird zurückgegeben
+|Abfrage einer Eigenschaft a|Nachdem das Element über einer der obigen Verfahren identifiziert worden ist, kann über den QueryString-Parameter 'prop' eine Eigenschaft des Objektes selektiert werden. Der Inhalt der Eigenschaft wird zurückgegeben.
 
 - dm:///datenbank/?fn=team_Frankfurt::player_1&prop=age
 - dm:///datenbank/?prop=age#objectid
@@ -28,4 +28,24 @@ Das UriExtent unterstützt folgende Abfrageschema:
 Hinweis: Die Url der Datenansicht muss Urlcodiert übergeben werden. 
 
 - dm:///datenbank/?fn=team_Frankfurt::player_1&prop=children&dataview=dm:///views/%23childrenView
+
+|Composites a|Durch Angabe des Parameter &composites= kann angegeben werden, ob die beinhaltenden Elemente mit zurückgegeben werden sollen. 
+
+Hier gibt es verschiedene Werte: 
+
+- includingSelf: Neben den Composite-Elementen werden die selektierten Werte werden ebenfalls zurückgegeben
+- onlyComposites: Nur die Composite-Elemente werden zurückgegeben. 
+- allReferenced: Alle referenzierten Elemente werden zurückgegeben, unabhängig davon, ob diese Composite sind oder nicht. 
+
+Beispiel: dm:///datenbank/&composites=onlyComposites
+
+|Filtern nach Metaklasse a|Hier kann nach einer Metaklasse gefiltert werden. 
+
+- dm:///datenbank/?metaclass={dm:///_internal/types/#DatenMeister.Package}
+- dm:///datenbank/?metaclass=dm%3A%2F%2F%2F_internal%2Ftypes%2F%23DatenMeister.Package
+
+Hinweis: Der Parameter in geschweiften Klammern muss url-encoded sein und ist hier nur zur klaren Darstellung nicht encodiert. 
+
+
+
 |===

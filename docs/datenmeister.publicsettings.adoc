@@ -53,3 +53,19 @@ Folgende Umgebungsvariablen werden standardmäßig gesetzt unterstützt:
 |dm_ApplicationPath|Pfad in der die Applikation ausgeführt worden ist.|---
 |dm_DatabasePath|Der Pfad in dem die Datenbank liegt|Gemäß der Konfiguration 'databasePath'.
 |===
+
+== Web Einstellungen
+
+Die Einstellungen für den Webserver werden ebenfalls in der obigen Datei 'DatenMeister.Settings.xmi' definiert. 
+
+Hierzu fügt man einen Xml-Knote 'web' hinzu in dem folgende Einstellungen definiert werden: 
+
+ <xmi>
+     <settings>
+         <!-- All the other stuff -->
+         <web backgroundColor="#999999" />
+     </settings>
+ </xmi>
+
+ Es werden folgende Konfigurationen unterstützen:
+ * backgroundColor: Hintergrundfarbe des Webclients
