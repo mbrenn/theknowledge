@@ -32,6 +32,8 @@ include::datenmeister.dataviews.adoc[leveloffset=+1]
 
 include::datenmeister.evaluation.adoc[leveloffset=+1]
 
+include::datenmeister.viewmode.adoc[leveloffset=+1]
+
 include::datenmeister.forms.adoc[leveloffset=+1]
 
 include::datenmeister.formfinder.adoc[leveloffset=+1]
@@ -50,4 +52,4 @@ include::datenmeister.web.adoc[leveloffset=+1]
 
 include::datenmeister.web-api.adoc[leveloffset=+1]
 
-include::datenmeister.meetingmeister.adoc[leveloffset=+1]
+include::datenmeister.stundenmeister.adoc[leveloffset=+1]

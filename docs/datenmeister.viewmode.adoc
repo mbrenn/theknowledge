@@ -1,0 +1,12 @@
+= Viewmode (Ansichtsmodus)
+
+Über den Ansichtsmodus kann der Mutzer einstellen aus welcher Perspektive das aktuelle Formular (Form) identifiziert und erzeugt werden soll. 
+
+Es werden folgende Standard-Viewmodes erzeugt: 
+
+* Default (ViewMode.Default): Dieses ist der Standard-Viewnode und kann von den Erweiterungen überschrieben werden, so dass spezielle Ansichten für spezielle Objekte oder Extents dargestellt werden können. 
+* Auto Generation (ViewMode.AutoGenerate): Über diese Ansicht wird die automatische Generierung des Formulars auf der gesetzten Eigenschaften und Objekttypen erzwungen. Die Suche nach best-passenden Formularen wird nicht durchgeführt. 
+* Data Manipulation (ViewMode.DataManipulation): Im Gegensatz zum Default-Viewmode werden hier keine visuellen Darstellungen des Objektes angezeigt. Über diese Ansicht soll der Nutzer die Möglichkeit erhalten das Objekt selbst zu manipulieren. 
+* Switch to Automatic: Diese Option wird nur in der grafischen Darstellung angezeigt und ist kein tatsächlicher Viewmode. Durch die Selektion dieses Items versucht das System auf Grund des Extenttyps den besten Viewmode zu selektieren. 
+
+

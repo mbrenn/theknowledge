@@ -36,6 +36,7 @@ Hier gibt es verschiedene Werte:
 - includingSelf: Neben den Composite-Elementen werden die selektierten Werte werden ebenfalls zurückgegeben
 - onlyComposites: Nur die Composite-Elemente werden zurückgegeben. 
 - allReferenced: Alle referenzierten Elemente werden zurückgegeben, unabhängig davon, ob diese Composite sind oder nicht. 
+- allReferencedIncludingSelf: Alle referenzierten Elemente, aber auch die selektierten Elemente, werden zurückgegeben, unabhängig davon, ob diese Composite sind oder nicht. 
 
 Beispiel: dm:///datenbank/&composites=onlyComposites
 
