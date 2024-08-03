@@ -10,7 +10,7 @@ Mittlerweile das Standard-Tool der automatisierten Ausführung von Skripten, wie
 
 Visual Studio Code:: https://code.visualstudio.com/
 +
-Ein sehr populärer Editor zum Bearbeiten von Code-, Markup und Daten-Dateien welcher unter allen großen Betriebssystemen läuft. Nutze ich täglich, wenn ich nicht Rider oder Visual Studio für C# nutze. 
+Ein sehr populärer Editor zum Bearbeiten von Code-, Markup und Daten-Dateien welcher unter allen großen Betriebssystemen läuft. Nutze ich täglich, wenn ich nicht Rider oder Visual Studio für C# nutze.
 
 Visual Studio:: https://visualstudio.microsoft.com/de/
 +
@@ -26,6 +26,3 @@ DotNet Benchmark:: https://github.com/dotnet/BenchmarkDotNet
 +
 Gehört mit NUnit zu einer der Standard-Tools für die Bestimmung der Laufzeit von Methoden. Das Tool kümmert sich automatisch um die Analyse des Overheads und der notwendigen Wiederholraten um eine gewisse Konfidenz zu erreichen. Bevor man mit https://docs.microsoft.com/de-de/dotnet/api/system.diagnostics.stopwatch?view=netcore-3.1["StopWatch"] sein eigenes Benchmarking aufbaut, empfehle ich eine Prüfung dieser Bibliothek.
 
-SmartGit:: https://www.syntevo.com/smartgit/
-+
-Aktuell mein Lieblings-Git-Tool. Sieht nicht hypig aus, funktioniert sehr zuverlässig und besitzt eine gute grafische Darstellung der Revisions-Logs. Insgesamt auch, wie Git halt so ist, sehr schnell. 

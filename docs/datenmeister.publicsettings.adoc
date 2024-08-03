@@ -1,4 +1,5 @@
 = Öffentliche Einstellungen
+[dm_public_settings]
 
 Die öffentlichen Einstellungen (PublicSettings) wird über die Datei 'DatenMeister.Settings.xmi' konfiguriert, die im Verzeichnis der ausführbaren Datei (.exe) liegen muss. 
 

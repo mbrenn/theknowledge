@@ -20,6 +20,7 @@
 |Registriert über|_Abstrakte Konfiguration_
 |===
 
+Loads the excel file and uses the excel file directly for MOF operations. Here, no importing into a temporary extent will be performed. 
 
 ==== ExcelImportExtentLoaderConfig
 
@@ -27,6 +28,8 @@
 |Abgeleitet|ExcelExtentLoaderConfig
 |Registriert über|DatenMeister.Excel.Integration.ExcelPlugin
 |===
+
+Creates a parallel extent type and loads the specific Excelfile into the extent. 
 
 
 ==== ExcelReferenceExtentLoaderConfig
@@ -36,6 +39,7 @@
 |Registriert über|DatenMeister.Excel.Integration.ExcelPlugin
 |===
 
+Loads the excel and copies all elements from the Excel file into a temporary Extent containing a Provider called 'InMemoryProvider'. This allows fast and easy access, but writings are discarded when the extent is unloaded.
 
 
 ==== InMemoryLoaderConfig
