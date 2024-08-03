@@ -215,7 +215,7 @@ Diese besitzt folgende Methode
 * element: Beschreibt das Objekt welches transformiert wird. Dieses wird direkt bearbeitet
 * actionConfiguration: Erweiterte Konfiguration, die der Action-Instanz selbst entspricht. 
 
-= SimpleReportAction
+== SimpleReportAction
 
 Erzeugt einen einfachen Bericht. 
 
