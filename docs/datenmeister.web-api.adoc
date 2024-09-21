@@ -11,9 +11,11 @@ Jedes Kapitel beschreibt die API einer Datei.
 Die Hilfsklasse _ItemWithNameAndId_ (C#-Namespace DatenMeister.Json) fungiert als Transferobjeot von Web-*Server* zu Web-*Client* um ein Item ohne seine Properties als Proxy zu übergeben. Um unnötige Roundtrips zwischen Webserver und Webclient zu vermeiden, besteht das Objekt aus folgenden Eigenschaften. 
 
 * name: Name des Objektes, wie von NamedElementMethods.GetName zurückgeliefert
+* uri: Uri des Elements
 * extentUri: Uri des Extents in dem sich das Objekt befindet
 * fullName: Der volle Namen, wie von NamedElementMethods.GetFullName zurückgeliefert
 * id: Die Id des Objektes
+* workspace: Arbeitsbereich in dem sich das Element selbst befindet. 
 
 Das Objekte ist über $"{extentUri}#{id}" vom Webserver abrufbar. 
 
@@ -63,7 +65,7 @@ Gibt den Namen des gewählten Elements zurück. Der Name wird über NamedElement
 
 === Get Composites
 
-* Node api/elements/get_composites/{workspaceId?}/{itemUrl?}
+* Node: api/elements/get_composites/{workspaceId?}/{itemUrl?}
 * Method: GET
 ** workspaceId: (Optional) Name des selektierten Arbeitsbereich
 ** itemUrl: (Optional) Url des selektierten Elemente 
@@ -76,6 +78,16 @@ Gibt den Namen des gewählten Elements zurück. Der Name wird über NamedElement
 Gibt die Unterelemente des selektierten Arbeitsbereiches, bzw. des selektierten Items zurück. 
 
 Falls kein Arbeitsbereich angegeben wurde, werden die Arbeitsbereiche zurückgegeben. Falls ein Arbeitsbereich angegeben wurde, aber keine ItemUrl, so werden alle Wurzelelemente zurückgegeben, ansonsten werden die Unterelemente zurückgegeben. 
+
+=== Find Item By SearchString
+
+* Node: api/elements/find_by_searchstring?search=searchString
+* Method: GET
+** searchString: Beschreibung des Items welches gesucht werden soll. Dies ist eine globale Suche über die entweder ein einzelnes Items oder auch eine Menge von Items zurückgegeben wird. Es ist Aufgabe des Clients die dahinterliegende, sinnvolle Aktion durchzuführen
+* Body: _keiner_
+* Return: 
+** resultType: 'reference', falls eine Referenz auf ein Element gefunden wurde. 'referenceExtent', falls eine Referenz auf ein Extent gefunden wurde. 'none', falls nichts gefunden wurde.
+** reference: ItemWithNameAndId-Instanz des Elements, welches referenziert ist. 
 
 == ExtentController
 
