@@ -218,6 +218,12 @@ Löscht das Objekt aus der Wurzel des Extents.
 ** workspaceId: Name des Arbeitsbereiches in dem sich das Objekt befindet
 ** extentUri: Uri des Extents
 * Method: GET
+* Parameter:
+** viewNode: Url to that specific viewnode
+** orderBy: Property to which the table shall be ordered
+** orderByDescending: Boolean whether the property shall be ordered descending (backwards)
+** filterByProperties: NOT SUPPORTED
+** filterByFreetext: Additional freetext which will be used to filter items. Here, all columns will be regarded
 * Body: _keiner_
 * Return: 
 ** item: Array von _MofJsonObject_ der Wurzelelemente
