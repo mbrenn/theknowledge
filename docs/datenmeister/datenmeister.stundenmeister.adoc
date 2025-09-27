@@ -12,23 +12,24 @@ The user wants to define or update periodic events to store them into a database
 
 The user wants to receive a report about the planned events in a 'hourplanning' like format. 
 
-== DataStructure
+== Data Structure
 
 === WeeklyPeriodicEvent
 
+[%header]
 |===
-|Name|Name of the periodic event|Text
+|Name|Name of the periodic event|Type
 |TimeStart|Time at which the event starts (Format is HH:MM)|Text in Format HH:MM
 |HoursDuration|Duration of the event in hours|Float
 |WeekInterval|Determines how many weeks are between two event. 1 means every week|Integer
 |WeekOffset|Determines how many weeks must pass before first event happens.|Integer
-|OnMonday|Indication, if event is on Monday
-|OnTuesday|Indication, if event is on Tuesday
-|OnWednesday|Indication, if event is on Wednesday
-|OnThursday|Indication, if event is on Thursday
-|OnFriday|Indication, if event is on Friday
-|OnSaturday|Indication, if event is on Saturday
-|OnSunday|Indication, if event is on Sunday
+|OnMonday|Indication, if event is on Monday|Boolean
+|OnTuesday|Indication, if event is on Tuesday|Boolean
+|OnWednesday|Indication, if event is on Wednesday|Boolean
+|OnThursday|Indication, if event is on Thursday|Boolean
+|OnFriday|Indication, if event is on Friday|Boolean
+|OnSaturday|Indication, if event is on Saturday|Boolean
+|OnSunday|Indication, if event is on Sunday|Boolean
 |===
 
 == Activities

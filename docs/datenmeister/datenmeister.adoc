@@ -16,44 +16,27 @@ Jedes Feature wird in einem Kapitel des Dokumentes behandelt und ist in jeweils 
 
 Jedes Feature wird in Bezug auf diese vier Aspekte durchgegangen. Im Abschluss wird nochmals insgesamt über die SW-Architektur diskutiert. 
 
-include::datenmeister.extent.adoc[leveloffset=+1]
+* link:datenmeister.extent.html[Extent]
+* link:datenmeister.actions.html[Actions]
+* link:datenmeister.plugins.html[Plugins]
+* link:datenmeister.excelimport.html[Excel Import]
+* link:datenmeister.publicsettings.html[Public Settings]
+* link:datenmeister.extentloader.html[Extent Loader]
+* link:datenmeister.dataviews.html[Data Views]
+* link:datenmeister.evaluation.html[Evaluation]
+* link:datenmeister.forms.html[Forms]
+* link:datenmeister.formfinder.html[Form Finder]
+* link:datenmeister.reports.html[Reports]
+* link:datenmeister.swapi.html[SW API]
+* link:datenmeister.translation.html[Translation]
+* link:datenmeister.dynamic_runtime_extent.html[Dynamic Runtime Extent]
+* link:datenmeister.web.html[Web]
+* link:datenmeister.web.load.html[Web Loading]
+* link:datenmeister.web-api.html[Web API]
+* link:datenmeister.stundenmeister.html[Stundenmeister]
+* link:datenmeister.massimport.html[Mass Import]
 
-include::datenmeister.actions.adoc[leveloffset=+1]
+== Issues and Change Requests
 
-include::datenmeister.plugins.adoc[leveloffset=+1]
-
-include::datenmeister.excelimport.adoc[leveloffset=+1]
-
-include::datenmeister.publicsettings.adoc[leveloffset=+1]
-
-include::datenmeister.extentloader.adoc[leveloffset=+1]
-
-include::datenmeister.dataviews.adoc[leveloffset=+1]
-
-include::datenmeister.evaluation.adoc[leveloffset=+1]
-
-include::datenmeister.viewmode.adoc[leveloffset=+1]
-
-include::datenmeister.forms.adoc[leveloffset=+1]
-
-include::datenmeister.formfinder.adoc[leveloffset=+1]
-
-include::datenmeister.forms.generator.adoc[leveloffset=+1]
-
-include::datenmeister.reports.adoc[leveloffset=+1]
-
-include::datenmeister.swapi.adoc[leveloffset=+1]
-
-include::datenmeister.translation.adoc[leveloffset=+1]
-
-include::datenmeister.dynamic_runtime_extent.adoc[leveloffset=+1]
-
-include::datenmeister.web.adoc[leveloffset=+1]
-
-include::datenmeister.web.load.adoc[leveloffset=+1]
-
-include::datenmeister.web-api.adoc[leveloffset=+1]
-
-include::datenmeister.stundenmeister.adoc[leveloffset=+1]
-
-include::datenmeister.massimport.adoc[leveloffset=+1]
+* link:Changes/change_create_dataview_fromview.html[Create Dataview from View]
+* link:Changes/issue91.html[Issue 91]

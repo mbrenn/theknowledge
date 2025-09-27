@@ -1,0 +1,20 @@
+= Change 
+
+Create Dataview out of the current view
+
+== Goal of the activity
+
+The user can navigate in the table view and we would like to be able a stored Dataview out of the current settings that the user has set within that Dataview
+
+The filtering, the sorting and Freetext filtering shall be automatically acknowledged and stored. 
+
+The name of the dataview shall be user-given.
+
+The dataview shall be stored in an automatic Package specifically for that activity. 
+
+The user shall be able to easily use that dataview. 
+
+== Workpackage Breakdown
+
+* [ ] Check that the user can filter and sort as intended
+ 

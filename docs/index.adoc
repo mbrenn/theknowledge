@@ -18,3 +18,10 @@ Das komplette Buch ist zur besseren Verständlichkeit in deutsch geschrieben. Er
 * Es gibt ausreichend gute Übersetzungsmaschinen
 
 Die Quelle des Buchs ist verfügbar unter The source of the book is available in  https://github.com/mbrenn/theknowledge[Github] und Pull Requests sind immer willkommen. 
+
+== Weitere Kapitel
+
+* link:DatenMeister/datenmeister.html[DatenMeister]
+* link:Systems%20Engineering/systemengineering.html[Systems Engineering]
+* link:Tools/cooletools.html[Toolings]
+* link:Trainings/training.html[Trainings / Cheatsheets]
