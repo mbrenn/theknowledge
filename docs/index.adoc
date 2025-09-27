@@ -18,14 +18,3 @@ Das komplette Buch ist zur besseren Verständlichkeit in deutsch geschrieben. Er
 * Es gibt ausreichend gute Übersetzungsmaschinen
 
 Die Quelle des Buchs ist verfügbar unter The source of the book is available in  https://github.com/mbrenn/theknowledge[Github] und Pull Requests sind immer willkommen. 
-
-
-Aber nun... lass uns einfach starten! 
-
-include::cooletools.adoc[leveloffset=+1]
-
-include::systemengineering.adoc[leveloffset=+1]
-
-include::datenmeister.adoc[leveloffset=+1]
-
-include::training.adoc[leveloffset=+1]
