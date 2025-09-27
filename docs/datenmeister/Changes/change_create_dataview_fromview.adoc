@@ -17,4 +17,30 @@ The user shall be able to easily use that dataview.
 == Workpackage Breakdown
 
 * [ ] Check that the user can filter and sort as intended
+** [ ] Migrate Dataview to use Dynamic Views
+* [ ] Activate Storage of the current view
+** [ ] Provide Storage button
+** [ ] By activation of the Storage button, the user shall be able to define the name of the created DataView
+** [ ] Define package in which the user-defined storages shall be done
+** [ ] Store current DataView into the defined Package
+* [ ] Define Mechanism to retrieve the stored view
+** [ ] Include Form Selector into the Table View
+** [ ] User shall be able to select the DataView
+
+
+
+=== Check that the user can filter and sort as intended
  
+=== Activate Storage of the current view
+
+==== Provide and define Storage button
+
+==== Define package in which the user-defined storages shall be done
+
+==== Store current DataView into the defined Package
+
+The defined dataview shall contain a dynamic mechanism which allows also the use of the DataView for other tables
+
+=== Define Mechanism to retrieve the stored view
+
+==== Include Form Selector into the Table View
