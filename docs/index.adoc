@@ -21,7 +21,7 @@ Die Quelle des Buchs ist verfügbar unter The source of the book is available in
 
 == Weitere Kapitel
 
-* link:DatenMeister/datenmeister.html[DatenMeister]
+* link:datenmeister/datenmeister.html[DatenMeister]
 * link:Systems%20Engineering/systemengineering.html[Systems Engineering]
 * link:Tools/cooletools.html[Toolings]
 * link:Trainings/training.html[Trainings / Cheatsheets]
