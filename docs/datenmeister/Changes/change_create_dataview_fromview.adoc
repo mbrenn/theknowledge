@@ -27,10 +27,10 @@ The user shall be able to easily use that dataview.
 ** [x] Creates the package
 ** [x] Stores the view itself
 ** [x] Creates the QueryStatement
-** [ ] Check that the references are correctly added!
+** [x] Check that the references are correctly added!
 * [ ] Define Mechanism to retrieve the stored view
-** [ ] Include Form Selector into the Table View
-** [ ] User shall be able to select the DataView
+** [x] Include Form Selector into the Table View
+** [x] User shall be able to select the DataView
 ** [ ] Instead of client-defined Query Statement, a server-selected QueryStatement shall be chosen.
 
 === Check that the user can filter and sort as intended
@@ -67,3 +67,47 @@ The action parameters are:
 === Define Mechanism to retrieve the stored view
 
 ==== Include Form Selector into the Table View
+
+Done via clickable butteon which shows the export
+
+==== User shall be able to select the DataVie
+
+Done via ItemSelectControl
+
+==== Instead of client-defined Query Statement, a server-selected QueryStatement shall be chosen.
+
+The Clients.Elements.queryObject is required to load also from a 
+pre-selected QueryStatement. 
+
+Here are two options open: 
+
+* Option 1: Directly use the existing API and reference to the query and its url
+* Option 2: Use the existing API but implement another server call
+* Option 3 Create an intermediate QueryStatement object which is just gatewaying to another option
+
+
+===== Option 1
+
+* We get a quite cluttering API call signature on client side
+* No increased # of API Calls
+* Dependent on whether the server call by just referencing the target querystatement is working
+
+===== Opton 2
+
+* Would be quite clean
+* Dependent on whether the server call by just referencing the target querystatement is working
+
+===== Option 3
+
+* New object is being created 
+* Might be useful also in future for indirect requests
+* No change on existing Server API and Client API
+
+===== Decision
+
+We will choose for option 3 to allow also future usages of that new type. 
+The name of the new ViewNode will be called 'ReferenceViewNode' and will contain the following properties: 
+
+* name: As always
+* workspaceId: Id of the workspace in which the referenced item is being located
+* itemUri: Uri which is used to dereference the workitem. 
