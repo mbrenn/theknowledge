@@ -45,6 +45,8 @@ The implementation is done in the function of 'createFunctionToStoreCurrentView'
 
 ==== Provide and define Storage button
 
+
+
 ==== Define package in which the user-defined storages shall be done
 
 ==== Store current DataView into the defined Package
