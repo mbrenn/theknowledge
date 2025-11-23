@@ -28,10 +28,10 @@ The user shall be able to easily use that dataview.
 ** [x] Stores the view itself
 ** [x] Creates the QueryStatement
 ** [x] Check that the references are correctly added!
-* [ ] Define Mechanism to retrieve the stored view
+* [x] Define Mechanism to retrieve the stored view
 ** [x] Include Form Selector into the Table View
 ** [x] User shall be able to select the DataView
-** [ ] Instead of client-defined Query Statement, a server-selected QueryStatement shall be chosen.
+** [x] Instead of client-defined Query Statement, a server-selected QueryStatement shall be chosen.
 
 === Check that the user can filter and sort as intended
 
