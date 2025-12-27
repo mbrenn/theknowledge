@@ -41,3 +41,4 @@ Jedes Feature wird in Bezug auf diese vier Aspekte durchgegangen. Im Abschluss w
 * link:Changes/change_create_dataview_fromview.html[Create Dataview from View]
 * link:Changes/issue91.html[Issue 91]
 * link:Changes/create_source_for_factory_support.html[Create Source for Factory Support]
+* link:Changes/issue117.html[Add Action to Index Page]
