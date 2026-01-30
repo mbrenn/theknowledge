@@ -35,6 +35,6 @@ The following requirements are valid:
 
 === Fix 3
 
-* [ ] Leverage Native HTML5 Input Types: Use `<input type="date">`, `<input type="time">`, or `<input type="datetime-local">` to simplify code and improve UX.
-* [ ] Standardize Data Storage Format: Use ISO 8601 (e.g., `2023-10-27T14:30:00`) for unambiguous, culture-independent storage.
-* [ ] Clarify Timezone Handling: Store in UTC and display in user's local time, or include offset in ISO string if server-local is required.
+* [x] Leverage Native HTML5 Input Types: Use `<input type="date">`, `<input type="time">`, or `<input type="datetime-local">` to simplify code and improve UX.
+* [x] Standardize Data Storage Format: Use ISO 8601 (e.g., `2023-10-27T14:30:00`) for unambiguous, culture-independent storage.
+* [x] Clarify Timezone Handling: Store in UTC and display in user's local time, or include offset in ISO string if server-local is required.
