@@ -87,7 +87,6 @@ Provides a field to input date and time.
 |Name|Meaning
 |hideDate|If true, only the time part is shown.
 |hideTime|If true, only the date part is shown.
-|showOffsetButtons|If true, buttons to quickly shift the date/time are shown.
 |===
 
 == DropDownFieldData

@@ -32,3 +32,9 @@ The following requirements are valid:
 === Fix 2
 
 * [x] When creating the textbox for date and time, please add the term 'Date:' before the boxes assigned for the data, a new line for the Time and a colon between HH and MM. Please take care that there shall be no new line in case one of the two fields are hidden. 
+
+=== Fix 3
+
+* [ ] Leverage Native HTML5 Input Types: Use `<input type="date">`, `<input type="time">`, or `<input type="datetime-local">` to simplify code and improve UX.
+* [ ] Standardize Data Storage Format: Use ISO 8601 (e.g., `2023-10-27T14:30:00`) for unambiguous, culture-independent storage.
+* [ ] Clarify Timezone Handling: Store in UTC and display in user's local time, or include offset in ISO string if server-local is required.

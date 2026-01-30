@@ -15,8 +15,8 @@ The following activities have to be performed:
 
 * [x] We need to have an iteration type: #IssueMeister.Iteration
 * [x] The issue needs to have a reference to the milestone -> Done
-* [X] The automatic form creation evaluates the reference to the milestone and creates a corresponding automatic field
-* [X] The automatic form is evaluated for simple usage. Another issue might be created out of that
+* [x] The automatic form creation evaluates the reference to the milestone and creates a corresponding automatic field
+* [x] The automatic form is evaluated for simple usage. Another issue might be created out of that
 * [x] In addition, the automatic form shall include the enumeration of IssueState: #IssueMeister.IssueState
 
 Used branch: feature/issue_repair

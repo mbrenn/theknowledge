@@ -32,8 +32,8 @@ The user shall be able to create a data, a type and a forms extent within a sing
 * [x] Create two .xmi files
 * [x] Load these .xmi files as plugin
 * [x] Define Action in type
-* [ ] Extent createSourceCode also for the Domain Action Handler
-* [ ] Implement Action Handler and let it load at Plugin Start-up
-* [ ] Implement Unit Test for the action
-* [ ] Get it running
+* [x] Extent createSourceCode also for the Domain Action Handler
+* [x] Implement Action Handler and let it load at Plugin Start-up
+* [x] Implement Unit Test for the action
+* [x] Get it running
 
