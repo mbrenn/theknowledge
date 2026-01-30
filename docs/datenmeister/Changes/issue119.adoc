@@ -1,0 +1,27 @@
+﻿= Issue 119
+
+We would like to add an field type which allows the user to set a date or a timespan. 
+
+The following requirements are valid: 
+
+* The field can be configured, that only the time can be shown and set (hideTime)
+* The field can be configured, that only the date can be shown and set (hideDate)
+* The data is stored as a string, which can be read by converting the String to a .Net DateTime value.
+* The set time shall be regarded as a server-local time.
+* The user must have a button to set the current date
+* The user must have a button to set the current time
+
+== Plan
+
+* [x] The definition of the FieldData is available: http://frosch:5000/Item/Types/dm%3A%2F%2F%2F_internal%2Ftypes%2Finternal%23DatenMeister.Models.Forms.DateTimeFieldData
+** It has the attributes, hideData, hideTime.
+* [ ] Create a .ts-file in datenmeister/fields called 'DateTimeField' implementing the IFormField interface and extending the BaseField
+* [ ] Create the createDom 
+** which provides 3 fields for date according ISO format, YYYY, MM, DD in case the date is not hidden
+** which provides 2 fields for time according HH, MM in case the date is not hidden.
+** Add a button to add today's time and date
+** Read the current value and interpret it as string how it is also written later within the evaluateDom method. It must be compatible according .Net DateTime Format
+* [ ] Create evaluateDom
+** Evaluates the content as given by the user and sets the property in the given dmElement
+* [ ] Register that new Field in the FieldFactory.ts
+
