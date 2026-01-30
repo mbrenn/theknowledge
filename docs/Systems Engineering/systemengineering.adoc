@@ -1,3 +1,8 @@
 
 = System Engineering
+:toc: left
+:toc-title: Inhaltsverzeichnis
+:sectnums:
+:icons: font
+
 include::systemengineering.object.adoc[leveloffset=+1]
