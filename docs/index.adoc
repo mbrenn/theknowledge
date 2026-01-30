@@ -17,7 +17,7 @@ Das komplette Buch ist zur besseren Verständlichkeit in deutsch geschrieben. Er
 * Die Erläuterungen sind plastischer und besser verständlich
 * Es gibt ausreichend gute Übersetzungsmaschinen
 
-Die Quelle des Buchs ist verfügbar unter The source of the book is available in  https://github.com/mbrenn/theknowledge[Github] und Pull Requests sind immer willkommen. 
+Die Quelle des Buchs ist verfügbar unter https://github.com/mbrenn/theknowledge[Github] und Pull Requests sind immer willkommen. 
 
 == Weitere Kapitel
 
