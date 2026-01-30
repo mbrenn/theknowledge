@@ -1,29 +1,29 @@
-
+﻿
 = MS Build
 
-* Standard Pfad: 
+* Standard Path: 
 
  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin
 
-== Typischer Aufbau
+== Typical Structure
 
- <Project" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+ <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup></PropertyGroup>
   <ItemGroup></ItemGroup>
-  <Target>
-    <Message Text="Hallo" Importance="high" />
+  <Target Name="MyTarget">
+    <Message Text="Hello" Importance="high" />
   </Target>
  </Project>
 
-Message ist eine Action, die einem 'Echo' ähnelt. 
+Message is a task similar to an 'Echo'. 
 
-== Sonderzeichen 
+== Special Characters 
 
-* %: Metadaten
-* $: Eigenschaften
-* @: Elemente
-* ': Bedingungen
-* ;: Listentrennungen
+* %: Metadata
+* $: Properties
+* @: Elements (Items)
+* ': Conditions
+* ;: List separators
 
 Escaping:
 
@@ -31,73 +31,73 @@ Escaping:
  <Compile Include="$([MSBuild]::Escape('MyFile.cs;MyClass.cs'))" />
 
 
-== Typische Eigenschaften (Property)
+== Typical Properties
 
-- Eigenschaften unterscheiden keine Groß-/Kleinschreibung
+- Properties are not case-sensitive
 
-=== Setzen
+=== Setting Properties
 
-- Setzen über Property Group: 
+- Setting via Property Group: 
 
  <PropertyGroup>
     <BuildDir>Build</BuildDir>
  </PropertyGroup>
 
-- Setzen über msbuild.exe
+- Setting via msbuild.exe
 
  msbuild.exe MyProj.proj -p:BuildDir=Build
  msbuild file.proj -p:Flavor=Debug;Platform=x86
 
-- Property Groups können auch innerhalb des Targets definiert werden. 
-- Eine Eigenschaft kann auch ein Xml-Knoten sein. 
+- Property Groups can also be defined within the targets. 
+- A property can also be an XML node. 
 
-- Priorität: 
-.. PropertyGroup mit Attribut 'TreatAsLocalProperty'
-.. MSBuild-Parameter
-.. Umgebungsvariablen
+- Priority: 
+.. PropertyGroup with attribute 'TreatAsLocalProperty'
+.. MSBuild parameters
+.. Environment variables
 .. PropertyGroup
 
-=== Lesen
+=== Reading Properties
 
-- Lesen über '$(Property)'
-- Registrierung: $(registry:Hive\MyKey\MySubKey@Value))
-- Eigenschaftenfunktionen: $([System.DateTime]::Now.ToString("yyyy.MM.dd")) - https://docs.microsoft.com/de-de/visualstudio/msbuild/property-functions?view=vs-2019[Link]
+- Reading via '$(Property)'
+- Registry: $(registry:Hive\MyKey\MySubKey@Value))
+- Property functions: $([System.DateTime]::Now.ToString("yyyy.MM.dd")) - https://docs.microsoft.com/en-us/visualstudio/msbuild/property-functions?view=vs-2019[Link]
 
-==== Relevante Eigenschaftfunktionen: 
+==== Relevant Property Functions: 
 
-- Pfad-Zusammenführung: $([System.IO.Path]::Combine($(MSBuildProjectDirectory), +`BuildInfo.txt`+))
-- Anhängen des trailing Slashes: $([MSBuild]::EnsureTrailingSlash($(path)))
+- Path combination: $([System.IO.Path]::Combine($(MSBuildProjectDirectory), +`BuildInfo.txt`+))
+- Ensuring trailing slash: $([MSBuild]::EnsureTrailingSlash($(path)))
 
-==== Transformieren
+==== Transforming
 
-Basierend auf den Meta-Informationen
+Based on meta-information:
 
  @(RESXFile->'%(filename).resources') -> a.resx --> a.resources
 
-https://docs.microsoft.com/de-de/visualstudio/msbuild/msbuild-well-known-item-metadata?view=vs-2019[Typische Meta-ElementInformationen]
+https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-well-known-item-metadata?view=vs-2019[Typical Well-known Item Metadata]
  
 
-=== Bedingte Auswertung
+=== Conditional Evaluation
 
-- Setzen von Standard-Werten: 
+- Setting default values: 
 
- <BuildDir Condition="'$(BuildDir)' == ''">c:\tools</ToolsPath>
+ <BuildDir Condition="'$(BuildDir)' == ''">c:\tools</BuildDir>
 
-=== Vordefinierte Eigenschaften: 
+=== Predefined Properties: 
 
-Volle Auflistung unter: https://docs.microsoft.com/de-de/visualstudio/msbuild/msbuild-reserved-and-well-known-properties?view=vs-2019
+Full list at: https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-reserved-and-well-known-properties?view=vs-2019
 
-- $(MSBuildProjectDirectory): Pfad der Projektdatei ohne Datei selbst
-- $(MSBuildProjectFullPath): Pfad der Projektdatei inkl. Datei
-- $(MSBuildProjectName): Name der MSBuild-Datei ohne Erweiterung. 
+- $(MSBuildProjectDirectory): Path of the project file without the file itself
+- $(MSBuildProjectFullPath): Path of the project file including the file
+- $(MSBuildProjectName): Name of the MSBuild file without extension. 
 
-- $(OutputPath): Ausgabepfad von Visual Studio
+- $(OutputPath): Output path of Visual Studio
 
-== Typische Elemente (Items)
+== Typical Elements (Items)
 
-=== Setzen
+=== Setting
 
-Setzen von Elementen: 
+Setting elements: 
 
  <ItemGroup>
     <Compile Include = "file1.cs"/>
@@ -108,12 +108,12 @@ Alternative:
 
  <ItemGroup><Compile Include = "file1.cs;file2.cs"/></ItemGroup>
 
-Platzhalter: 
+Wildcards: 
 
  <VBFile Include="D:/**/*.vb"/>
  <VBFile Include="D:/**/*.vb" Exclude="Settings.vb"/>
 
-Mit Metadaten: 
+With metadata: 
 
  <ItemGroup>
     <CSFile Include="one.cs;two.cs">
@@ -121,111 +121,111 @@ Mit Metadaten:
     </CSFile>
  </ItemGroup>
 
-=== Lesen
+=== Reading
 
-Lesen von Elementen
+Reading elements:
 
  @(Compile) ==> file1.cs;file2.cs 
 
-Auswerten von Meta-Daten: https://docs.microsoft.com/de-de/visualstudio/msbuild/msbuild-well-known-item-metadata?view=vs-2019[Standard-Metadaten]
+Evaluating metadata: https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-well-known-item-metadata?view=vs-2019[Standard Metadata]
 
   <Target Name="Batching">
         <Message Text="@(CSFile)" Condition=" '%(Culture)' == 'Fr' "/>
   </Target>
 
 
-Umwandlung mit Hilfe von Meta-Daten: 
+Transformation using metadata: 
 
  @(CppFiles -> '%(Filename).obj')
 
-Entfernen von Element (nur innerhalb eines Targets erlaubt):
+Removing elements (only allowed within a target):
 
- <Target>
+ <Target Name="RemoveConfig">
     <ItemGroup><Compile Remove="*.config"/></ItemGroup>
  </Target>
 
-=== Elementfunktionen:
+=== Item Functions:
 
-https://docs.microsoft.com/de-de/visualstudio/msbuild/item-functions?view=vs-2019[Volle Übersicht]
+https://docs.microsoft.com/en-us/visualstudio/msbuild/item-functions?view=vs-2019[Full Overview]
 
-  @(Compile->IndexOf('.')) ==> 3;5 (je nach Position)
+  @(Compile->IndexOf('.')) ==> 3;5 (depending on position)
 
-Relevante Funktionen: 
+Relevant functions: 
 
 . ->Count()
 . ->IndexOf()
 . ->Replace('a', 'b')
 
-== Ziele
+== Targets
 
  <Target Name="Construct">
     <Csc Sources="@(Compile)" />
  </Target>
 
-- Ein Ziel wird maximal einmal ausgeführt
+- A target is executed at most once
 
-=== Definition und Reihenfolge von Zielen
+=== Definition and Order of Targets
 
-* Erstes Ziel: Wenn nichts angegeben wird, wird das erste Ziel ausgeführt. 
-* InitialTargets: Als Attribut ins Project. Wird immer ausgeführt. 
+* First target: If nothing is specified, the first target is executed. 
+* InitialTargets: As an attribute in Project. Always executed. 
 
  <Project InitialTargets="Warm;Eject" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
-* DefaultTargets: Wenn nichts über msbuild.exe angegeben ist, wird dies hier ausgeführt. 
+* DefaultTargets: If nothing is specified via msbuild.exe, this is executed. 
 
  <Project DefaultTargets="Warm;Eject" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
-* BeforeTargets, AfterTargets: Hierüber kann eine Reihenfolge definiert werden. 
+* BeforeTargets, AfterTargets: Can be used to define an order. 
 
-* DependsOnTargets: Gibt die Ziele an, die davor ausgeführt werden müssen.
+* DependsOnTargets: Specifies the targets that must be executed before.
 
-=== Standard-Ziele
+=== Standard Targets
 
-https://docs.microsoft.com/de-de/visualstudio/msbuild/msbuild-targets?view=vs-2019[Volle Liste]
+https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-targets?view=vs-2019[Full List]
 
-* BeforeBuild: Vor dem Bauen
-* Build: Der Standard
-* AfterBuild: Nach dem Bauen
+* BeforeBuild: Before building
+* Build: The standard build target
+* AfterBuild: After building
 
-https://docs.microsoft.com/de-de/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process?view=vs-2019[Überschreiben von Zielen]
+https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process?view=vs-2019[Overriding Targets]
 
-== Aufgaben
+== Tasks
 
-* Schnittstelle _ITask_ in Microsoft.Build.Framework
-* Vorimplementierung _Task_ in Microsoft.Build.Utilities.dll 
+* Interface _ITask_ in Microsoft.Build.Framework
+* Pre-implementation _Task_ in Microsoft.Build.Utilities.dll 
 
-* Importieren von neuen Tasks: 
+* Importing new tasks: 
 
  <UsingTask TaskName="Microsoft.Build.Tasks.ResolveNativeReference" AssemblyName="Microsoft.Build.Tasks.Core" />
  <UsingTask TaskName="SimpleTask3.SimpleTask3" AssemblyFile="SimpleTask3\bin\debug\simpletask3.dll"/>
 
- * https://docs.microsoft.com/de-de/visualstudio/msbuild/msbuild-roslyncodetaskfactory?view=vs-2019[Inlineaufgaben-Definition]
+ * https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-roslyncodetaskfactory?view=vs-2019[Inline Task Definition]
 
-* Ignorieren von Fehlern: 
+* Ignoring errors: 
 
  <Delete Files="@(Files)" ContinueOnError="WarnAndContinue"/>
 
-=== Typische Aufgaben
+=== Typical Tasks
 
-https://docs.microsoft.com/de-de/visualstudio/msbuild/msbuild-task-reference?view=vs-2019[Komplette Referenz]
+https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-task-reference?view=vs-2019[Complete Reference]
 
-Nachricht an die Konsole: 
+Message to the console: 
 
- <Target><Message Text="$(BuildDir)" Importance="high"/></Target>
+ <Target Name="LogBuildDir"><Message Text="$(BuildDir)" Importance="high"/></Target>
 
-Erzeugen eines Ordners: 
+Creating a directory: 
 
  <MakeDir Directories = "$(BuildDir)" Condition = "!Exists('$(BuildDir)')" />
 
-Entfernen eines Ordners: 
+Removing a directory: 
 
  <RemoveDir Directories="$(BuildDir)" />
 
-https://docs.microsoft.com/de-de/visualstudio/msbuild/msbuild-items?view=vs-2019#updating-metadata-on-items-in-an-itemgroup-outside-of-a-target[Komplexeres Beispiel]
+https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-items?view=vs-2019#updating-metadata-on-items-in-an-itemgroup-outside-of-a-target[Complex Example]
 
 
-== Sonstiges
+== Miscellaneous
 
-* Importieren von Elementen
+* Importing elements
 
  <Import Project="Other.targets" />
