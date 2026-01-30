@@ -1,10 +1,10 @@
-= Datenansichten (DataViews)
+= Data Views (DataViews)
 
-Über Datenansichten erhält der Modellierer und Nutzer Zugriff auf Sammlungen von Objekten oder Instanzen von Objekten. 
+Through data views, the modeler and user gain access to collections of objects or instances of objects.
 
-Die Datenansichten sind im Namespace _DatenMeister.Models.Namespace_ definiert. 
+The data views are defined in the namespace _DatenMeister.Models.Namespace_.
 
-Eine Datenansicht referenziert einen Ansichtsknoten (ViewNode), der eines oder mehrere Objekte zurückgibt. Dieser Knoten können miteinander verkettet werden, damit auch komplexe Datenaggregationen möglich sind. 
+A data view references a view node (ViewNode) that returns one or more objects. These nodes can be chained together to enable complex data aggregations.
 
-Wenn ein Datenknoten nur ein spezifisches Objekt repräsentiert, so ist es alleinig in der Datensammlung vorhanden.
+If a data node represents only one specific object, it is the only one present in the data collection.
 

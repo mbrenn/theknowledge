@@ -1,54 +1,54 @@
-= Import von Excel-Dokumenten
+= Import of Excel Documents
 
-== Hierarchischer Excel Import
+== Hierarchical Excel Import
 
-Über die Import-Konfiguration 'HierarchicalExcelImportSettings' unterstützt der DatenMeister den Import von Exceldokumenten, die nach folgendem Schema aufgebaut worden sind. 
+Through the import configuration 'HierarchicalExcelImportSettings', the DatenMeister supports the import of Excel documents structured according to the following scheme.
 
 image::images/hierarchical_excel_import.png[]
 
-Diese Tabelle wird in eine Baumstruktur mit drei Ebenen umgewandelt: 
+This table is converted into a tree structure with three levels:
 
- Liga
+ League
  > Team
- > > Spieler
+ > > Player
 
-Dazu dient folgende Konfiguration
+The following configuration is used for this:
 
 === ExcelLoaderConfig
 
 [%header,cols="1,5"]
 |===
-|Name|Bedeutung
-|filePath|Dateiname über den importiert wird
-|extentUri|Uri des entstehenden Extents
-|workspaceId|Id des Arbeitsbereiches in dem der entstehende Extent eingefügt wird
-|sheetName|Name des Excel-Sheets aus dem importiert wird
-|hasHeader|Flag, ob die erste Spalte des Excelsheets Überschriften bezeichnet
-|idColumnName|Name der Spalte, die gegebenenfalls die Id beinhaltet
-|countRows|Anzahl der Zeilen, die einzulesen sind. Wenn 0 oder negativ wird versucht automatisch zu ermitteln wieviel Zeilen abzuarbeiten sind
-|countColumns|Anzahl der Spalten, die einzulesen sind. Wenn 0 oder negativ wird versucht automatisch zu ermitteln wieviel Spalten abzuarbeiten sind
-|offsetRow|Anzahl der Zeilen, die zuerst übersprungen werden um das Excel einzulesen. Damit muss das Excel nicht zwingend bei A1 beginnen. 
-|offsetColumn|Anzahl der Spalten, die zuerst übersprungen werden um das Excel einzulesen. Damit muss das Excel nicht zwingend bei A1 beginnen.
+|Name|Meaning
+|filePath|Filename from which to import.
+|extentUri|URI of the resulting extent.
+|workspaceId|ID of the workspace into which the resulting extent is inserted.
+|sheetName|Name of the Excel sheet from which to import.
+|hasHeader|Flag indicating whether the first column of the Excel sheet denotes headers.
+|idColumnName|Name of the column that optionally contains the ID.
+|countRows|Number of rows to be read. If 0 or negative, an attempt is made to automatically determine how many rows to process.
+|countColumns|Number of columns to be read. If 0 or negative, an attempt is made to automatically determine how many columns to process.
+|offsetRow|Number of rows to be skipped first before reading the Excel. Thus, the Excel does not necessarily have to start at A1.
+|offsetColumn|Number of columns to be skipped first before reading the Excel. Thus, the Excel does not necessarily have to start at A1.
 |===
 === ExcelHierarchicalLoaderConfig
 
-Abgeleitet von ExcelLoaderConfig
+Derived from ExcelLoaderConfig
 
 [%header,cols="1,5"]
 |===
-|Name|Bedeutung
+|Name|Meaning
 
-|hierarchicalcolumns|Spalten-Definitionen, die die verschiedenen Hierarchie-Stufen beschreiben. Diese Liste von Elementen beschreibt in der Reihenfolge der Spaltentiefe welche Inhalte beschrieben werden. 
+|hierarchicalcolumns|Column definitions describing the different hierarchy levels. This list of elements describes the content in the order of column depth.
 |===
 
 === ExcelHierarchicalColumnDefinition
 
 [%header,cols="1,5"]
 |===
-|Name|Bedeutung
-|name|Name der Spalte. Dies ist üblicherweise die Überschrift
-|metaClass|MetaClass, die diese Spalte beinhaltet
-|property|Eigenschaft in dem die Kinder des Elements gespeichert werden. Für die letzte Spalte hat diese Eigenschaft keine Bedeutung mehr. 
+|Name|Meaning
+|name|Name of the column. This is usually the header.
+|metaClass|MetaClass that this column contains.
+|property|Property in which the children of the element are stored. For the last column, this property no longer has any meaning.
 |===
 
 

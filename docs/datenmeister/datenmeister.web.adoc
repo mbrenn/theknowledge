@@ -1,32 +1,32 @@
-= Die Web-Schnittstelle
+= The Web Interface
 
 image::images/datenmeister.web.navigation.uxf.png[]
 
-Der Nutzer hat folgende Hauptnavigationspunkte: 
+The user has the following main navigation points:
 
 - Dashboard
-- Arbeitsbereiche
-- Daten-Arbeitsbereich
-- Einstellungen
+- Workspaces
+- Data Workspace
+- Settings
 
-== Web-Formulare
+== Web Forms
 
-Über das Web werden folgende zwei Formulare angefragt: 
- 
+The following two forms are requested via the web:
+
 === ItemsOverview.cshtml --> DetailFormCreator
 
-- Hier wird die Funktion des DetailFormCreator aufgerufen. 
-- Dieser ruft die Web-API forms/default_for_item auf
-- Diese ruft CreateExtentFormForItem mit dem Parameter: TreeItemDetail auf
+- Here, the function of the DetailFormCreator is called.
+- This calls the web API forms/default_for_item.
+- This calls CreateExtentFormForItem with the parameter: TreeItemDetail.
 
 === Items.cshtml
 
-- Hier wird die Funktion des CollectionFormCreator aufgerufen. 
-- Dieser ruft die Web-API forms/default_for_extent auf
-- Diese ruft CreateExtentFormForExtent mit dem Parameter: TreeItemExtent auf.
+- Here, the function of the CollectionFormCreator is called.
+- This calls the web API forms/default_for_extent.
+- This calls CreateExtentFormForExtent with the parameter: TreeItemExtent.
 
-== Web-Oberfläche
+== Web UI
 
-Das Hauptfenster soll folgende Bereiche beinhalten: 
+The main window should contain the following areas:
 
 

@@ -1,232 +1,232 @@
-= Aktionen und Aktionssammlungen
+= Actions and Action Sets
 
-Über die Aktionen kann der Nutzer des Datenmeister eine Sequenz von Aktivitäten definieren, die im DatenMeister-Kontext ausführbar sind. 
+Through actions, the user of the Datenmeister can define a sequence of activities that are executable in the DatenMeister context.
 
-Hierzu gibt es die beiden Basisklassen: 
+For this purpose, there are two base classes:
 . Action
 . ActionSet
 
-Jede Aktion hat folgende Eigenschaften:
+Each action has the following properties:
 
 [%header,cols="1,5"]
 |===
-|Name|Beschreibung
-|name|Name der Aktion
-|isDisabled|Flag, ob die Aktion deaktiviert ist und damit in der Aktionssammlung übersprungen wird. 
+|Name|Description
+|name|Name of the action
+|isDisabled|Flag indicating whether the action is disabled and thus skipped in the action collection.
 |===
 
 == ActionSet
 
-Ein ActionSet (Aktionssammlung) sammelt verschiedene Aktionen. 
+An ActionSet (action collection) collects various actions.
 
 [%header,cols="1,5"]
 |===
-|Name|Beschreibung
-|name|Name der Aktionssammlung
+|Name|Description
+|name|Name of the action collection
 |===
 == Action
 
-Die Basisklasse Action repräsentiert eine Aktion. Allerdings muss diese Klasse abgeleitet werden, damit die Aktion konkretisiert wird.
+The base class Action represents an action. However, this class must be derived to concretize the action.
 
 
 [%header,cols="1,5"]
 |===
-|Name|Beschreibung
-|name|Name der Aktion
+|Name|Description
+|name|Name of the action
 |===
 
 == LoggingWriterAction
 
-Schreibt einen fixen Text in das konfigurierte Logging.
+Writes a fixed text to the configured logging.
 
-Neben der Eigenschaften der Klasse _Action_ werden folgende Eigenschaften unterstützt
+In addition to the properties of the _Action_ class, the following properties are supported
 
 [%header,cols="1,5"]
 |===
-|Name|Beschreibung
-|message|Nachricht, die in das Log geschrieben werden soll.
+|Name|Description
+|message|Message to be written to the log.
 |===
 
 == CommandExecutionAction
 
-Führt einen Prozess aus und wartet bis der Prozess abgeschlossen worden ist. 
+Executes a process and waits until the process has been completed. 
 
-Neben der Eigenschaften der Klasse _Action_ werden folgende Eigenschaften unterstützt
+In addition to the properties of the _Action_ class, the following properties are supported
 
 [%header,cols="1,5"]
 |===
-|Name|Beschreibung
-|command|Prozess, der gestartet wird. Der Prozess wird über System.Diagnostics.Process gestartet und sollte eine ausführbare Datei bezeichnen
-|arguments|Argumente, die dem Prozess mitgegeben werden
-|workingDirectory|Das Arbeitsverzeichnis zu dem der Prozess wechseln soll. Dieser wird um die Umgebungsvariablen erweitert.
+|Name|Description
+|command|Process to be started. The process is started via System.Diagnostics.Process and should designate an executable file
+|arguments|Arguments passed to the process
+|workingDirectory|The working directory to which the process should switch. This is expanded by environment variables.
 |===
 
 == DocumentOpenAction
 
-Öffnet das Standardprogramm, welches hinter einem bestimmmten Programm steht.
+Opens the default program associated with a specific program.
 
-Neben der Eigenschaften der Klasse _Action_ werden folgende Eigenschaften unterstützt
+In addition to the properties of the _Action_ class, the following properties are supported
 
 [%header,cols="1,5"]
 |===
-|Name|Beschreibung
-|filePath|Datei, die geöffnet werden soll.
+|Name|Description
+|filePath|File to be opened.
 |===
 
 == PowershellExecutionAction
 
-Schreibt eine Skript-Datei und führt diese dann mit Hilfe von Microsoft Powershell aus.
-Hierbei wird die Powershell-Instanz genutzt, welche über die normale Pfad-Variablen aufrufbar sind. 
+Writes a script file and then executes it using Microsoft PowerShell.
+The PowerShell instance used is the one accessible via the normal path variables. 
 
 [%header,cols="1,5"]
 |===
-|Name|Beschreibung
-|script|Das Skript, welches ausgeführt wird. 
-|workingDirectory|Das Arbeitsverzeichnis zu dem der Prozess wechseln soll. Dieser wird um die Umgebungsvariablen erweitert.
+|Name|Description
+|script|The script to be executed. 
+|workingDirectory|The working directory to which the process should switch. This is expanded by environment variables.
 |===
 
 
 == LoadExtentAction
 
-Führt einen Prozess aus und wartet bis der Prozess abgeschlossen worden ist. 
+Executes a process and waits until the process has been completed. 
 
-Neben der Eigenschaften der Klasse _Action_ werden folgende Eigenschaften unterstützt
+In addition to the properties of the _Action_ class, the following properties are supported
 
 [%header,cols="1,5"]
 |===
-|Name|Beschreibung
-|configuration|Die Extent-Konfiguration, die zum Laden genutzt wird. 
+|Name|Description
+|configuration|The extent configuration used for loading. 
 |===
 == DropExtentAction
 
-Löscht einen Extent aus der Datenbank.
+Deletes an extent from the database.
 
-Neben der Eigenschaften der Klasse _Action_ werden folgende Eigenschaften unterstützt
+In addition to the properties of the _Action_ class, the following properties are supported
 
 [%header,cols="1,5"]
 |===
-|Name|Beschreibung
-|workspace|Workspace aus dem der Extent gelöscht werden soll.
-|extentUri|Uri des Extents welches gelöscht werden soll.
+|Name|Description
+|workspace|Workspace from which the extent should be deleted.
+|extentUri|Uri of the extent to be deleted.
 |===
 
 == CreateWorkspaceAction
 
-Erstellt einen neuen Workspace.
+Creates a new workspace.
 
-Neben der Eigenschaften der Klasse _Action_ werden folgende Eigenschaften unterstützt
+In addition to the properties of the _Action_ class, the following properties are supported
 
 [%header,cols="1,5"]
 |===
-|Name|Beschreibung
-|workspace|Name des Workspaces welcher erzeugt werden soll.
-|annotation|Beschreibung des Workspaces
+|Name|Description
+|workspace|Name of the workspace to be created.
+|annotation|Description of the workspace
 |===
 
 
 == DropWorkspaceAction
 
-Löscht einen Arbeitsbereich aus der Datenbank.
+Deletes a workspace from the database.
 
-Neben der Eigenschaften der Klasse _Action_ werden folgende Eigenschaften unterstützt
+In addition to the properties of the _Action_ class, the following properties are supported
 
 [%header,cols="1,5"]
 |===
-|Name|Beschreibung
-|workspace|Workspace aus  der Datenbank gelöscht werden soll.
+|Name|Description
+|workspace|Workspace to be deleted from the database.
 |===
 
 == ClearCollectionAction
 
-Löscht alle Elemente einer Sammlung. 
-Dies kann ein komplettes Extent sein oder auch die Eigenschaft eines Objektes welches die Sammlung enthält. 
+Deletes all elements of a collection. 
+This can be an entire extent or a property of an object containing the collection. 
 
 
 [%header,cols="1,5"]
 |===
-|Name|Beschreibung
-|workspace|Der Arbeitsbereich in dem das Objekt gefunden wird. Standard ist 'Data'
-|path|Der Pfad, der auf eine Sammlung verweist. Dies kann ein Extent oder eine Eigenschaft eines Objektes sein 
+|Name|Description
+|workspace|The workspace in which the object is found. Default is 'Data'
+|path|The path pointing to a collection. This can be an extent or a property of an object 
 |===
 
 == CopyElementsAction
 
-Kopiert alle Unterelemente von einem Objekt oder Extent zu einem anderen Extent. 
+Copies all sub-elements from an object or extent to another extent. 
 
-Abgeleitet von Action 
+Derived from Action 
 
 [%header,cols="1,5"]
 |===
-|Name|Beschreibung
-|sourceWorkspace|Der Arbeitsbereich in dem die Quell-Elemente gefunden werden
-|targetWorkspace|Der Arbeitsbereich zu dem die Ziel-Elemente kopiert werden
-|sourcePath|Der Pfad in dem Quell-Arbeitsbereich aus dem die Elemente geholt werden.
-|targetPath|Der Pfad in dem die Elemente kopiert werden. 
+|Name|Description
+|sourceWorkspace|The workspace in which the source elements are found
+|targetWorkspace|The workspace to which the target elements are copied
+|sourcePath|The path in the source workspace from which the elements are retrieved.
+|targetPath|The path where the elements are copied. 
 |===
 
-=== Regeln für Quell-Elemente
+=== Rules for Source Elements
 
-- Wenn der Pfad zum Quell-Element eine ReflectiveCollection ist, werden alle Elemente dieser kopiert oder verschoben. 
-- Wenn der Pfad zum Quell-Element ein Extent ist, werden alle Elemente des Extents kopiert oder verschoben. 
-- Wenn der Pfad zum Quell-Element ein Objekt selbst ist, wird nur dieses kopiert oder verschoben. 
+- If the path to the source element is a ReflectiveCollection, all its elements are copied or moved. 
+- If the path to the source element is an extent, all elements of the extent are copied or moved. 
+- If the path to the source element is an object itself, only this object is copied or moved. 
 
-=== Regeln für Ziel-Elemente
+=== Rules for Target Elements
 
-- Wenn der Pfad zum Ziel-Element eine ReflectiveCollection ist, werden alle Elemente in diese kopiert oder verschoben. 
-- Wenn der Pfad zum Ziel-Element ein Extent ist, werden alle Elemente in diese kopiert oder verschoben. 
-- Wenn der Pfad zum Ziel-Element ein Objekt selbst ist, werden die Elemente in die Standard-Eigenschaft (meist 'packagedElement') des Elements geschoben. 
+- If the path to the target element is a ReflectiveCollection, all elements are copied or moved into it. 
+- If the path to the target element is an extent, all elements are copied or moved into it. 
+- If the path to the target element is an object itself, the elements are pushed into the standard property (usually 'packagedElement') of the element. 
 
 == ExportToXmiAction
 
-Nimmt eine Sammlung von Objekten, kopiert diese in einen Xmi-Extent und exportiert die dahinterliegende Xml-Datei als Xml.
+Takes a collection of objects, copies them into an Xmi extent, and exports the underlying XML file as XML.
 
 [%header,cols="1,5"]
 |===
-|Name|Beschreibung
-|sourceWorkspaceId|Definiert den Quell-Arbeitsbereich aus dem die Daten für den Export vorbereitet werden. 
-|sourcePath|Definiert den Quell-Pfad der zum Auffinden der Daten genutzt wird. 
-|filePath|Pfad in dem das Xmi exportiert wird.
+|Name|Description
+|sourceWorkspaceId|Defines the source workspace from which the data for the export is prepared. 
+|sourcePath|Defines the source path used to find the data. 
+|filePath|Path where the Xmi is exported.
 |===
 
 == ItemTransformationAction
 
-Nimmt jedes einzelne Objekt des gewählten Extents und übergibt es dem Transformationsobjekt welche die Schnittstelle IItemTransformation implementiert. 
+Takes each individual object of the selected extent and passes it to the transformation object implementing the IItemTransformation interface. 
 
-Das gewählte Objekt und all seine Unterelemente (rekursiv) werden übergeben.
+The selected object and all its sub-elements (recursively) are passed.
 
 [%header,cols="1,5"]
 |===
-|Name|Beschreibung
-|metaClass|Ein optionaler Filter auf die Meta-Klassen auf die gefiltert werden kann. Nur Elemente dieser Metaklassen werden der Transformation übergeben. 
-|runtimeClass|Der volle Name der .Net Klasse, die instanziiert wird um die gewählten Objekten dieser zu übergeben. Diese Klassen kann dann die Transformation vornehmen. 
-|workspace|Arbeitsbereich in dem der Pfad ausgeführt wird. 
-|path|Uri, die das Extent oder die Objekte selektiert
-|excludeDescendents|True, falls nur die selektierten Objekte gewählt werden sollen und nicht die darunterliegenden Unterobjekte. 
+|Name|Description
+|metaClass|An optional filter for the metaclasses to filter by. Only elements of these metaclasses are passed to the transformation. 
+|runtimeClass|The full name of the .Net class instantiated to pass the selected objects to. This class can then perform the transformation. 
+|workspace|Workspace in which the path is executed. 
+|path|Uri, selecting the extent or the objects
+|excludeDescendents|True if only the selected objects should be chosen and not the sub-objects underneath. 
 |===
 
-=== Schnittstelle IItemTransformation
+=== IItemTransformation Interface
 
-Diese Schnittstelle kann von den Implementierungen umgesetzt werden, die die ItemTransformation gemäß obiger Darstellung durchführen soll. 
+This interface can be implemented by the implementations that are to perform the ItemTransformation according to the above description. 
 
-Diese besitzt folgende Methode
+It has the following method:
 
  void TransformItem(IElement element, IElement actionConfiguration);
 
-* element: Beschreibt das Objekt welches transformiert wird. Dieses wird direkt bearbeitet
-* actionConfiguration: Erweiterte Konfiguration, die der Action-Instanz selbst entspricht. 
+* element: Describes the object being transformed. This is processed directly
+* actionConfiguration: Extended configuration corresponding to the action instance itself. 
 
 == SimpleReportAction
 
-Erzeugt einen einfachen Bericht. 
+Generates a simple report. 
 
 [%header,cols="1,5"]
 |===
-|Name|Beschreibung
-|workspaceId|Id des Arbeitsbereiches 
-|path|Pfad der die Elemente identifiziert über die der Report erzeugt wird.
-|configuration|Konfiguration es einfachen Berichtes vom Typ 
+|Name|Description
+|workspaceId|ID of the workspace 
+|path|Path identifying the elements over which the report is generated.
+|configuration|Configuration of the simple report of type 
 SimpleReportConfiguration.
-|filePath|Dateipfad in dem der Report abgelegt wird. Ist kein Pfad angegeben, so wird eine temporäre Datei auf dem Desktop erzeugt. 
+|filePath|File path where the report is stored. If no path is specified, a temporary file is created on the desktop. 
 |===
 
 

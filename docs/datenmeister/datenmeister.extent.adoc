@@ -1,52 +1,50 @@
 = Extents
 
-Ein Extent ist eine Sammlung von Objekten in einem abgeschlossenen Container. Innerhalb des DatenMeister ist dies eine Datei, eine Datenbank oder eine dynamische Objektsammlung, die jeweilig über eine Konfiguration (LoaderConfig) eingeladen worden ist. 
+An extent is a collection of objects in a self-contained container. Within the DatenMeister, this is a file, a database, or a dynamic object collection, each of which has been loaded via a configuration (LoaderConfig).
 
-== Das Auflösen (Resolving) von Objekten
+== Resolving Objects
 
-Jeder UriExtent besitzt eine oder mehrere Adressen über das er gefunden werden kann. 
+Each UriExtent has one or more addresses through which it can be found.
 
-Elemente können über eine ID abgerufen werden kann. 
+Elements can be retrieved via an ID.
 
-Das UriExtent unterstützt folgende Abfrageschema: 
+The UriExtent supports the following query scheme:
 
 [%header, cols="2,5"]
 |===
-|Typ|Beschreibung
-|Abfrage per ID a|Der Uri des Extents wird über ein '#' die Objekt-ID angehängt. Der Text hinter diesem identifiziert das Object per ID
+|Type|Description
+|Query by ID a|The URI of the extent is appended with an '#' and the object ID. The text following this identifies the object by ID.
 
-- dm:///datenbank/#objectid
-|Abfrage per Name a|Der Uri des Extents wird über ein '?fn=' der volle Name des Objekts angehängt
+- dm:///database/#objectid
+|Query by Name a|The URI of the extent is appended with '?fn=' and the full name of the object.
 
-- dm:///datenbank/?fn=team_Frankfurt::player_1
-|Abfrage einer Eigenschaft a|Nachdem das Element über einer der obigen Verfahren identifiziert worden ist, kann über den QueryString-Parameter 'prop' eine Eigenschaft des Objektes selektiert werden. Der Inhalt der Eigenschaft wird zurückgegeben.
+- dm:///database/?fn=team_Frankfurt::player_1
+|Query a Property a|After the element has been identified via one of the above methods, a property of the object can be selected via the QueryString parameter 'prop'. The content of the property is returned.
 
-- dm:///datenbank/?fn=team_Frankfurt::player_1&prop=age
-- dm:///datenbank/?prop=age#objectid
-|Abfrage einer Datenansicht a|Nachdem eine reflektive Auflistung (reflectiveCollection) über eines der obigen Schemas selektiert worden ist, kann dieses über eine Datenansicht modifiziert werden. Die Auflistung wird dieser Datenansicht als 'input'-Knoten übergeben.
+- dm:///database/?fn=team_Frankfurt::player_1&prop=age
+- dm:///database/?prop=age#objectid
+|Query a Data View a|After a reflective collection (reflectiveCollection) has been selected via one of the above schemes, it can be modified via a data view. The collection is passed to this data view as an 'input' node.
 
-Hinweis: Die Url der Datenansicht muss Urlcodiert übergeben werden. 
+Note: The URL of the data view must be URL-encoded.
 
-- dm:///datenbank/?fn=team_Frankfurt::player_1&prop=children&dataview=dm:///views/%23childrenView
+- dm:///database/?fn=team_Frankfurt::player_1&prop=children&dataview=dm:///views/%23childrenView
 
-|Composites a|Durch Angabe des Parameter &composites= kann angegeben werden, ob die beinhaltenden Elemente mit zurückgegeben werden sollen. 
+|Composites a|By specifying the parameter &composites=, it can be indicated whether the containing elements should also be returned.
 
-Hier gibt es verschiedene Werte: 
+There are various values:
 
-- includingSelf: Neben den Composite-Elementen werden die selektierten Werte werden ebenfalls zurückgegeben
-- onlyComposites: Nur die Composite-Elemente werden zurückgegeben. 
-- allReferenced: Alle referenzierten Elemente werden zurückgegeben, unabhängig davon, ob diese Composite sind oder nicht. 
-- allReferencedIncludingSelf: Alle referenzierten Elemente, aber auch die selektierten Elemente, werden zurückgegeben, unabhängig davon, ob diese Composite sind oder nicht. 
+- includingSelf: In addition to the composite elements, the selected values are also returned.
+- onlyComposites: Only the composite elements are returned.
+- allReferenced: All referenced elements are returned, regardless of whether they are composites or not.
+- allReferencedIncludingSelf: All referenced elements, but also the selected elements, are returned, regardless of whether they are composites or not.
 
-Beispiel: dm:///datenbank/&composites=onlyComposites
+Example: dm:///database/&composites=onlyComposites
 
-|Filtern nach Metaklasse a|Hier kann nach einer Metaklasse gefiltert werden. 
+|Filter by Metaclass a|A metaclass can be filtered here.
 
-- dm:///datenbank/?metaclass={dm:///_internal/types/#DatenMeister.Package}
-- dm:///datenbank/?metaclass=dm%3A%2F%2F%2F_internal%2Ftypes%2F%23DatenMeister.Package
+- dm:///database/?metaclass={dm:///_internal/types/#DatenMeister.Package}
+- dm:///database/?metaclass=dm%3A%2F%2F%2F_internal%2Ftypes%2F%23DatenMeister.Package
 
-Hinweis: Der Parameter in geschweiften Klammern muss url-encoded sein und ist hier nur zur klaren Darstellung nicht encodiert. 
-
-
+Note: The parameter in curly braces must be URL-encoded and is only not encoded here for clear presentation.
 
 |===

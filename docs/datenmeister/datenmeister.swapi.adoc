@@ -4,40 +4,40 @@
 
 === Module Runtime.ExtentStorage
 
-Prinzipiell ist der DatenMeister in der Lage mit entkoppelten Extents zu arbeiten. Dies bedeutet, dass man Extents laden kann, die ohne zentralisierte Registrierung genutzt, bearbeitet und wieder gespeichert werden können. 
+In principle, the DatenMeister is capable of working with decoupled extents. This means that extents can be loaded, used, edited, and saved again without centralized registration.
 
-Der DatenMeister unterstützt aber parallel eine zentrale Registrierung über den *ExtentManager*, welcher das Laden, das Sperren und das abgesicherte Abspeichern bei Beendigung der Applikation unterstützt. 
+However, the DatenMeister also supports centralized registration via the *ExtentManager*, which supports loading, locking, and secured saving upon termination of the application.
 
-Es gibt damit insgesamt zwei Datenbanken in den die Extents gespeichert werden. 
+There are thus two databases in total where the extents are stored.
 
-. Innerhalb der Workspaces (_WorkspaceLogic.GetWorkspaces()_) sind die Extents eingefügt. Hierüber können Extents im normalen Datenbankprinzip gefunden werden. Hier ist aber nicht bekannt über welchen ProviderLoader das Extent von welcher Quelle geladen worden ist. 
+1. Within the workspaces (_WorkspaceLogic.GetWorkspaces()_), the extents are inserted. Through this, extents can be found in the normal database principle. However, it is not known here which ProviderLoader was used to load the extent from which source.
 
-. Über die Registrierung des ExtentManager (_ExtentStorageData_) werden geladene Extents zum Zwecke der Nachverfolgung bein Locking und Speichern gespeichert. Der ExtentManager weist auch die genutzter ProviderLoader Config dem Extent zu. 
+2. Via the registration of the ExtentManager (_ExtentStorageData_), loaded extents are stored for tracking during locking and saving. The ExtentManager also assigns the utilized ProviderLoader configuration to the extent.
 
-Folgende Methoden werden bei der Verwendung von Extents genutzt: 
+The following methods are used when utilizing extents:
 
-* Beim Einladen über _LoadExtent_ wird das Extent eingeladen und registriert. Beim Einladen wird das Extent über seinen Provider auch gesperrt.
+* When loading via _LoadExtent_, the extent is loaded and registered. Upon loading, the extent is also locked via its provider.
 
-* Beim Entladen über _DetachExtent_ wird das Extent deregistriert, aber nicht gespeichert. Das Extent wird über seinen Provider auch wieder entsperrt. 
+* When unloading via _DetachExtent_, the extent is deregistered but not saved. The extent is also unlocked via its provider.
 
-* Über _LoadAllExtents_ findet das Einladen der ExtentLoaderConfig statt, die von der vorherigen Instanz speichert, welche Extents beim Hochfahren einzuladen sind. Das Einladen erfolgt dann auch über _LoadExtent_ und führt damit zu einer Sperrung der Extents. 
+* Via _LoadAllExtents_, the loading of the ExtentLoaderConfig takes place, which stores from the previous instance which extents are to be loaded upon startup. The loading then also occurs via _LoadExtent_ and thus leads to a locking of the extents.
 
-* Über _StoreAllExtents_ findet ein Write Trigger über alle geladenen und registrierten Events statt. 
+* Via _StoreAllExtents_, a write trigger occurs over all loaded and registered events.
 
-* Über _DeleteExtent_ wird das Extent nicht nur aus der Registrierung entfernt, sondern auch aus dem Workspace genommen. 
+* Via _DeleteExtent_, the extent is not only removed from the registration but also taken out of the workspace.
 
-* Über _UnloadManager_ werden die Extents entladen und der Zugriff auf die Registrierungs-Datei komplett aufgehoben. Die Extents selbst sind noch in den Workspaces, werden aber nicht mehr über den ExtentManager nachverfolgt. 
+* Via _UnloadManager_, the extents are unloaded and access to the registration file is completely revoked. The extents themselves are still in the workspaces but are no longer tracked via the ExtentManager.
 
 
 == Module.Reports
 
-Die Generierung von Reports wird von zwei Report Generatoren unterstützt: 
+The generation of reports is supported by two report generators:
 
 * SimpleReport
 * TextReport
 
 === Simple Report
 
-Implementiert in den Klassen _SimpleReportConfiguration_ und _SimpleReportCreator_
+Implemented in the classes _SimpleReportConfiguration_ and _SimpleReportCreator_
 
 === Text Report

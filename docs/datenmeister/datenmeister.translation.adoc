@@ -1,10 +1,10 @@
-= Übersetzungen
+= Translations
 
-Folgende Übersetzungen gelten zwischen dem Deutschen und dem Englischen
+The following translations apply between German and English:
 
 [%header]
 |===
-|Deutsch|Englisch
+|German|English
 |Arbeitsbereich|Workspace
 |Datenansicht|Dataview
 |Formular-Zuordnung|FormAssociation

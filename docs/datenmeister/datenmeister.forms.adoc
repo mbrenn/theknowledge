@@ -1,130 +1,130 @@
-= Formulare
+= Forms
 
-== Anforderungen
+== Requirements
 
-=== GUI-Applikation
+=== GUI Application
 
-In der Applikation gibt es folgende Darstellungsformen:
+The application has the following forms of representation:
 
-Das Hauptfenster:
+The main window:
 
-- Im Hauptfenster wählt der Nutzer ein Extent und hierbei sollen alle Items in einer Liste angezeigt werden. Hierbei können allerdings schonnach verschiedenen Sichten gefiltert werden (zum Beispiel nach bestimmten Objekttypen oder spezielle Darstellungen). Hier ist der Eingang der Ansicht eine Sammlung von Objekten. 
-- Im Hauptfenster wählt der Nutzer ein Element aus und dieses soll dargestellt werden. Im ersten Tab können die Detaileigenschaften oder auch die Unterelemente dargestellt werden. Auch hier können in weiteren Unterfenstern eine Filterung von Elementen oder besondere Darstellungen erfolgen. Hier ist der Eingang der Ansicht ein einzelnes Objekt.
+- In the main window, the user selects an extent, and all items therein should be displayed in a list. However, it can already be filtered by different views (e.g., by specific object types or special representations). Here, the input of the view is a collection of objects.
+- In the main window, the user selects an element, and it should be displayed. In the first tab, the detail properties or the sub-elements can be displayed. Here too, filtering of elements or special representations can take place in further sub-windows. Here, the input of the view is a single object.
 
-Das Detailfenster:
+The detail window:
 
-- Klickt der Nutzer per Doppelklick auf ein Item, so wird ein Unterfenster geöffnet. Hier können auch mehrere Tabs dargestellt werden. Dieses kann unterschiedlich zum vorherigen Usecase sein. Hier ist der Eingang der Ansicht ein einzelnes Objekt.
+- If the user double-clicks on an item, a sub-window is opened. Several tabs can also be displayed here. This can be different from the previous use case. Here, the input of the view is a single object.
 
-Die Steuerelemente:
+The control elements:
 
-- Wird eine Eigenschaft angezeigt, die mehrere zugeordnete Objekte haben kann, so wird eine Tabelle angezeigt. Diese Tabelle ist nicht unterteilt und besteht nicht aus Untertabellen. Hier ist der Eingang der Ansicht ein Element und eine Eigenschaft. 
+- If a property is displayed that can have several associated objects, a table is displayed. This table is not subdivided and does not consist of sub-tables. Here, the input of the view is an element and a property.
 
-Ein Formular wird zu folgenden Elementen benötigt: 
+A form is required for the following elements:
 
-- Die Elemente eines Extents ==> Auflistung von Elementen. Hierbei können nur Listen von Elementen angezeigt werden, da es nicht das einzelne Objekt gibt von welchem die Werte der Eigenschaften abgefragt werden können. 
-- Das Objekt selbst ==> Die Eigenschaften des Objektes werden angezeigt.
-- Die Elemente einer Objekteigenschaft  ==> Hierbei wird ein Objekt und die Eigenschaft übergeben. Über eine Listenansicht werden die einzelnen Elemente angezeigt.
+- The elements of an extent ==> Listing of elements. Here, only lists of elements can be displayed, as there is no single object from which the property values can be queried.
+- The object itself ==> The properties of the object are displayed.
+- The elements of an object property ==> Here, an object and the property are passed. The individual elements are displayed via a list view.
 
-Mit diesen Anforderungen wird für folgendes Design entschieden: 
+With these requirements, the following design is chosen:
 
-== Design 
+== Design
 
-Es gibt drei Arten von Hauptformularen: 
+There are three types of main forms:
 
-* Object Form: Dieses Formular besitzt mehrere Unterformulare und ist zur Darstellung eines einzelnen Items ausgelegt. 
-** Dieses kann über ein Objekt oder eine Metaklasse abgefragt werden. 
-* Collection Form: Dieses Formular bestitzt mehrere Unterformulare und ist zur Darstellung einer Sammlung von Elementen ausgelegt. 
-** Dieses kann über eine Sammlung von Elementen oder ein Extent abgefragt werden. 
-* Row Form: Hier werden jedes Feld in einer eigenen Zeile dargestellt. 
-** Dieses kann über eine Metaklasse abgefragt werden. 
-* Table Form: Hier werden viele Elemente in einer Tabelle angezeigt. Diese Elemente werden im Kontext des darzustellenden Objektes definiert.
-** Dieses kann über eine Sammlung von Objekten, eine Metaklasse oder einer Eigenschaft eines Objektes abgefragt werden.  
+* Object Form: This form consists of several sub-forms and is designed for displaying a single item.
+** This can be queried via an object or a metaclass.
+* Collection Form: This form consists of several sub-forms and is designed for displaying a collection of elements.
+** This can be queried via a collection of elements or an extent.
+* Row Form: Here, each field is displayed in its own row.
+** This can be queried via a metaclass.
+* Table Form: Here, many elements are displayed in a table. These elements are defined in the context of the object to be displayed.
+** This can be queried via a collection of objects, a metaclass, or a property of an object.
 
-Über den ViewMode wird festgelegt in welchem Kontext das Objekt angezeigt wird.
+The ViewMode determines the context in which the object is displayed.
 
 
 == Form
 
-Das Formular im Allgemeinen unterstützt folgende Eigenschaften. Alle Ableitungen haben auch diese Eigenschaften zu unterstützen. 
+The form in general supports the following properties. All derivations must also support these properties.
 
 [%header,cols="1,5"]
 |===
-|Name|Bedeutung
-|name|Name des Formulars
-|title|Titel, wie er angezeigt wird
-|isReadOnly|Flag, ob das Formular im schreibgeschützten Modus angezeigt wird
-|hideMetaInformation|Wahr, wenn im Formular nicht automatisch die Meta-Informationen eines Objektes angezeigt werden soll. 
-|originalUri|Da das Formular bei der Anzeige geklont wird, enthält diese Eigenschaft die Url vor dem Klonvorgang. 
-|isAutoGenerated|Wert, ob dieses Formular automatisch aus Objekt-Eigenschaften generiert worden ist. 
-|creationProtocol|Eine Debugging-Hilfe, die darlegt, wie das Formular erstellt worden ist. 
+|Name|Meaning
+|name|Name of the form
+|title|Title as it is displayed
+|isReadOnly|Flag indicating whether the form is displayed in read-only mode
+|hideMetaInformation|True if the meta-information of an object should not be automatically displayed in the form.
+|originalUri|Since the form is cloned upon display, this property contains the URL before the cloning process.
+|isAutoGenerated|Value indicating whether this form was automatically generated from object properties.
+|creationProtocol|A debugging aid that explains how the form was created.
 |===
 
 == ObjectForm
 
-Ein Objekt-Form besteht aus mehreren Unterformularen und dient zur Anzeige eines einzelnen Elements. Es ist von Form abgeleitet.
+An object form consists of several sub-forms and serves to display a single element. It is derived from Form.
 
-Weitere Eigenschaften:
+Additional properties:
 
 [%header,cols="1,5"]
 |===
-|Name|Bedeutung
-|tab|Eine Auflistung der Unterformulare
-|autoTabs|Wert, ob Unterformulare automatisch generiert werden sollen
+|Name|Meaning
+|tab|A list of sub-forms
+|autoTabs|Value indicating whether sub-forms should be automatically generated
 |===
 
 
 == ExtentForm
 
-Ein Extent Form ist enthält einen Satz von Formularen um ein konkretes Objekt anzuzeigen. 
+An extent form contains a set of forms to display a specific object.
 
-Das Extent Form wird prinzipiell im Hauptfenster bei der Ansicht der Elemente eines Extents genutzt oder auch wenn der Nutzer im Hauptfenster ein konkretes Objekt ausgewählt hat. 
+The extent form is basically used in the main window when viewing the elements of an extent or when the user has selected a specific object in the main window.
 
-=== Extent Form für Package
-Ein besonderes Formular ist die Listenansicht der Package-Objekte. Hier kann der Nutzer über die 'Eigenschaft' der preferredTypes festlegen, welche Klasseninstanzen bevorzugt in diesem Package angelegt werden können. 
+=== Extent Form for Package
+A special form is the list view of the package objects. Here, the user can determine via the 'preferredTypes' property which class instances can preferably be created in this package.
 
-==== Implementierung
-Die Evaluierung erfolg im FormsPlugin per FormsModificationPlugin, welcher hier ein besonderes Regelwerk enthält. 
+==== Implementation
+The evaluation takes place in the FormsPlugin via FormsModificationPlugin, which contains a special set of rules here.
 
-Es können sich hier verschiedene Plugins registrieren, die nachträglich nochmals ein Formular verändern dürfen. 
+Various plugins can register here, which are allowed to change a form afterwards.
 
 == ListForm
-Das Listenformular beschreibt eine Tabelle bzw. reine Auflistung einer Sammlung von Objekten: 
+The list form describes a table or pure listing of a collection of objects:
 
 [%header,cols="1,5"]
 |===
-|Name|Bedeutung
-|property|k.A.
-|metaClass|k.A.
-|includeDescendents|k.A.
-|noItemsWithMetaClass|k.A.
-|inhibitNewItems|k.A.
-|inhibitDeleteItems|k.A.
-|defaultTypesForNewElements|k.A.
-|fastViewFilters|k.A.
-|duplicatePerType|Wert, ob das Listenitem für jeden Typ in der Liste dupliziert werden soll. Diese Eigenschaft wird für die ExtentForms genutzt, damit man die Listen pro Typ anzeigen kann. 
-|field|Diese Auflistung enthält die Felder, die in der Liste angezeigt werden sollen. Üblicherweise sind dies die Spalten der Tabelle
-|sortingOrder|Die Reihenfolge in der die Items angezeigt werden sollen.
-|viewNode|In diesem Formular kann nochmals konkreter über eine Datenansicht gefiltert oder verändert werden. Die eigentliche Liste wird als dynamische Datensammlung _input_ übergeben. 
+|Name|Meaning
+|property|n/a
+|metaClass|n/a
+|includeDescendents|n/a
+|noItemsWithMetaClass|n/a
+|inhibitNewItems|n/a
+|inhibitDeleteItems|n/a
+|defaultTypesForNewElements|n/a
+|fastViewFilters|n/a
+|duplicatePerType|Value indicating whether the list item should be duplicated for each type in the list. This property is used for ExtentForms so that the lists can be displayed per type.
+|field|This list contains the fields that should be displayed in the list. Usually, these are the columns of the table.
+|sortingOrder|The order in which the items should be displayed.
+|viewNode|In this form, filtering or modification can be more specific via a data view. The actual list is passed as a dynamic data collection _input_.
 |===
 
 
 
 == FormModificationPlugins
 
-Folgende FormModificationPlugins gibt es: 
+The following FormModificationPlugins exist:
 
 === PackageFormModificationPlugin
 
-Hier werden dem UML-Type 'Package' in der Detailansicht folgende Elemente hinzugefügt: 
-- DefaultTypeForNewElement zur Erstellung der Buttons für die Erzeugung neuer Elemente
+Here, the following elements are added to the UML type 'Package' in the detail view:
+- DefaultTypeForNewElement for creating buttons for generating new elements.
 
 === BasicNavigationForFormsAndItemsPlugin
 
-Hierüber werden als IDatenMeisterPlugin folgende ActionButtons den Formularen hinzugefügt: 
+Through this, as an IDatenMeisterPlugin, the following ActionButtons are added to the forms:
 
 [%header,cols="1,1,5"]
 |===
-|Code|Name|Bedeutung
+|Code|Name|Meaning
 |Extent.NavigateTo|View Extent|Metaclass: Management.Extent
 |Item.Delete|Delete Item|FormType: TreeItemDetail
 |Item.New|New Item|FormType: TreeItemExtent, MetaClass: Management.Extent

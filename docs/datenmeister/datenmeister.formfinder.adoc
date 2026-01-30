@@ -1,119 +1,119 @@
-= Formulare finden
+= Finding Forms
 
-Wie im vorherigen Kapital beschrieben sind die Formulare von den eigentlichen Daten entkoppelt. Um das Formular, gegebenenfalls bestehend aus Unterformularen, auswählen zu können, gibt es die _FormAssociation_, die einen Regelsatz festlegt über den das Formular einer Liste, einem Objekt oder einen Extent zugeordnet wird. 
+As described in the previous chapter, forms are decoupled from the actual data. To be able to select the form, potentially consisting of subforms, there is the _FormAssociation_, which defines a set of rules through which the form is assigned to a list, an object, or an extent.
 
-== Die Modelle
+== The Models
 === FormAssociation
 
-In dieser Instanz der Formular-Zuordnung  wird das Regelwerk festgelegt
+In this instance of the form association, the rule set is defined.
 
 [%header,cols="1,5"]
 |===
-|Name|Bedeutung
-|name|Name der Formular-Zuordnung
-|formType|Typ des Formulars welches zugeordnet werden kann. Die möglichen Typen finden sich in der Tabelle unten wieder
-|metaClass|Wenn das selektierte Objekt oder die Liste dahinter von diesem Objekttyp ist, kann diese Zurodnung ausgewählt werden
-|extentType|Wenn das Extent von diesem Typ ist, kann dise Zuordnung ausgewählt werden. 
-|viewModeId|Wenn der Nutzer in dieser Ansicht ist, kann diese Zuordnung ausgewählt werden
-|parentMetaClass|Wenn die Elemente einer Liste ausgewählt werden und das besitzende Objekt von diesem Typ ist, kann dieses ausgewählt erden. 
-|parentProperty|Wenn die Elemente einer Liste ausgewählt werden und sich diese Liste in dieser Eigenschaft des besitzenden Objektes befindet, kann dieses ausgewählt ewrden. 
-|form|Dies beschreibt das Formular welches ausgewählt werden kann, wenn die Eigenschaften oben zustimmen, soweit sie gewählt sind. 
+|Name|Meaning
+|name|Name of the form association
+|formType|Type of the form that can be assigned. The possible types can be found in the table below.
+|metaClass|If the selected object or the list behind it is of this object type, this association can be selected.
+|extentType|If the extent is of this type, this association can be selected.
+|viewModeId|If the user is in this view, this association can be selected.
+|parentMetaClass|If elements of a list are selected and the owning object is of this type, this can be selected.
+|parentProperty|If elements of a list are selected and this list is in this property of the owning object, this can be selected.
+|form|This describes the form that can be selected if the properties above match, as far as they are chosen.
 |===
 
-=== Die Formulartypen
+=== Form Types
 
 [%header,cols="1,4,1"]
 |===
-|Name|Bedeutung|Formular
-|Detail|Das Formular wird für die Detail-Ansicht eines Items angezeigt.|DetailForm, ExtentForm
-|TreeItemExtent|Das Formular wird angezeigt wenn der Nutzer ein bestimmtes Extent ausgewählt hat und alle Elemente des Extents angezeigt werden sollen. |ExtentForm
-|TreeItemDetail|Das Formular wird angezeigt wenn der Nutzer ein bestimmtes Element ausgewählt hat und nun in der Baumansicht dieses Element angezeigt werden soll. Dieser typ unterscheidet sich vom Detail, dass das Fenster nicht dediziert für das Element angelegt worden ist. |ExtentForm
-|ObjectList|Das Formular wird angezeigt, wenn alle Elemente einer bestimmten Eigenschaft in einer Subliste (SubElementField) angezeigt werden sollen.|ListForm
-|TreeItemExtentExtension|Dieses Formular wird dem ExtentForm hinzugefügt, wenn die Beschreibung der Formular-Zuordnung zu dem angezeigtne Formular passt.|Listform, DetailForm
-|TreeItemDetailExtension|Dieses Formular wird dem ExtentForm hinzugefügt, wenn die Beschreibung der Formular-Zuordnung zu dem angezeigten Formular passt.|Listform, DetailForm
+|Name|Meaning|Form
+|Detail|The form is displayed for the detail view of an item.|DetailForm, ExtentForm
+|TreeItemExtent|The form is displayed when the user has selected a specific extent and all elements of the extent should be displayed. |ExtentForm
+|TreeItemDetail|The form is displayed when the user has selected a specific element and this element should now be displayed in the tree view. This type differs from Detail in that the window was not created dedicatedly for the element. |ExtentForm
+|ObjectList|The form is displayed when all elements of a specific property are to be displayed in a sublist (SubElementField).|ListForm
+|TreeItemExtentExtension|This form is added to the ExtentForm if the description of the form association matches the displayed form.|Listform, DetailForm
+|TreeItemDetailExtension|This form is added to the ExtentForm if the description of the form association matches the displayed form.|Listform, DetailForm
 |===
 
-== Beschreibung des Verfahren
+== Procedure Description
 
-=== Detailansicht
+=== Detail View
 
-In der Detailansicht wird die Formular-Zuordnung nach folgenden Eigenschaften gesucht:
+In the detail view, the form association is searched for according to the following properties:
 
 image::images/datenmeister_detailform.png[]
 
 [%header,cols="1,5"]
 |===
-|Name|Bedeutung
+|Name|Meaning
 |formType|DetailForm
-|metaClass|Die Meta-Klasse des Objektes welches ausgewählt worden ist. 
-|extentType|Typen (Getrennt durch Leerzeichen) des Extents in dem sich das angezeigte Objekt befindet
+|metaClass|The metaclass of the object that has been selected.
+|extentType|Types (separated by spaces) of the extent in which the displayed object is located.
 |===
 
-=== Extentansicht
+=== Extent View
 
-In der Extentansicht kann der Nutzer entweder das Extent selbst markiert haben oder ein Element im Extent. 
+In the extent view, the user can have either the extent itself or an element in the extent selected.
 
-Diese Formulartypen werden _TreeItemExtent_ und _TreeItemDetail_ genannt. 
+These form types are called _TreeItemExtent_ and _TreeItemDetail_.
 
-Für die Darstellung des gesamten Extents werden folgende Eigenschaften in der Formular-Zuordnung definiert: 
+For the representation of the entire extent, the following properties are defined in the form association:
 
-==== Extent Basis-Formular für die Baumansicht
+==== Extent Base Form for the Tree View
 [%header,cols="1,5"]
 |===
-|Name|Bedeutung
+|Name|Meaning
 |formType|TreeItemExtent
-|extentType|Typen des anzuzeigenden Extents
-|viewModeId|Die vom Nuutzer ausgewählte Ansicht
+|extentType|Types of the extent to be displayed
+|viewModeId|The view selected by the user
 |===
 
-==== Extent Listen-Formular für die Baumansicht
+==== Extent List Form for the Tree View
 
-Das Extentform besteht aus mehreren Reitern (Tabs). Wird nun ein Reiter automatisch erzeugt, kann eine Metaklasse angegeben werden, die dann die Inhalte beinhaltet.  
+The ExtentForm consists of several tabs. If a tab is automatically generated, a metaclass can be specified, which then contains the contents.
 
 [%header,cols="1,5"]
 |===
-|Name|Bedeutung
+|Name|Meaning
 |formType|TreeItemExtent
-|extentType|Typen des anzuzeigenden Extents
-|metaClass|Meta-Klasse der anzuzeigenden Objekte
+|extentType|Types of the extent to be displayed
+|metaClass|Metaclass of the objects to be displayed
 |===
 
-==== Extent Objekt-Formular für die Baumansicht
+==== Extent Object Form for the Tree View
 
-Selektiert der Nutzer ein Element in der Baumansicht, so wird die Formular-Zuordnung nach folgendem Schema gesucht (_FormsPlugin.GetItemTreeFormForObject_): 
+If the user selects an element in the tree view, the form association is searched for according to the following scheme (_FormsPlugin.GetItemTreeFormForObject_):
 
 [%header,cols="1,5"]
 |===
-|Name|Bedeutung
+|Name|Meaning
 |formType|TreeItemDetail
-|extentType|Typen des anzuzeigenden Extents
-|metaClass|Meta-Klasse des anzuzeigenden Objektes
-|viewModeId|Die vom Nutzer ausgewählte Ansicht. Ist im Package ein ViewMode als Eigenschaft angegeben, so 
+|extentType|Types of the extent to be displayed
+|metaClass|Metaclass of the object to be displayed
+|viewModeId|The view selected by the user. If a ViewMode is specified as a property in the package, then
 |===
 
 
-==== Extent Objektlisten-Formular für die Baumansicht
+==== Extent Object List Form for the Tree View
 
-Werden automatisch Formulare für eine Objektansicht, wird je nach Konfiguration (_ConfigurationFormCreatorSeparateProperties_) entweder ein ListForm für jeden Typ und jede Eigenschaft erzeugt oder ein ListForm für jede Eigenschaft, die aber dann alle Objekt-Typen enthält. 
+If forms for an object view are generated automatically, depending on the configuration (_ConfigurationFormCreatorSeparateProperties_), either a ListForm for each type and each property is generated, or a ListForm for each property, which then contains all object types.
 
-Hier zu werden folgende Eigenschaften genutzt:
+The following properties are used here:
 
 [%header,cols="1,5"]
 |===
-|Name|Bedeutung
+|Name|Meaning
 |formType|TreeItemDetail
-|extentType|Typen des anzuzeigenden Extents
-|parentMetaClass|Die Meta-Klasse der Objekte die selektiert sind.
-|parentProperty|Der Name der Eigenschaft der Objekte.
+|extentType|Types of the extent to be displayed
+|parentMetaClass|The metaclass of the objects that are selected.
+|parentProperty|The name of the property of the objects.
 |===
 
-==== Automatische Erweiterung der Formulare
+==== Automatic Extension of Forms
 
-Nachdem das Formular gefunden, gewählt und erzeugt worden ist, wird in einer weiteren Abfrage-Runde definiert ob weitere Formularehinzugefügt werden sollen.
+After the form has been found, selected, and created, another query round defines whether further forms should be added.
 
-Hierzu werden die gleichen Formular-Zurordnungen genutzt, wie oben dargestellt, allerdings mit der Änderung des Form-Types:
+For this purpose, the same form associations as shown above are used, but with a change in the form type:
 
 . TreeItemExtent => TreeItemExtentExtension
 . TreeItemDetail => TreeItemDetailExtension
 
-Hierbei soll ein ListForm zurückgegeben werden.
+A ListForm should be returned here.

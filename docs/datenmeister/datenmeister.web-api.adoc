@@ -1,160 +1,160 @@
-= DatenMeister Web-API
+= DatenMeister Web API
 
-Der DatenMeister-Web-Client kommuniziert neben den server-generierten Webseiten auch mit der Server-API, die im folgenden Absatz dokumentiert ist. 
+In addition to server-generated web pages, the DatenMeister web client also communicates with the server API, which is documented in the following section.
 
-Jedes Kapitel beschreibt die API einer Datei.
+Each chapter describes the API of a file.
 
-== Hilfsklassen
+== Helper Classes
 
-=== Hilfsklasse ItemWithNameAndId
+=== Helper Class ItemWithNameAndId
 
-Die Hilfsklasse _ItemWithNameAndId_ (C#-Namespace DatenMeister.Json) fungiert als Transferobjeot von Web-*Server* zu Web-*Client* um ein Item ohne seine Properties als Proxy zu übergeben. Um unnötige Roundtrips zwischen Webserver und Webclient zu vermeiden, besteht das Objekt aus folgenden Eigenschaften. 
+The helper class _ItemWithNameAndId_ (C# namespace DatenMeister.Json) functions as a transfer object from web *server* to web *client* to pass an item as a proxy without its properties. To avoid unnecessary round trips between web server and web client, the object consists of the following properties:
 
-* name: Name des Objektes, wie von NamedElementMethods.GetName zurückgeliefert
-* uri: Uri des Elements
-* extentUri: Uri des Extents in dem sich das Objekt befindet
-* fullName: Der volle Namen, wie von NamedElementMethods.GetFullName zurückgeliefert
-* id: Die Id des Objektes
-* workspace: Arbeitsbereich in dem sich das Element selbst befindet. 
+* name: Name of the object, as returned by NamedElementMethods.GetName
+* uri: URI of the element
+* extentUri: URI of the extent in which the object is located
+* fullName: The full name, as returned by NamedElementMethods.GetFullName
+* id: The ID of the object
+* workspace: Workspace in which the element itself is located.
 
-Das Objekte ist über $"{extentUri}#{id}" vom Webserver abrufbar. 
+The object is accessible from the web server via $"{extentUri}#{id}".
 
-=== Hilfsklasse MofJsonObject
+=== Helper Class MofJsonObject
 
-Die Hilfsklasse _MofJsonObject_ (Über C#-Klasse MofJsonConverter generiert) fungiert als Transferobject von Web-*Client* zu Web-*Server* oder vom Web-*Server* zum Web-*Client* um ein Item mit all seinen Properties, notwendigen Meta-Informationen zu übergeben. 
+The helper class _MofJsonObject_ (generated via C# class MofJsonConverter) functions as a transfer object from web *client* to web *server* or from web *server* to web *client* to pass an item with all its properties and necessary meta-information.
 
-Dieses Objekt ist ein Json-Objekt und wird auf Client-Seite von der Methode _Mof.ts::createObjectFromJson_ verarbeitet. 
+This object is a JSON object and is processed on the client side by the method _Mof.ts::createObjectFromJson_.
 
-* r: Falls das Objekt vom Server in dem jeweiligen Kontext nicht aufgelöst worden ist, so enthält diese Eigenschaft die Url des Objektes. Entspricht dem MofObjectShadow-Konzept. 
-* v: Enthält ein assoziatives Array von Eigenschaftsnamen zu Wert. Ist der Wert wieder ein MofObjekt, so wird wieder ein MofJsonObject gebildet.
-* m: ItemWithNameAndId-Instanz der Metaclass des Objektes
-* u: Url des Objektes
+* r: If the object has not been resolved by the server in the respective context, this property contains the URL of the object. Corresponds to the MofObjectShadow concept.
+* v: Contains an associative array of property names to values. If the value is again a MofObject, a MofJsonObject is formed again.
+* m: ItemWithNameAndId instance of the object's metaclass
+* u: URL of the object
 
 == ElementsController
 
-Dieser Webcontroller unterscheidet sich vom Controllert 'ItemsController' darin, dass dieser Controller erweiterte Methoden beinhaltet, während der  ItemsController die typischen CRUD-Methoden (Create, Read, Update, Delete) beinhaltet. 
+This web controller differs from the 'ItemsController' in that it contains extended methods, while the ItemsController contains the typical CRUD methods (Create, Read, Update, Delete).
 
 === Get Name of element
 
 * Node: api/elements/get_name/{workspace}/{extenturi}/{itemid}
-** workspace: Arbeitsbereich des gesuchten Elements
-** extentUri: Extent des gesuchten Elements
-** itemid: Id des gesuchten Elements
+** workspace: Workspace of the searched element
+** extentUri: Extent of the searched element
+** itemid: ID of the searched element
 * Method: GET
-* Body: _keiner_
-* Return: 
-** name: Name des Elements
+* Body: _none_
+* Return:
+** name: Name of the element
 
-*Beschreibung:*
+*Description:*
 
-Gibt den Namen des gewählten Elements zurück. Der Name wird über NamedElementMethods.GetName ausgewählt. 
+Returns the name of the selected element. The name is selected via NamedElementMethods.GetName.
 
 === Get Name of Element (per Uri)
 
 * Node: api/elements/get_name/{uri}/{workspace?}
-** uri: Uri des gesuchten Elements
-** workspace: (Optional) Arbeitsbereich des gesuchten Elements
+** uri: URI of the searched element
+** workspace: (Optional) Workspace of the searched element
 * Method: GET
-* Body: _keiner_
-* Return: 
-** name: Name des Elements
+* Body: _none_
+* Return:
+** name: Name of the element
 
-*Beschreibung:*
+*Description:*
 
-Gibt den Namen des gewählten Elements zurück. Der Name wird über NamedElementMethods.GetName ausgewählt. Ist kein Arbeitsbereich angegeben, so wird über die gesamte Datenbank gesucht. 
+Returns the name of the selected element. The name is selected via NamedElementMethods.GetName. If no workspace is specified, the entire database is searched.
 
 === Get Composites
 
 * Node: api/elements/get_composites/{workspaceId?}/{itemUrl?}
 * Method: GET
-** workspaceId: (Optional) Name des selektierten Arbeitsbereich
-** itemUrl: (Optional) Url des selektierten Elemente 
-* Body: _keiner_
+** workspaceId: (Optional) Name of the selected workspace
+** itemUrl: (Optional) URL of the selected elements
+* Body: _none_
 * Return:
-** Array von _ItemWithNameAndId_-Elementen. Diese enthalten Namen und Url der Elemente. 
+** Array of _ItemWithNameAndId_ elements. These contain the name and URL of the elements.
 
-*Beschreibung:*
+*Description:*
 
-Gibt die Unterelemente des selektierten Arbeitsbereiches, bzw. des selektierten Items zurück. 
+Returns the sub-elements of the selected workspace or the selected item.
 
-Falls kein Arbeitsbereich angegeben wurde, werden die Arbeitsbereiche zurückgegeben. Falls ein Arbeitsbereich angegeben wurde, aber keine ItemUrl, so werden alle Wurzelelemente zurückgegeben, ansonsten werden die Unterelemente zurückgegeben. 
+If no workspace was specified, the workspaces are returned. If a workspace was specified but no itemUrl, all root elements are returned; otherwise, the sub-elements are returned.
 
 === Find Item By SearchString
 
 * Node: api/elements/find_by_searchstring?search=searchString
 * Method: GET
-** searchString: Beschreibung des Items welches gesucht werden soll. Dies ist eine globale Suche über die entweder ein einzelnes Items oder auch eine Menge von Items zurückgegeben wird. Es ist Aufgabe des Clients die dahinterliegende, sinnvolle Aktion durchzuführen
-* Body: _keiner_
-* Return: 
-** resultType: 'reference', falls eine Referenz auf ein Element gefunden wurde. 'referenceExtent', falls eine Referenz auf ein Extent gefunden wurde. 'none', falls nichts gefunden wurde.
-** reference: ItemWithNameAndId-Instanz des Elements, welches referenziert ist. 
+** searchString: Description of the item to be searched for. This is a global search that returns either a single item or a set of items. It is the task of the client to perform the underlying, meaningful action.
+* Body: _none_
+* Return:
+** resultType: 'reference', if a reference to an element was found. 'referenceExtent', if a reference to an extent was found. 'none', if nothing was found.
+** reference: ItemWithNameAndId instance of the element which is referenced.
 
 == ExtentController
 
 === Create new Xmi Extent
 
 * Node: api/extent/create_xmi/{workspace}
-** workspace: (Optional) Arbeitsbereich des gesuchten Elements
+** workspace: (Optional) Workspace of the searched element
 * Method: POST
-* Body: 
-** filePath: Pfad in dem das Xmi erzeugt werden soll
-** extentUri: Name des Extents welches erzeugt werden soll
-* Return: 
-** success: true, falls das Extent erfolgreich erzeugt werden konnte. 
+* Body:
+** filePath: Path where the XMI is to be created
+** extentUri: Name of the extent to be created
+* Return:
+** success: true, if the extent could be successfully created.
 
-*Beschreibung:*
+*Description:*
 
-Erzeugt ein neues Extent an dem angegebenen Dateipfad {filePath} unter der Extent-URL {extentUri}. Dieses Extent ist ein Standard-XMI-Extent. 
+Creates a new extent at the specified file path {filePath} under the extent URL {extentUri}. This extent is a standard XMI extent.
 
-Warnung: Dieses Extent wird mit den Rechten des Webservers erzeugt und daher kann man per filePath an nahezu jeder beliebigen Stelle im Dateisystem des Servers dieses Extent erzeugen.  
+Warning: This extent is created with the rights of the web server, and therefore this extent can be created almost anywhere in the server's file system via filePath.
 
 === Delete Extent
 
 * Node: api/extent/delete
 * Method: DELETE
-* Body: 
-** workspace: Arbeitsbereich des zu löschenden Extents
-** extentUri: Name des Extents welches gelöscht werden soll
-* Return: 
-** success: true, falls das Extent erfolgreich gelöscht werden konnte. 
+* Body:
+** workspace: Workspace of the extent to be deleted
+** extentUri: Name of the extent to be deleted
+* Return:
+** success: true, if the extent could be successfully deleted.
 
-*Beschreibung:*
+*Description:*
 
-Löscht das angegebene Extent. Die dahinterliegenden Daten werden ebenfalls gelöscht. 
+Deletes the specified extent. The underlying data is also deleted.
 
 == FormsController
 
-=== Get Default Form for Item 
+=== Get Default Form for Item
 
 * Node: api/forms/default_for_item/{workspaceId}/{itemUrl}/{viewMode?}
-** workspaceId: Name des Arbeitsbereiches in dem sich das Objekt befindet
-** itemUrl: Url des Items
-** viewMode: (Optional) ViewMode für den das Formular geholt werden soll
+** workspaceId: Name of the workspace where the object is located
+** itemUrl: URL of the item
+** viewMode: (Optional) ViewMode for which the form should be retrieved
 * Method: GET
-* Body: _keiner_
-* Return: 
-** item: Das Item als _MofJson-Object_. 
-** metaClass: Die MetaClass des Forms als _ItemWithNameAndId_.
+* Body: _none_
+* Return:
+** item: The item as a _MofJson-Object_.
+** metaClass: The MetaClass of the form as _ItemWithNameAndId_.
 
-*Beschreibung:*
+*Description:*
 
-Holt das Formular zu dem selektierten Item. Ist der ViewMode ebenfalls angegeben, so wird dieser von der Formsuche betrachtet. Die Formsuche selbst läuft über die C#-Klasse _FormFinder_. Siehe Kapitel "Formulare finden"
+Retrieves the form for the selected item. If the ViewMode is also specified, it is considered by the form search. The form search itself runs via the C# class _FormFinder_. See chapter "Finding Forms".
 
 === Get Default Form for Extent
 
 * Node: api/forms/default_for_extent/{workspaceId}/{extentUrl}/{viewMode?}
-** workspaceId: Name des Arbeitsbereiches in dem sich das Objekt befindet
-** extentUrl: Url des Extents
-** viewMode: (Optional) ViewMode für den das Formular geholt werden soll
+** workspaceId: Name of the workspace where the object is located
+** extentUrl: URL of the extent
+** viewMode: (Optional) ViewMode for which the form should be retrieved
 * Method: GET
-* Body: _keiner_
-* Return: 
-** item: Das Item als _MofJson-Object_. 
-** metaClass: Die MetaClass des Forms als _ItemWithNameAndId_.
+* Body: _none_
+* Return:
+** item: The item as a _MofJson-Object_.
+** metaClass: The MetaClass of the form as _ItemWithNameAndId_.
 
-*Beschreibung:*
+*Description:*
 
-Holt das Formular zu dem selektierten Extent. Ist der ViewMode ebenfalls angegeben, so wird dieser von der Formsuche betrachtet. Die Formsuche selbst läuft über die C#-Klasse _FormFinder_. Siehe Kapitel "Formulare finden"
+Retrieves the form for the selected extent. If the ViewMode is also specified, it is considered by the form search. The form search itself runs via the C# class _FormFinder_. See chapter "Finding Forms".
 
 
 == ItemsController
@@ -162,204 +162,204 @@ Holt das Formular zu dem selektierten Extent. Ist der ViewMode ebenfalls angegeb
 === Create Item in Extent
 
 * Node: api/items/create_in_extent/{workspaceId}/{extentUri}
-** workspaceId: Name des Arbeitsbereiches in dem sich das Objekt befindet
-** extentUri: Url des Extents
+** workspaceId: Name of the workspace where the object is located
+** extentUri: URL of the extent
 * Method: POST
 * Body:
-** metaClass: Uri der MetaClass
-* Return: 
-** success: true, wenn erfolgreich
-** itemId: Id des neu erstellten Objektes
+** metaClass: URI of the MetaClass
+* Return:
+** success: true, if successful
+** itemId: ID of the newly created object
 
-*Beschreibung:* 
+*Description:*
 
-Erstellt ein neues Objekt als Wurzelobjekt im Extent. Über die MetaClass kann die Metaklasse des neu erstellten Objektes angegeben werden. 
+Creates a new object as a root object in the extent. Via the MetaClass, the metaclass of the newly created object can be specified.
 
 === Create Item as Child
 
 * Node: api/items/create_child/{workspaceId}/{itemUri}
-** workspaceId: Name des Arbeitsbereiches in dem sich das Objekt befindet
-** itemUri: Url des Items in dem das neue Objekt als Kind erstellt wird 
+** workspaceId: Name of the workspace where the object is located
+** itemUri: URL of the item in which the new object is created as a child
 * Method: POST
 * Body:
-** property: Eigenschaft in dem das Kindobjekt erstellt wird. 
-** asList: true, falls das Objekte als Listeneintrag hinzugefügt werden soll. Ansonsten wird das Element als direkte Referenz hinzugefügt.
-** metaClass: Uri der MetaClass
-** properties: MofObjectAsJson welche die Eigenschaften enthält, die gesetzt werden sollen
-* Return: 
-** success: true, wenn erfolgreich
-** itemId: Id des neu erstellten Objektes
+** property: Property in which the child object is created.
+** asList: true, if the object should be added as a list entry. Otherwise, the element is added as a direct reference.
+** metaClass: URI of the MetaClass
+** properties: MofObjectAsJson which contains the properties to be set
+* Return:
+** success: true, if successful
+** itemId: ID of the newly created object
 
-*Beschreibung:* 
+*Description:*
 
-Erstellt ein neues Objekt als Kind eines schon bestehendes Objektes. Über die property wird die Eigenschaft angegeben in der das Objekt gespeichert werden soll. Soll das Objekt direkt als Eigenschaft als alleiniges Eigenschaftsobjekt zugeordnet werden, kann _asList_ als False gesetzt werden. Soll das Objekt als Listeneintrag hinzugefügt werden, dann ist _asList_ als True zu setzen. 
+Creates a new object as a child of an existing object. Via the property, the property in which the object is to be stored is specified. If the object is to be assigned directly as a property as the sole property object, _asList_ can be set to False. If the object is to be added as a list entry, then _asList_ should be set to True.
 
-Über die MetaClass kann die Metaklasse des neu erstellten Objektes angegeben werden. 
+Via the MetaClass, the metaclass of the newly created object can be specified.
 
 
 === Delete Item
 
 * Node: api/items/delete_from_extent/{workspaceId}/{extentUri}/{itemId}
-** workspaceId: Name des Arbeitsbereiches in dem sich das Objekt befindet
-** extentUri: Uri des Extents
-** itemId: Id des Items in dem das neue Objekt als Kind erstellt wird 
+** workspaceId: Name of the workspace where the object is located
+** extentUri: URL of the extent
+** itemId: ID of the item in which the new object is created as a child
 * Method: DELETE
-* Body: _keiner_
-* Return: 
-** success: true, wenn erfolgreich
+* Body: _none_
+* Return:
+** success: true, if successful
 
-*Beschreibung:* 
+*Description:*
 
-Löscht das Objekt aus der Wurzel des Extents. 
+Deletes the object from the root of the extent.
 
 === Get Root Elements
 
 * Node: api/items/get_root_elements/{workspaceId}/{extentUri}
-** workspaceId: Name des Arbeitsbereiches in dem sich das Objekt befindet
-** extentUri: Uri des Extents
+** workspaceId: Name of the workspace where the object is located
+** extentUri: URL of the extent
 * Method: GET
-* Parameter:
-** viewNode: Url to that specific viewnode
+* Parameters:
+** viewNode: URL to that specific viewnode
 ** orderBy: Property to which the table shall be ordered
 ** orderByDescending: Boolean whether the property shall be ordered descending (backwards)
 ** filterByProperties: NOT SUPPORTED
 ** filterByFreetext: Additional freetext which will be used to filter items. Here, all columns will be regarded
-* Body: _keiner_
-* Return: 
-** item: Array von _MofJsonObject_ der Wurzelelemente
+* Body: _none_
+* Return:
+** item: Array of _MofJsonObject_ of the root elements
 
-*Beschreibung:*
+*Description:*
 
-Listet alle Wurzel-Elemente des gewählten Extents aus. 
+Lists all root elements of the selected extent.
 
 === Get Object
 
 * Node: api/items/get/{workspaceId}/{extentUri}/{item}
-** workspaceId: Name des Arbeitsbereiches in dem sich das Objekt befindet
-** extentUri: Uri des Extents
-** itemId: Id des Items in dem das neue Objekt als Kind erstellt wird 
+** workspaceId: Name of the workspace where the object is located
+** extentUri: URL of the extent
+** itemId: ID of the item in which the new object is created as a child
 * Method: GET
-* Body: _keiner_
-* Return: 
-** item: _MofJsonObject_ des gefundenen Objektes
+* Body: _none_
+* Return:
+** item: _MofJsonObject_ of the found object
 
-*Beschreibung:*
+*Description:*
 
-Holt die Eigenschaften des gewählten Objektes. 
+Retrieves the properties of the selected object.
 
 === Get Parents
 
 * Node api/items/get_container/{workspaceId}/{itemUrl}
 * Method: GET
-** workspaceId: Name des selektierten Arbeitsbereich
-** itemUrl: Url des selektierten Elemente 
-* Body: _keiner_
-* Return: 
-** Array von _ItemWithNameAndId_-Elementen. Das erste Element beinhaltet den direkten Container, während die weiteren Elemente jeweils dessen Container rekursiv beinhaltet. 
+** workspaceId: Name of the selected workspace
+** itemUrl: URL of the selected elements
+* Body: _none_
+* Return:
+** Array of _ItemWithNameAndId_ elements. The first element contains the direct container, while the further elements each contain its container recursively.
 
-*Beschreibung:*
+*Description:*
 
-Gibt das Container Element des selektierten Elements und dessen Container rekursiv zurück. Diese Methode endet bei dem eigentlichen Extent. 
+Returns the container element of the selected element and its containers recursively. This method ends at the actual extent.
 
 === Set Property
 
 * Node: api/items/set_property/{workspaceId}/{itemUri}
-** workspaceId: Name des Arbeitsbereiches in dem sich das Objekt befindet
-** itemUri: Uri des Items in dem das neue Objekt als Kind erstellt wird 
+** workspaceId: Name of the workspace where the object is located
+** itemUri: URL of the item in which the new object is created as a child
 * Method: PUT
-* Body: 
-** key: Schlüssel der Eigenschaft
-** value: Wert der Eigenschaft
-* Return: 
-** success: true, falls erfolgreich
+* Body:
+** key: Key of the property
+** value: Value of the property
+* Return:
+** success: true, if successful
 
-*Beschreibung:*
+*Description:*
 
-Setzt eine Eigenschaft des gewählten Objektes. 
+Sets a property of the selected object.
 
 === Set Properties
 
 * Node: api/items/set_properties/{workspaceId}/{itemUri}
-** workspaceId: Name des Arbeitsbereiches in dem sich das Objekt befindet
-** itemUri: Uri des Items in dem das neue Objekt als Kind erstellt wird 
+** workspaceId: Name of the workspace where the object is located
+** itemUri: URL of the item in which the new object is created as a child
 * Method: PUT
 * Body:
-** Array von Elementen mit folgenden Eigenschaften: 
-*** key: Schlüssel der Eigenschaft
-*** value: Wert der Eigenschaft
-* Return: 
-** success: true, falls erfolgreich
+** Array of elements with the following properties:
+*** key: Key of the property
+*** value: Value of the property
+* Return:
+** success: true, if successful
 
-*Beschreibung:*
+*Description:*
 
-Setzt mehrere Eigenschaften des gewählten Objektes. 
+Sets several properties of the selected object.
 
 === Set Object
 
 * Node: api/items/set/{workspaceId}/{itemUri}
-** workspaceId: Name des Arbeitsbereiches in dem sich das Objekt befindet
-** itemUri: Uri des Items in dem das neue Objekt als Kind erstellt wird 
+** workspaceId: Name of the workspace where the object is located
+** itemUri: URL of the item in which the new object is created as a child
 * Method: POST
 * Body:
-** _MofJsonObject_ mit den Eigenschaften, die zu setzen sind. 
-* Return: 
-** success: true, falls erfolgreich
+** _MofJsonObject_ with the properties to be set.
+* Return:
+** success: true, if successful
 
 === Get Property of Object
 * Node: api/items/get_property/{workspaceId}/{itemUri}
-** workspaceId: Name des Arbeitsbereiches in dem das Objekt gefunden wird. 
-** itemUri: Uri des Items wessen Eigenschaft geladen werden soll
+** workspaceId: Name of the workspace where the object is found.
+** itemUri: URL of the item whose property is to be loaded
 * Method: GET
-** property: Name der Eigenschaft, die geladen werden soll.
+** property: Name of the property to be loaded.
 * Return:
-** v: Wert der geladenen Eigenschaft als MofJsonObject. Dies kann auch ein Array von Eigenschaften sein. 
+** v: Value of the loaded property as a MofJsonObject. This can also be an array of properties.
 
-*Beschreibung:*
+*Description:*
 
-Holt eine Eigenschaft eines Objektes ab.
+Retrieves a property of an object.
 
-=== Add Reference To List 
+=== Add Reference To List
 
 * Node: api/items/add_ref_to_collection/{workspaceId}/{itemUri}
-** workspaceId: Name des Arbeitsbereiches in dem das Objekt gefunden wird. 
-** itemUri: Uri des Items zu wessen Eigenschaft eine neue Referenz hinzugefügt werden soll. 
+** workspaceId: Name of the workspace where the object is found.
+** itemUri: URL of the item to whose property a new reference is to be added.
 * Method: POST
-* Body: 
-** property: Eigenschaft deren ein Objekt hinzugefügt werden soll: 
-** workspaceId: Optional, der Arbeitsbereich in dem die Referenz zu finden ist. 
-** referenceUri: Uri der Referenz, die hinzugefügt werden soll
-* return: 
-** success: true, falls erfolgreich
+* Body:
+** property: Property to which an object is to be added:
+** workspaceId: Optional, the workspace where the reference is to be found.
+** referenceUri: URL of the reference to be added
+* return:
+** success: true, if successful
 
-Fügt eine neue Referenz zu einer Eigenschaft eines Objekts hinzu. Hierzu wird die Eigenschaft als Collection eingeladen und dann das gefundene Objekt hinzugefügt. 
+Adds a new reference to a property of an object. For this purpose, the property is loaded as a collection and then the found object is added.
 
 === Remove Reference from list
 
 * Node: api/items/remove_ref_to_collection/{workspaceId}/{itemUri}
-** workspaceId: Name des Arbeitsbereiches in dem das Objekt gefunden wird. 
-** itemUri: Uri des Items zu wessen Eigenschaft eine neue Referenz hinzugefügt werden soll. 
+** workspaceId: Name of the workspace where the object is found.
+** itemUri: URL of the item from whose property a reference is to be removed.
 * Method: POST
-* Body: 
-** property: Eigenschaft deren ein Objekt hinzugefügt werden soll: 
-** workspaceId: Optional, der Arbeitsbereich in dem die Referenz zu finden ist. 
-** referenceUri: Uri der Referenz, die entfernt werden soll
-* return: 
-** success: true, falls erfolgreich
+* Body:
+** property: Property from which an object is to be removed:
+** workspaceId: Optional, the workspace where the reference is to be found.
+** referenceUri: URL of the reference to be removed
+* return:
+** success: true, if successful
 
 === SetMetaClass
 
 * Node api/items/set_metaclass/{workspaceId}/{itemUrl}
 * Method: POST
-** workspaceId: Name des selektierten Arbeitsbereich
-** itemUrl: Url des selektierten Elemente 
-* Body: 
-** metaClassUri: Ein Link auf die neue Metaclasse 
-* Return: 
-** success: true, falls erfolgreich
+** workspaceId: Name of the selected workspace
+** itemUrl: URL of the selected elements
+* Body:
+** metaClassUri: A link to the new metaclass
+* Return:
+** success: true, if successful
 
-*Beschreibung:*
+*Description:*
 
-Gibt das Container Element des selektierten Elements und dessen Container rekursiv zurück. Diese Methode endet bei dem eigentlichen Extent. 
+Returns the container element of the selected element and its containers recursively. This method ends at the actual extent.
 
 == TypesController
 
@@ -367,13 +367,13 @@ Gibt das Container Element des selektierten Elements und dessen Container rekurs
 
 * Node: api/types/all
 * Method: GET
-* Body: _keiner_
-* Return: 
-** Array[] aller Typen. Jeder Typ ist in der Struktur _ItemWithNameAndId_ dargestellt 
+* Body: _none_
+* Return:
+** Array[] of all types. Each type is represented in the structure _ItemWithNameAndId_
 
-*Beschreibung:*
+*Description:*
 
-Gibt eine Liste aller bekannten und selektierten Typen zurück. Hierzu wird die Methode LocalTypeSupport.GetAllTypes() genutzt.
+Returns a list of all known and selected types. For this, the method LocalTypeSupport.GetAllTypes() is used.
 
 == WorkspaceController
 
@@ -381,14 +381,14 @@ Gibt eine Liste aller bekannten und selektierten Typen zurück. Hierzu wird die 
 
 * Node: api/workspace/delete
 * Method: DELETE
-* Body: 
-** Workspace: Selektierter Arbeitsbereich
-* Return: 
+* Body:
+** Workspace: Selected workspace
+* Return:
 ** success: true
 
-*Beschreibung:*
+*Description:*
 
-Löscht den selektierten Arbeitsbereich. Diese Methode löscht auch alle darin befindlichen Extents. 
+Deletes the selected workspace. This method also deletes all extents contained therein.
 
 == ZipController
 
@@ -396,12 +396,12 @@ Löscht den selektierten Arbeitsbereich. Diese Methode löscht auch alle darin b
 
 * Node: api/zip/create
 * Method: POST
-* Body: 
-** Workspace: Selektierter Arbeitsbereich
-* Return: 
+* Body:
+** Workspace: Selected workspace
+* Return:
 ** success: true
-** extentUri: URI des erzeugten Beispiels
+** extentUri: URI of the generated example
 
-*Beschreibung:*
+*Description:*
 
-Generiert ein neues Zip-Beispiel in dem selektierten Arbeitsbereich
+Generates a new zip example in the selected workspace.

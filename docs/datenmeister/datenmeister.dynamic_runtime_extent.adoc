@@ -1,44 +1,44 @@
-= Dynamische Laufzeit Provider
+= Dynamic Runtime Provider
 
-Ein dynamischer Laufzeit Extent (Dynamic Runtime Provider) ist ein programmierbarer Provider, dessen Inhalte über eine Klasse erzeugt werden und nicht über eine Datenbank. 
+A dynamic runtime extent (Dynamic Runtime Provider) is a programmable provider whose content is generated via a class rather than a database.
 
-Die Klasse selbst muss über die bestehende Plugin-Infrastruktur dem DatenMeister eingeladen sein,d as s
+The class itself must be loaded into the DatenMeister via the existing plugin infrastructure.
 
-== Konfiguration
+== Configuration
 
-Die Konfiguration des Providers erfolgt über _DynamicRuntimeLoaderConfig_ und enthält folgende Eigenschaften: 
+The provider is configured via _DynamicRuntimeLoaderConfig_ and contains the following properties:
 
 [%header,cols="1,5"]
 |===
-|Name|Beschreibung
-|name|Name des Providers
-|extentUri|Uri des einzuladenen Extents
-|workspaceId|Id des Arbeitsbereiches in dem das zugehörige Extent eingeladen wird
-|runtimeClass|Voller Pfad (FullName) zur Klasse, die die Elemente enthält
-|configuration|Konfiguration, die dann dieser Klasse übergeben wird. Der Typ dieser Konfiguration ist nicht speziell definiert. 
+|Name|Description
+|name|Name of the provider
+|extentUri|URI of the extent to be loaded
+|workspaceId|ID of the workspace into which the corresponding extent is loaded
+|runtimeClass|Full path (FullName) to the class containing the elements
+|configuration|Configuration that is then passed to this class. The type of this configuration is not specifically defined.
 |===
 
-== Implementierung
+== Implementation
 
-Der Laufzeitprovider wird über folgende eine Schnittstelle _IDynamicRuntimeProvider_ zur Verfügung gestellt. Diese enthält folgende Methode: 
+The runtime provider is made available via an interface _IDynamicRuntimeProvider_. This contains the following method:
 
 *IEnumerable<IProviderObject> Get(IElement configuration)*
 
-Hierbei enthält der Parameter _configuration_ den Konfigurationsparameter, der in der LoaderConfig über _configuration_ festgelegt wurde. Dieser Wert kann auch null sein.
+Here, the parameter _configuration_ contains the configuration parameter defined in the LoaderConfig via _configuration_. This value can also be null.
 
-Der Laufzeitprovider gibt auf Aufruf eine Liste von Provider-Elementen zurück. Dieses können vereinfacht vom Typ _InMemoryProviderObject_ sein. 
+The runtime provider returns a list of provider elements upon request. For simplicity, these can be of type _InMemoryProviderObject_.
 
-== Beispiel-Implementierungen
+== Example Implementations
 
 === Modules.DynamicRuntimeProvider.NumberProvider
 
-Nimmt eine Instanz von _NumberProviderSettings_ auf und gibt eine Auflistung von Zahlen in Binär (binary), Oktal (octal), Dezimal (decimal) und Hexadezimal (hexadecimal) zurück. 
+Takes an instance of _NumberProviderSettings_ and returns a listing of numbers in binary, octal, decimal, and hexadecimal.
 
-Die Eigenschaften der Settings: 
+The properties of the settings:
 
 [%header,cols="1,5"]
 |===
-|Name|Beschreibung
-|start|Erster Wert der Auflistung. Standardwert ist 0
-|end|Letzter Wert der Auflistung. Standardwert ist 100
+|Name|Description
+|start|First value of the list. Default value is 0
+|end|Last value of the list. Default value is 100
 |===

@@ -1,12 +1,12 @@
-= Viewmode (Ansichtsmodus)
+= Viewmode (View Mode)
 
-Über den Ansichtsmodus kann der Mutzer einstellen aus welcher Perspektive das aktuelle Formular (Form) identifiziert und erzeugt werden soll. 
+Through the view mode, the user can set from which perspective the current form (Form) should be identified and created.
 
-Es werden folgende Standard-Viewmodes erzeugt: 
+The following standard view modes are generated:
 
-* Default (ViewMode.Default): Dieses ist der Standard-Viewnode und kann von den Erweiterungen überschrieben werden, so dass spezielle Ansichten für spezielle Objekte oder Extents dargestellt werden können. 
-* Auto Generation (ViewMode.AutoGenerate): Über diese Ansicht wird die automatische Generierung des Formulars auf der gesetzten Eigenschaften und Objekttypen erzwungen. Die Suche nach best-passenden Formularen wird nicht durchgeführt. 
-* Data Manipulation (ViewMode.DataManipulation): Im Gegensatz zum Default-Viewmode werden hier keine visuellen Darstellungen des Objektes angezeigt. Über diese Ansicht soll der Nutzer die Möglichkeit erhalten das Objekt selbst zu manipulieren. 
-* Switch to Automatic: Diese Option wird nur in der grafischen Darstellung angezeigt und ist kein tatsächlicher Viewmode. Durch die Selektion dieses Items versucht das System auf Grund des Extenttyps den besten Viewmode zu selektieren. 
+* Default (ViewMode.Default): This is the standard view node and can be overridden by extensions so that special views can be displayed for special objects or extents.
+* Auto Generation (ViewMode.AutoGenerate): This view forces the automatic generation of the form based on the set properties and object types. The search for best-fitting forms is not performed.
+* Data Manipulation (ViewMode.DataManipulation): In contrast to the default view mode, no visual representations of the object are displayed here. Through this view, the user is given the opportunity to manipulate the object itself.
+* Switch to Automatic: This option is only displayed in the graphical representation and is not an actual view mode. By selecting this item, the system attempts to select the best view mode based on the extent type.
 
 

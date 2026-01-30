@@ -1,73 +1,73 @@
 = Extents
 
-== Das Laden von Extents
+== Loading Extents
 
-=== Konfigurationen
+=== Configurations
 
 ==== ExtentLoaderConfig
 
-==== ExtentFileLoaderConfig 
+==== ExtentFileLoaderConfig
 
 |===
-|Abgeleitet|ExtentLoaderConfig
-|Registriert über|_Abstrakte Konfiguration_
+|Derived from|ExtentLoaderConfig
+|Registered via|_Abstract configuration_
 |===
 
 ==== ExcelExtentLoaderConfig
 
 |===
-|Abgeleitet|ExtentFileLoaderConfig
-|Registriert über|_Abstrakte Konfiguration_
+|Derived from|ExtentFileLoaderConfig
+|Registered via|_Abstract configuration_
 |===
 
-Loads the excel file and uses the excel file directly for MOF operations. Here, no importing into a temporary extent will be performed. 
+Loads the Excel file and uses the Excel file directly for MOF operations. Here, no importing into a temporary extent will be performed.
 
 ==== ExcelImportExtentLoaderConfig
 
 |===
-|Abgeleitet|ExcelExtentLoaderConfig
-|Registriert über|DatenMeister.Excel.Integration.ExcelPlugin
+|Derived from|ExcelExtentLoaderConfig
+|Registered via|DatenMeister.Excel.Integration.ExcelPlugin
 |===
 
-Creates a parallel extent type and loads the specific Excelfile into the extent. 
+Creates a parallel extent type and loads the specific Excel file into the extent.
 
 
 ==== ExcelReferenceExtentLoaderConfig
 
 |===
-|Abgeleitet|ExcelExtentLoaderConfig
-|Registriert über|DatenMeister.Excel.Integration.ExcelPlugin
+|Derived from|ExcelExtentLoaderConfig
+|Registered via|DatenMeister.Excel.Integration.ExcelPlugin
 |===
 
-Loads the excel and copies all elements from the Excel file into a temporary Extent containing a Provider called 'InMemoryProvider'. This allows fast and easy access, but writings are discarded when the extent is unloaded.
+Loads the Excel and copies all elements from the Excel file into a temporary extent containing a provider called 'InMemoryProvider'. This allows fast and easy access, but writings are discarded when the extent is unloaded.
 
 
 ==== InMemoryLoaderConfig
 
 |===
-|Abgeleitet|ExtentLoaderConfig
-|Registriert über|DatenMeister.Integration.Integrator
+|Derived from|ExtentLoaderConfig
+|Registered via|DatenMeister.Integration.Integrator
 |===
 
 
 ==== XmiStorageLoaderConfig
 
 |===
-|Abgeleitet|ExtentFileLoaderConfig
-|Registriert über|DatenMeister.Provider.XMI.XmiPlugin
+|Derived from|ExtentFileLoaderConfig
+|Registered via|DatenMeister.Provider.XMI.XmiPlugin
 |===
 
 
 ==== XmlReferenceLoaderConfig
 
 |===
-|Abgeleitet|ExtentFileLoaderConfig
-|Registriert über|DatenMeister.Integration.Integrator
+|Derived from|ExtentFileLoaderConfig
+|Registered via|DatenMeister.Integration.Integrator
 |===
 
 ==== CsvExtentLoaderConfig
 
 |===
-|Abgeleitet|ExtentFileLoaderConfig
-|Registriert über|DatenMeister.Provider.CSV.CsvPlugin
+|Derived from|ExtentFileLoaderConfig
+|Registered via|DatenMeister.Provider.CSV.CsvPlugin
 |===

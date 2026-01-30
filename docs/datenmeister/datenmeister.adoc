@@ -1,20 +1,20 @@
-= Der DatenMeister
+= The DatenMeister
 
 * http://www.datenmeister.net [Website of DatenMeister]
 * http://github.com/mbrenn/datenmeister-new [Source of DatenMeister]
 
-== Inhalte 
+== Contents
 
-Dieses Dokument gibt dir einen kurzen, ungeordneten Überblick über verschiedene Aspekte des DatenMeisters. 
+This document gives you a short, unordered overview of various aspects of the DatenMeister.
 
-Jedes Feature wird in einem Kapitel des Dokumentes behandelt und ist in jeweils drei Unterbereiche unterteilt: 
+Each feature is covered in a chapter of the document and is divided into three sub-areas:
 
-. Eine Beschreibung für den Endnutzer
-. Eine Beschreibung für den Modellierer des Datenmodells
-. Eine Beschreibung des internen Verhaltens des DatenMeisters für Entwickler
-. Eine Beschreibung der Software-Architektur und des Sourcecodes
+. A description for the end user
+. A description for the modeler of the data model
+. A description of the internal behavior of the DatenMeister for developers
+. A description of the software architecture and the source code
 
-Jedes Feature wird in Bezug auf diese vier Aspekte durchgegangen. Im Abschluss wird nochmals insgesamt über die SW-Architektur diskutiert. 
+Each feature is reviewed in relation to these four aspects. Finally, the software architecture is discussed as a whole.
 
 * link:datenmeister.extent.html[Extent]
 * link:datenmeister.actions.html[Actions]

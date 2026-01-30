@@ -1,52 +1,52 @@
-= Feldelement
+= Field Element
 
-Die DatenMeister Formulare unterstützen unterschiedliche Typen von Feldformularen. 
-Dieses Kapitel enthält eine Beschreibung Dieser
+The DatenMeister forms support different types of field forms.
+This chapter contains a description of these.
 
 
 == FieldData
 
-Diese Basis-Klasse stellt die generischen Eigenschaften zur Verfügung, die von jedem Feld unterstützt werden sollten. 
+This base class provides the generic properties that should be supported by every field.
 
 [%header,cols="1,5"]
 |===
-|Name|Bedeutung
-|name|Name des Feldes und der dahinterliegenden Eigenschaft des Objektes
-|title|Titel, der im Formular angezeigt wird
-|isEnumeration|Flag, ob die Inhalte hinter der Eigenschafte eine Aufzählung sind oder ein einzelnes Element. Diese Eigenschaft wird von manchen Feldtypen zur automatischen Gestatung genutzt. 
-|defaultValue|Falls der Wert nicht gesetzt ist, kann hier der Wert der Standard-Eigenschaft definiert werden. 
-|isReadOnly|Flag, ob das Feld nicht beschreibbar ist. 
+|Name|Meaning
+|name|Name of the field and the underlying property of the object
+|title|Title displayed in the form
+|isEnumeration|Flag indicating whether the content behind the property is an enumeration or a single element. This property is used by some field types for automatic design.
+|defaultValue|If the value is not set, the value of the default property can be defined here.
+|isReadOnly|Flag indicating whether the field is not writable.
 |===
 
 == TextFieldData
 
-Dieses Feld drückt ein Text-Eingabefeld aus in dem der Nutzer einen freien Text eintragen kann. 
+This field represents a text input field in which the user can enter free text.
 
-Neben der Eigenschaften der FieldData werden noch folgende Eigenschaften unterstützt: 
+In addition to the properties of FieldData, the following properties are supported:
 
 [%header,cols="1,5"]
 |===
-|Name|Bedeutung
-|lineHeight|Anzahl der Zeilen, die angezeigt standardmäßig angezeigt werden sollen
-|width|Breite in logischen Pixeln, die das Feld standardmäßig haben soll. 
+|Name|Meaning
+|lineHeight|Number of lines that should be displayed by default
+|width|Width in logical pixels that the field should have by default.
 |===
 
 
 == EvalTextFieldData
 
-Diese Erweiterung des Textfelds unterstützt die dynamische Auswertung von Inhalten. Dies ist im besonderen relevant bei der Report-Erstellung, da hier das Format und andere Eigenschaften dynamisch ausgewertet werden können. 
+This extension of the text field supports the dynamic evaluation of content. This is particularly relevant for report creation, as the format and other properties can be evaluated dynamically here.
 
-Neben der Eigenschaften der TextFieldData werden folgende Eigenschaften unterstützt:
+In addition to the properties of TextFieldData, the following properties are supported:
 [%header,cols="1,5"]
 |===
-|Name|Bedeutung
-|evalCellProperties a|Das Skript, das zur Erstellung der Zelle ausgewertet wird. 
+|Name|Meaning
+|evalCellProperties a|The script evaluated for creating the cell.
 
-- Die Variable 'i' beschreibt das aktuell betrachtete Element 
+- The variable 'i' describes the element currently being considered.
 
-- Die Variable 'c' die aktuelle Zelle. Die Eigenschaften des Zelle sind abhängig von verwendeten Report.
+- The variable 'c' is the current cell. The cell's properties depend on the report used.
 
-- Die Variable 'r' der Zustand der aktuellen Zeile, wie sie im ListForm in der Eigenschaft 'evalRowProperties' definiert werden kann. 
+- The variable 'r' is the state of the current row, as can be defined in the ListForm in the 'evalRowProperties' property.
 |===
 
 == AnyDataFieldData
@@ -65,20 +65,19 @@ Neben der Eigenschaften der TextFieldData werden folgende Eigenschaften unterst�
 
 == SubElementFieldData
 
-Über dieses Feld-Element kann der Nutzer einer Eigenschaft mehrere Unterelemente zuordnen. 
-Dieses Feld drücke eine 1:n Beziehung zwischen der Eigenschaft und dessen Unterelementen aus. 
+Through this field element, the user can assign several sub-elements to a property.
+This field expresses a 1:n relationship between the property and its sub-elements.
 
-Neben der Eigenschaften der FieldData werden folgende Eigenschaften unterstützt: 
+In addition to the properties of FieldData, the following properties are supported:
 
 [%header,cols="1,5"]
 |===
-|Name|Bedeutung
-|isEnumeration|Wird nicht ausgewertet
-|isReadOnly|Flag, ob das Feld nicht beschreibbar ist. 
-|form|Ein Listform, welches genutzt wird um das SubForm aufzubauen. Ist dieses leer, so wird die Metaklasse genutzt um das Formular aufzubauen. Ist auch 
-die Metaklasse leer, so wird das Formular abhängig von den enthaltenen Eigenschaften erstellt. 
-|defaultTypesForNewElements|Enthält eine Liste von Metaklassen, die genutzt wird um ein einfaches Erstellen von Items zu ermöglichen
-|allowOnlyExistingElements|Wahr, wenn nur Referenzen auf bestehenden Elementen erzeugt werden können sollen. 
+|Name|Meaning
+|isEnumeration|Not evaluated
+|isReadOnly|Flag indicating whether the field is not writable.
+|form|A ListForm used to build the SubForm. If this is empty, the metaclass is used to build the form. If the metaclass is also empty, the form is created depending on the properties contained.
+|defaultTypesForNewElements|Contains a list of metaclasses used to enable easy creation of items.
+|allowOnlyExistingElements|True if only references to existing elements should be allowed.
 |===
 
 
