@@ -1,0 +1,55 @@
+﻿= Gesetz über die Durchsetzung von Regeln in technischen Systemen (Regeldurchsetzungsgesetz - RegDG)
+:revdate: 2026-02-10
+:toc:
+
+== Abschnitt 1: Allgemeine Bestimmungen
+
+=== § 1 Zweck des Gesetzes
+(1) Dieses Gesetz regelt die Grundsätze für die Einführung, Überwachung und Durchsetzung von Regeln innerhalb der Systementwicklung und Produktgestaltung.
+(2) Ziel des Gesetzes ist die Sicherstellung einer wohlgeordneten Produktqualität unter Berücksichtigung der wirtschaftlichen Verhältnismäßigkeit und der Akzeptanz durch die Anwender.
+
+=== § 2 Grundsatz der Beobachtbarkeit
+Regeln im Sinne dieses Gesetzes sollen so gestaltet sein, dass deren Einhaltung objektiv beobachtbar und prüfbar ist. Eine Regel ohne Prüfbarkeit besitzt lediglich empfehlenden Charakter.
+
+=== § 3 Abwägungserhebliche Belange
+Bei der Einführung zwingender Regeln sind insbesondere folgende Nachteile gegen den Nutzen abzuwägen:
+1. die Kosten der Implementierung in die Werkzeuglandschaft;
+2. die laufenden Wartungskosten bei Systemaktualisierungen;
+3. die Opportunitätskosten, insbesondere durch Behinderung von Expertenwissen (Fehlalarme) und daraus resultierendem Zeitverlust oder Frustration.
+
+== Abschnitt 2: Formen der Regeldurchsetzung
+
+=== § 4 Präventive Durchsetzung
+(1) Eine präventive Durchsetzung liegt vor, wenn technische Mittel den Verstoß gegen eine Regel bereits im Entstehungsprozess verhindern.
+(2) Dies geschieht vorzugsweise durch Integration in das Autorensystem oder durch Prüfung bei der Rückführung von Daten in das Hauptsystem.
+(3) Die präventive Durchsetzung erfordert eine unmittelbare Rückmeldung an den Anwender.
+(4) Zur Vermeidung von Arbeitsblockaden ist eine fachliche Begleitung durch die Systemadministration sicherzustellen, um begründete Ausnahmen zu ermöglichen.
+
+=== § 5 Repressive Durchsetzung
+(1) Eine repressive Durchsetzung liegt vor, wenn Regelverstöße nachträglich durch Prüfverfahren, Berichte oder Dashboards identifiziert werden.
+(2) Es ist ein verbindlicher Kommunikationskanal zu etablieren, um über festgestellte Verstöße zu informieren.
+(3) Regelverstöße sind zeitnah zu ahnden, um die Akzeptanz des Regelsystems zu wahren.
+(4) Die zur repressiven Durchsetzung erstellten Berichte dürfen nicht zur isolierten Messung der individuellen Arbeitsleistung (Leistungskontrolle) herangezogen werden. Sie dienen ausschließlich der Prozessunterstützung und Qualitätssteigerung.
+
+== Abschnitt 3: Besondere Verfahren und Verhältnismäßigkeit
+s
+=== § 6 Abgestufte Verfahren
+(1) Zur Wahrung der Flexibilität können Warnmechanismen eingesetzt werden, die auf eine Regelverletzung hinweisen, den Vorgang jedoch nach Bestätigung durch den Anwender zulassen. In diesem Fall ist ein ergänzendes Berichtswesen zur Überwachung der Ausnahmehäufigkeit erforderlich.
+(2) Zur Motivation kann eine Qualitäts-Kennziffer (KPI) eingesetzt werden, bei der Regelverletzungen zu Abzügen in einer Gesamtwertung führen.
+
+=== § 7 Auswahl des Durchsetzungsverfahrens
+(1) Die Wahl des Verfahrens richtet sich nach der Schwere der Konsequenz einer Regelverletzung.
+(2) Schwerwiegende Folgen für das Produkt oder das Unternehmen rechtfertigen eine präventive Durchsetzung.
+(3) Stilistische Mängel oder Verstöße, die lediglich den Bearbeitungsaufwand geringfügig erhöhen, sollen primär repressiv verfolgt werden.
+
+=== § 8 Einführungsprozess
+In etablierten Organisationen kann die Einführung neuer Regeln stufenweise erfolgen, wobei zunächst ein repressives Verfahren zur Schaffung von Problembewusstsein und anschließend ein präventives Verfahren zur strikten Einhaltung gewählt werden kann.
+
+== Abschnitt 4: Schlussbestimmungen
+
+=== § 9 Dokumentation und Rückführbarkeit (Traceability)
+(1) Jede technische Regelprüfung muss bidirektional auf die zugrunde liegende normative Regel zurückführbar sein.
+(2) Änderungen an Regeln müssen unmittelbar in der technischen Umsetzung nachgepflegt werden, um Inkonsistenzen und Anwenderfrustration zu vermeiden.
+
+=== § 10 Verbot der Umgehung
+Regeln sind so zu gestalten, dass sie nicht durch inhaltlich wertlose, aber formal korrekte Eingaben umgangen werden können. Die Wirksamkeit der Regeln ist regelmäßig zu evaluieren.
