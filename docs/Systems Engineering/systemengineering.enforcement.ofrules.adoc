@@ -1,0 +1,66 @@
+﻿= Erzwingen von Regeln
+
+Wir lieben Methoden und wir lieben Regeln. Nur bin ich fest der Meinung, dass eine Regel nur einen Sinn erfüllt, wenn sie auch beobachtbar und prüfbar ist. Letzteres ist eher optional, aber eine wichtige Eigenschaft.
+
+Ich möchte darauf hinweisen, dass jede Einführung einer zwingenden Regel neben den Vorteilen eines klaren und wohlgeordneten Produktes auch einige Nachteile in seinem Kontext erzeugt:  
+
+* **Implementierungskosten**: Der Aufwand, eine Regel präventiv in ein komplexes Tool zu integrieren, kann immens sein.
+* **Wartungskosten**: Regeln müssen bei Tool-Updates oder Prozessänderungen angepasst werden.
+* **Opportunitätskosten**: Wenn eine zu harte Regel die Experten in ihrer Arbeit behindert ("False Positives" bzw. unangemessener Aufwand gegenüber seinen Vorteilen), entstehen Kosten durch Zeitverlust und Frustration.
+
+Gerade in verteilten Umgebungen nutzt es nichts, nur eine Regel zu definieren, sondern man benötigt auch das Feedback, wie und ob die Regel überhaupt umgesetzt wird. Dies nenne ich 'enforcement', auf Deutsch: 'Durchsetzung', und in meinen Augen gibt es hier zwei Haupttypen: 
+
+== Die präventive Durchsetzung
+
+* Hier wird über technische Mittel direkt verhindert, dass eine Regel überhaupt verletzt werden kann. 
+* Übliche Verfahren sind hier eine Einbindung der Regel direkt im Tool oder über eine Prüfung bei der Rückspielung der Änderung in das System. 
+* Diese Durchsetzung ermöglicht ein direktes Feedback an den Bearbeiter. Der Mitarbeiter wird über die Regel auch in Änderungsprozessen aufmerksam gemacht.
+* Die hohe Toolkopplung und die Verhinderung von eventuell begründeten Ausnahmen erfordern eine enge Begleitung durch die Toolabteilung.
+
+== Die repressive Durchsetzung
+* Hier bleibt das Tool, in welchem die Inhalte definiert werden, erst einmal unmodifiziert. 
+* Es wird aber eine nachträgliche Prüfung eingebaut, die dann über ein Dashboard oder einen Bericht direkt signalisiert,
+an welchen Stellen gegen die Regel verstoßen wurde. 
+* Hier ist es wichtig, einen Kommunikationskanal zu etablieren, damit die Verantwortlichen hinter diesem Verstoß auch direkt darüber informiert werden. Gibt es keine Verbindlichkeit im Team, so werden die Regelverstöße nicht geahndet und verlieren an Akzeptanz.  
+* Der Bericht sollte auch niemals zur Messung einer Arbeitsleistung verwendet werden, da ansonsten die Nutzbarkeit verloren geht. Mitarbeitende bekommen sehr schnell heraus, wie man die 'richtigen' Informationen einfügt, damit der Report ruhig ist. Daher ist der Bericht als Unterstützung zu verwenden und darf nicht als Teil eines 'Blame-Game' genutzt werden. 
+
+Als kleine Diskussion nun die Eigenschaften dieser beiden Verfahren im Vergleich: 
+
+[%header]
+|===
+|Kriterium|Präventiv|Repressiv
+
+|Kommunikation von Regel-Änderung
+|Der Nutzer erhält direkt eine Rückmeldung und kann daraus ableiten, dass es eine neue Regel gibt. 
+|Durch die verspätete Rückmeldung über den Bericht fühlt sich der Nutzer erst im Nachhinein informiert. Dies kann dazu führen, dass zusätzliche Arbeit entsteht, die vermieden worden wäre, hätte der Nutzer bereits die Regel bei seiner Änderung gekannt.
+
+|Technischer Aufwand
+|Meist ist es aufwändig, eine Regelung im Bearbeitungstool direkt so zu integrieren, dass die Zurückführung von
+inhaltlichen Änderungen in das System geprüft wird. Ist der Datentransfer so gestaltet, dass eine lokale oder abgekoppelte
+Datenbank erst in ein Hauptsystem übergeführt werden muss, kann die Prüfung gegebenenfalls beim Rückübertrag stattfinden. 
+Der Nachteil der nachträglichen Kommunikation einer Regel bleibt hier aber teilweise bestehen.
+|Eine Berichterstellung zu implementieren ist meist einfacher, als sich in das Autoren-Tool direkt einzuklinken. 
+Hier ist ein entsprechender Zugang zu den Rohdaten erforderlich sowie die Verteilung des Berichtes. Auch ist bei 
+vielen Regelprüfungen darauf zu achten, dass es nicht zu viele unterschiedliche Berichte gibt, die ein Benutzer zu verfolgen hat.
+Auch ist die Urheberschaft einer Änderung oder eines Moduls zu definieren, da ansonsten die Regelverletzung nicht adressiert 
+werden kann.
+
+|Flexibilität
+|Durch die harte Einführung der Erzwingung können Prozessänderungen oder -abweichungen nur dann implementiert werden, wenn auch der Regelsatz angepasst ist. Auch sind temporäre, notwendige Abweichungen nicht möglich, sodass der Autor dann blockiert ist. 
+|Der Nutzer kann bewusst von einer Regel abweichen und taucht dann im Report auf. Hier kann eine Ausnahmebehandlung definiert werden bzw. ein Problembericht, über den dann die finale, regelkonforme Arbeit dokumentiert angefordert wird. Dies ist flexibler für Ad-hoc-Situationen, kann aber einen kontinuierlichen, schleichenden Qualitätsverfall einleiten. Daher ist die
+Zahl der Regelverletzungen und Ausnahmebehandlungen kontinuierlich zu beobachten und zu prüfen.
+
+|Akzeptanz
+|Eine präventive Regel-Durchsetzung erschwert die Arbeit des Nutzers, sofern er diese Regel nicht beachtet hat. Hier ist es sehr wichtig, dass der Nutzer über den Zweck und Inhalt der Regel direkt im Tool aufmerksam gemacht wird und ihm eine Lösungsmöglichkeit oder ein -verfahren dargelegt wird. Ist dies nicht der Fall, kann dies sogar so weit führen, dass der Nutzer ein Arbeitsprodukt nicht abschicken kann und die Arbeit daher umsonst war. Dies führt zu einer sehr hohen Frustration.
+|Ein berichtendes Wesen wird von den meisten Bearbeitern erst einmal nur aufgenommen. Je nach intrinsischer oder extrinsischer Motivationslage werden die Mängel eigenständig bearbeitet. Hier ist es wichtig, eine enge Verbindung und Verantwortung auch vom entsprechenden Leiter (Projekt oder Disziplin) zu pflegen, damit diese Mängel auch nachhaltig von den Arbeitsprodukt-Verantwortlichen behoben werden. Hier ist es auch wichtig, dem Nutzer direkt zu zeigen, wie ein Mangel behoben werden kann. 
+|===
+
+== Alternative, abgestufte Verfahren
+
+* *Warnungen statt Blockade*: Statt eines präventiven Verfahrens kann der Nutzer eine direkte Rückmeldung erhalten, dass er gerade gegen eine Regel verstößt. Diese kann er dann bestätigen und trotzdem absenden. Der Vorteil dieses Verfahrens ist das Beibehalten der Flexibilität und das direkte Feedback. Nachteilig ist hier zu benennen, dass zusätzlich ein Report erforderlich sein wird, über den man die Warnungen sammelt und konsolidiert auf Akzeptanz bewertet. 
+
+* *Qualitäts-Kennziffern*: Statt einer Warnung erhält der Nutzer einen Qualitäts-KPI für sein Artefakt oder einen Satz von Artefakten. Hier kann auch die Vollständigkeit von Artefakten geprüft werden, sofern man die Ausarbeitung eines Artefaktes in mehreren Schritten durchführt. Jede Verletzung einer Regel führt zu einem Abzug. Vorteilhaft ist hier, eine konsolidierte Übersicht mit einem klaren motivatorischen Ziel darzustellen. Auch kann der Nutzer bereits bei der Eingabe auf seine Regelverletzung hingewiesen werden. Dies benötigt allerdings nochmals die doppelte Implementierung: sowohl im Autoren-Tool als auch als konsolidierender Bericht.
+
+Abhängig von der Schwere der Konsequenz der Regelverletzung kann hier differenziert werden. Probleme, die zu einer schweren Folge für das Produkt oder Unternehmen führen, sollten vermieden werden ("präventiv"). Probleme, die eher stilistische oder nur zu Aufwand in der Bearbeitung führen, eher berichtend ("repressiv").
+
+In etablierten Organisationen kann eine Regel auch schrittweise, erst repressiv, dann präventiv, eingeführt werden. Dies gibt den Nutzern ausreichend Vorwarnung über eine kommende Veränderung und Erwartungshaltung.
