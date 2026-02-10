@@ -24,9 +24,9 @@ an welchen Stellen gegen die Regel verstoßen wurde.
 * Hier ist es wichtig, einen Kommunikationskanal zu etablieren, damit über diesen Verstoß auch direkt informiert wird. Gibt es keine Verbindlichkeit im Team, so werden die Regelverstöße nicht geahndet und verlieren an Akzeptanz.  
 * Der Bericht sollte auch niemals zur Messung einer Arbeitsleistung verwendet werden, da ansonsten die Nutzbarkeit verloren geht. Mitarbeitende bekommen sehr schnell heraus, wie man die 'richtigen' Informationen einfügt, damit der Report ruhig ist. Daher ist der Bericht als Unterstützung zu verwenden und darf nicht als Teil eines 'Blame-Game' genutzt werden. 
 
-Als kleine Diskussion nun die Eigenschaften dieser beiden Verfahren im Vergleich: 
+Als kleine Diskussion nun die Eigenschaften dieser beiden Verfahren im Vergleich:
 
-[%header]
+[%header, width="100%", cols="1,2,2"]
 |===
 |Kriterium|Präventiv|Repressiv
 
