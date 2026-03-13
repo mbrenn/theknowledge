@@ -4,7 +4,7 @@ Wir lieben Methoden und wir lieben Regeln. Nur bin ich fest der Meinung, dass ei
 
 Ich möchte darauf hinweisen, dass jede Einführung einer zwingenden Regel neben den Vorteilen eines klaren und wohlgeordneten Produktes auch einige Nachteile in seinem Kontext erzeugt:  
 
-* **Implementierungskosten**: Der Aufwand, eine Regel präventiv in ein komplexes Tool zu integrieren, kann immens sein.
+* **Implementierungskosten**: Der Aufwand, eine Regel präventiv in ein komplexes Tool zu integrieren, kann unangemessen sein.
 * **Wartungskosten**: Regeln müssen bei Tool-Updates oder Prozessänderungen angepasst werden.
 * **Opportunitätskosten**: Wenn eine zu harte Regel die Expertise in ihrer Arbeit behindert ("False Positives" bzw. unangemessener Aufwand gegenüber den Vorteilen), entstehen Kosten durch Zeitverlust und Frustration.
 
@@ -26,34 +26,21 @@ an welchen Stellen gegen die Regel verstoßen wurde.
 
 Als kleine Diskussion nun die Eigenschaften dieser beiden Verfahren im Vergleich:
 
-[%header, width="100%", cols="1,2,2"]
-|===
-|Kriterium|Präventiv|Repressiv
+=== Kommunikation von Regel-Änderung
+* **Präventiv**: Es wird direkt eine Rückmeldung gegeben, aus der abgeleitet werden kann, dass es eine neue Regel gibt. 
+* **Repressiv**: Durch die verspätete Rückmeldung über den Bericht wird erst im Nachhinein informiert. Dies kann dazu führen, dass zusätzliche Arbeit entsteht, die vermieden worden wäre, wäre die Regel bereits bei der Änderung bekannt gewesen.
 
-|Kommunikation von Regel-Änderung
-|Es wird direkt eine Rückmeldung gegeben, aus der abgeleitet werden kann, dass es eine neue Regel gibt. 
-|Durch die verspätete Rückmeldung über den Bericht wird erst im Nachhinein informiert. Dies kann dazu führen, dass zusätzliche Arbeit entsteht, die vermieden worden wäre, wäre die Regel bereits bei der Änderung bekannt gewesen.
+=== Technischer Aufwand
+* **Präventiv**: Meist ist es aufwändig, eine Regelung im Bearbeitungstool direkt so zu integrieren, dass die Zurückführung von inhaltlichen Änderungen in das System geprüft wird. Ist der Datentransfer so gestaltet, dass eine lokale oder abgekoppelte Datenbank erst in ein Hauptsystem übergeführt werden muss, kann die Prüfung gegebenenfalls beim Rückübertrag stattfinden. Der Nachteil der nachträglichen Kommunikation einer Regel bleibt hier aber teilweise bestehen.
+* **Repressiv**: Eine Berichterstellung zu implementieren ist meist einfacher, als sich in das Autoren-Tool direkt einzuklinken. Hier ist ein entsprechender Zugang zu den Rohdaten erforderlich sowie die Verteilung des Berichtes. Auch ist bei vielen Regelprüfungen darauf zu achten, dass es nicht zu viele unterschiedliche Berichte gibt, die zu verfolgen sind. Auch ist die Urheberschaft einer Änderung oder eines Moduls zu definieren, da ansonsten die Regelverletzung nicht adressiert werden kann.
 
-|Technischer Aufwand
-|Meist ist es aufwändig, eine Regelung im Bearbeitungstool direkt so zu integrieren, dass die Zurückführung von
-inhaltlichen Änderungen in das System geprüft wird. Ist der Datentransfer so gestaltet, dass eine lokale oder abgekoppelte
-Datenbank erst in ein Hauptsystem übergeführt werden muss, kann die Prüfung gegebenenfalls beim Rückübertrag stattfinden. 
-Der Nachteil der nachträglichen Kommunikation einer Regel bleibt hier aber teilweise bestehen.
-|Eine Berichterstellung zu implementieren ist meist einfacher, als sich in das Autoren-Tool direkt einzuklinken. 
-Hier ist ein entsprechender Zugang zu den Rohdaten erforderlich sowie die Verteilung des Berichtes. Auch ist bei 
-vielen Regelprüfungen darauf zu achten, dass es nicht zu viele unterschiedliche Berichte gibt, die zu verfolgen sind.
-Auch ist die Urheberschaft einer Änderung oder eines Moduls zu definieren, da ansonsten die Regelverletzung nicht adressiert 
-werden kann.
+=== Flexibilität
+* **Präventiv**: Durch die harte Einführung der Erzwingung können Prozessänderungen oder -abweichungen nur dann implementiert werden, wenn auch der Regelsatz angepasst ist. Auch sind temporäre, notwendige Abweichungen nicht möglich, sodass die Arbeit dann blockiert ist. 
+* **Repressiv**: Es kann bewusst von einer Regel abgewichen werden, was dann im Report erscheint. Hier kann eine Ausnahmebehandlung definiert werden bzw. ein Problembericht, über den dann die finale, regelkonforme Arbeit dokumentiert angefordert wird. Dies ist flexibler für Ad-hoc-Situationen, kann aber einen kontinuierlichen, schleichenden Qualitätsverfall einleiten. Daher ist die Zahl der Regelverletzungen und Ausnahmebehandlungen kontinuierlich zu beobachten und zu prüfen.
 
-|Flexibilität
-|Durch die harte Einführung der Erzwingung können Prozessänderungen oder -abweichungen nur dann implementiert werden, wenn auch der Regelsatz angepasst ist. Auch sind temporäre, notwendige Abweichungen nicht möglich, sodass die Arbeit dann blockiert ist. 
-|Es kann bewusst von einer Regel abgewichen werden, was dann im Report erscheint. Hier kann eine Ausnahmebehandlung definiert werden bzw. ein Problembericht, über den dann die finale, regelkonforme Arbeit dokumentiert angefordert wird. Dies ist flexibler für Ad-hoc-Situationen, kann aber einen kontinuierlichen, schleichenden Qualitätsverfall einleiten. Daher ist die
-Zahl der Regelverletzungen und Ausnahmebehandlungen kontinuierlich zu beobachten und zu prüfen.
-
-|Akzeptanz
-|Eine präventive Regel-Durchsetzung erschwert die Arbeit, sofern eine Regel nicht beachtet wurde. Hier ist es sehr wichtig, dass über den Zweck und Inhalt der Regel direkt im Tool aufmerksam gemacht wird und eine Lösungsmöglichkeit oder ein -verfahren dargelegt wird. Ist dies nicht der Fall, kann dies sogar so weit führen, dass ein Arbeitsprodukt nicht abgeschickt werden kann und die Arbeit daher umsonst war. Dies führt zu einer sehr hohen Frustration.
-|Ein Berichtswesen wird meist erst einmal nur aufgenommen. Je nach intrinsischer oder extrinsischer Motivationslage werden die Mängel eigenständig bearbeitet. Hier ist es wichtig, eine enge Verbindung und Verantwortung auch seitens der Leitung (Projekt oder Disziplin) zu pflegen, damit diese Mängel auch nachhaltig von den für das Arbeitsprodukt Verantwortlichen behoben werden. Hier ist es auch wichtig, direkt zu zeigen, wie ein Mangel behoben werden kann. 
-|===
+=== Akzeptanz
+* **Präventiv**: Eine präventive Regel-Durchsetzung erschwert die Arbeit, sofern eine Regel nicht beachtet wurde. Hier ist es sehr wichtig, dass über den Zweck und Inhalt der Regel direkt im Tool aufmerksam gemacht wird und eine Lösungsmöglichkeit oder ein -verfahren dargelegt wird. Ist dies nicht der Fall, kann dies sogar so weit führen, dass ein Arbeitsprodukt nicht abgeschickt werden kann und die Arbeit daher umsonst war. Dies führt zu einer sehr hohen Frustration.
+* **Repressiv**: Ein Berichtswesen wird meist erst einmal nur aufgenommen. Je nach intrinsischer oder extrinsischer Motivationslage werden die Mängel eigenständig bearbeitet. Hier ist es wichtig, eine enge Verbindung und Verantwortung auch seitens der Leitung (Projekt oder Disziplin) zu pflegen, damit diese Mängel auch nachhaltig von den für das Arbeitsprodukt Verantwortlichen behoben werden. Hier ist es auch wichtig, direkt zu zeigen, wie ein Mangel behoben werden kann. 
 
 == Alternative, abgestufte Verfahren
 
