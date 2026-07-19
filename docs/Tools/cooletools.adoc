@@ -1,5 +1,9 @@
 = Gute Tools
 
+JetBrains Rider:: https://www.jetbrains.com/de-de/rider/
++
+Ein platform-übergreifendes Tool zur C#/.Net Entwicklung unter Windows und Linux. Mein persönliches Entwicklungstool. Mittlerweile unterstützt es auch viele andere Dateiformate direkt inline... Geht in direkten Wettbewerb mit Visual Studio Code und einfach nur hervorragend, wenn auch kostenpflichtig.
+
 Asciidoctor:: https://asciidoctor.org/
 + 
 Ein Konvertierungstool um aus https://en.wikipedia.org/wiki/AsciiDoc[.adoc-Dateien] ein Html zu erzeugen. Auch das Geschriebene, welches du gerade liest, ist ein .adoc-Dokument. In Kombination mit Jenkins ein einfach gutes Tool. 
@@ -12,17 +16,6 @@ Visual Studio Code:: https://code.visualstudio.com/
 +
 Ein sehr populärer Editor zum Bearbeiten von Code-, Markup und Daten-Dateien welcher unter allen großen Betriebssystemen läuft. Nutze ich täglich, wenn ich nicht Rider oder Visual Studio für C# nutze.
 
-Visual Studio:: https://visualstudio.microsoft.com/de/
-+
-Das Tool für Windows-Entwicklung, allerdings für C# nutze ich persönlich den Rider.
-
-JetBrains Rider:: https://www.jetbrains.com/de-de/rider/
-+
-Ein platform-übergreifendes Tool zur C#/.Net Entwicklung unter Windows und Linux. Mein persönliches Entwicklungstool. 
-+
-Kostet ein wenig Geld, aber ist in meinen Augen das Abo wert. 
-
 DotNet Benchmark:: https://github.com/dotnet/BenchmarkDotNet
 +
 Gehört mit NUnit zu einer der Standard-Tools für die Bestimmung der Laufzeit von Methoden. Das Tool kümmert sich automatisch um die Analyse des Overheads und der notwendigen Wiederholraten um eine gewisse Konfidenz zu erreichen. Bevor man mit https://docs.microsoft.com/de-de/dotnet/api/system.diagnostics.stopwatch?view=netcore-3.1["StopWatch"] sein eigenes Benchmarking aufbaut, empfehle ich eine Prüfung dieser Bibliothek.
-
