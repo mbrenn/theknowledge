@@ -50,7 +50,7 @@ The following topics are required to be clarified:
 ** [x] Where is the project configuration stored? How is it ensured that the syntax highlighting works?
 ** [x] How can MSBuild on project-level call bsmake? 
 ** [x] How is it ensured that the compiled project build configuration is hidden in the .gitignore? 
-* [ ] How can bsmake be integrated in 'dotnet tool'? -> <<bsmake-in-dotnet-tool>>
+* [x] How can bsmake be integrated in 'dotnet tool'? -> <<bsmake-in-dotnet-tool>>
 * [x] How is a new project file to be integrated into an existing MSBuild project? -> Description is needed and to be created
 
 === Development plan
