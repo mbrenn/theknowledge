@@ -6,6 +6,7 @@
 
 === § 1 Zweck des Gesetzes
 (1) Dieses Gesetz regelt die Grundsätze für die Einführung, Überwachung und Durchsetzung von Regeln innerhalb der Systementwicklung und Produktgestaltung.
+
 (2) Ziel des Gesetzes ist die Sicherstellung einer wohlgeordneten Produktqualität unter Berücksichtigung der wirtschaftlichen Verhältnismäßigkeit und der Akzeptanz durch die Anwender.
 
 === § 2 Grundsatz der Beobachtbarkeit
