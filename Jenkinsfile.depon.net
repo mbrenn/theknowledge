@@ -1,0 +1,48 @@
+﻿pipeline {
+    agent any
+    
+    options {
+        // Prevent concurrent deployments to the same webroot
+        disableConcurrentBuilds()
+        // Retain only the last 10 builds to save disk space
+        buildDiscarder(logRotator(numToKeepStr: '10'))
+        // Abort build if it hangs
+        timeout(time: 15, unit: 'MINUTES')
+    }
+
+    stages {
+        stage('Checkout Git') {
+            steps {
+                // Get some code from a GitHub repository
+                git 'https://github.com/mbrenn/theknowledge.git'
+            }
+        }
+        
+        stage('Clean') {
+            steps {
+                // Ensure no stale output from prior runs
+                sh 'rm -rf output'
+            }
+        }
+
+        stage('Build Documentation') {
+            steps {
+                dir('scripts') {
+                    // Executes asciidoctor and python documentation generator
+                    sh 'python3 create.py'
+                }
+            }
+        }
+
+        stage('Deploy to Webroot') {
+            steps {
+                // Ensure target directory exists
+                sh 'mkdir -p /var/www/html/theknowledge'
+                
+                // rsync synchronizes the generated files and removes deleted files from the destination
+                // Alternatively: sh 'cp -r output/* /var/www/html/theknowledge/'
+                sh 'rsync -av --no-o --no-g --no-t --delete output/ /var/www/html/theknowledge/'
+            }
+        }
+    }
+}

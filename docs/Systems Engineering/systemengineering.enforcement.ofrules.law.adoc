@@ -32,7 +32,7 @@ Bei der Einführung zwingender Regeln sind insbesondere folgende Nachteile gegen
 (4) Die zur repressiven Durchsetzung erstellten Berichte dürfen nicht zur isolierten Messung der individuellen Arbeitsleistung (Leistungskontrolle) herangezogen werden. Sie dienen ausschließlich der Prozessunterstützung und Qualitätssteigerung.
 
 == Abschnitt 3: Besondere Verfahren und Verhältnismäßigkeit
-s
+
 === § 6 Abgestufte Verfahren
 (1) Zur Wahrung der Flexibilität können Warnmechanismen eingesetzt werden, die auf eine Regelverletzung hinweisen, den Vorgang jedoch nach Bestätigung durch den Anwender zulassen. In diesem Fall ist ein ergänzendes Berichtswesen zur Überwachung der Ausnahmehäufigkeit erforderlich.
 (2) Zur Motivation kann eine Qualitäts-Kennziffer (KPI) eingesetzt werden, bei der Regelverletzungen zu Abzügen in einer Gesamtwertung führen.

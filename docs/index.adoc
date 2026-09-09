@@ -21,7 +21,7 @@ Die Quelle des Buchs ist verfügbar unter https://github.com/mbrenn/theknowledge
 
 == Weitere Kapitel
 
-* link:datenmeister/datenmeister.html[DatenMeister]
 * link:Systems%20Engineering/systemengineering.html[Systems Engineering]
 * link:Tools/cooletools.html[Toolings]
 * link:Trainings/training.html[Trainings / Cheatsheets]
+* link:https://github.com/mbrenn/datenmeister-new/blob/master/docs/datenmeister.adoc[DatenMeister]
