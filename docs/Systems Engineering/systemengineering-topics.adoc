@@ -1,0 +1,29 @@
+﻿= Welche Topics
+
+Welchen Themen möchte ich betrachten:
+
+== Theorie 
+
+* Was ist ein Objekt? 
+* Was sind Eigenschaften? 
+* Schnittstellen und was geht über Schnittstellen? 
+
+== Projet Management
+
+* Stage and Gate
+
+== Systems Engineering
+
+* In welchen Bereichen ist das Systems Engineering unterwegs?
+** Referenz auf ISO 15288
+** Was ist der V-Zyklus? 
+** Wie interagiert dieser mit modernen, iterativen Entwicklungsmethoden
+* Was sind Anforderungen? 
+** Welche Arten und Eigenschaften von Anforderungen gibt es? 
+** Die Toolfrage!
+* Wie geht man mit Anforderungen um? 
+** Warum macht man eigentlich Anforderungen? 
+** Welche Eigenschaften haben Anforderungen? 
+* Wie geht man mit Verifikation um? 
+** Wie verifiziert man? 
+* Was ist Tracing / Nachverfolgbarkeit? 
