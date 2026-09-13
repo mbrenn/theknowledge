@@ -7,4 +7,6 @@
 
 include::systemengineering.object.adoc[leveloffset=+1]
 
+include::systemengineering.001.whatis.adoc[leveloffset=+1]
+
 include::systemengineering.enforcement.ofrules.adoc[leveloffset=+1]

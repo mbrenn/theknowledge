@@ -1,0 +1,35 @@
+﻿= Was ist Systems Engineering? 
+
+Es gibt in meinen Augen keine abschließende Definition was Systems Engineering ist und ich verweise hier auch gerne auf die Definition der https://www.incose.org/[INCOSE], die sich auch in den Standard der ISO 15288 eingefunden hat: https://www.incose.org/about-systems-engineering/[About Systems Engineering].
+
+[quote, INCOSE, About Systems Engineering]
+____
+ Systems Engineering is a transdisciplinary and integrative approach to enable the successful realization, use, and retirement of engineered systems, using systems principles and concepts, and scientific, technological, and management methods.
+____
+
+Das ist natürlich ein dicher, abstrakter Satz, der bei dieser Kompression nicht nah an dem Verständnis ist. 
+
+Eine alternative Beschreibung ist auf der NASA-Website zu lesen:
+https://www.nasa.gov/reference/2-0-fundamentals-of-systems-engineering/[Fundamentals of Systems Engineering]. Dies ist eine schön beschreibende Seite, die in meinen Augen den Punkt schon sehr auf den Punkt bringt. 
+
+All die Definitionen haben folgende Grundsätze gemeinsam und ich möchte bei der vorhandenen Literatur nicht das Systems Engineering im Theoretischen beschreiben, sondern eher konkrete Hilfestellungen geben. 
+
+. Systems Engineering sieht das Produkt als Ganzes und nicht als zufälliges Konstrukt vieler Teilprodukte.
+. Systems Engineering betrachtet das Produkt aus der Perspektive der vielen interagierenden Personen, wobei hier nicht nur an den Nutzer und Eigentümer gedacht wird. Man spricht auch von Stakeholder
+. Systems Engineering betrachtet das Produkt über seinen gesamten Lebenszyklus von der ersten Idee der Entstehung bis zur sicheren Entsorgung. 
+. Systems Engineering bildet einen Rahmen um das Verhalten eines komplexes Produkts dadurch zu verstehen, indem die Schnittstellen beschrieben und analysiert werden.
+. Systems Engineering beschreibt nicht nur das Produkt, sondern auch dessen Kontext und das dortige Zusammenwirken.
+
+Ausgehend von diesem ersten Überblick werden wir uns in den folgenden Kapiteln Schritt für Schritt an die konkrete Anwendung heranarbeiten, aber bevor wird die Interaktion mit anderen Fachdisziplinen betrachtet: 
+
+== Wie interagiert Systems Engineering? 
+
+Systems Engineering alleine kann alleine kein Produkt erzeugen. Es bringt die verschiedenen Fachdisziplinen zusammen, ersetzt diese aber nicht!
+
+Es gibt insbesondere folgende Schnittstellen:
+
+* **Projekt-Management**: Das Projekt-Management stellt den Rahmen und die Aufträge für die notwendigen Aktivitäten zur Verfügung. Das Systems Engineering unterstützt bei der Erstellung und Beschreibung der notwendigen Aktivitäten, um eine sinnhafte Projektplanung vorzubereiten und so eine Verschwendung durch unsinnige Aufgaben vorbereiten. 
+
+* **Program-Management**: Das Program-Management kümmert sich (je nach organisatorischer Definition) um die Bereitstellung einer sinnhaften Roadmap von Produkten zur gewinnbringenden Inverkehrbringung. Das Systems Engineering unterstützt hier bei der Bewertung der Produktvarianten und entwickelt die Produkte in einer Art und Weise, dass eine effiziente Ableitung konkreter Produktvarianten aus den Kundenanforderungen möglich ist. 
+
+* **Fachdisziplinen**: Die Fachdisziplinen beherrschen das Design und fir  Integration der Teile durch entsprechende Fach- und Disziplin-Kompetenzen. Das Systems Engineering unterstützt diese durch klare Definitionen, Budgetierung und Annahmen der einzelnen Teile und hört den Fachdisziplinen auf der Suche nach der idealen Lösung zu.  
