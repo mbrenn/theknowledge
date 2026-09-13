@@ -7,7 +7,7 @@ ____
  Systems Engineering is a transdisciplinary and integrative approach to enable the successful realization, use, and retirement of engineered systems, using systems principles and concepts, and scientific, technological, and management methods.
 ____
 
-Das ist natürlich ein dicher, abstrakter Satz, der bei dieser Kompression nicht nah an dem Verständnis ist. 
+Das ist natürlich ein dichter, abstrakter Satz, der so komprimiert ist, dass er kaum verständlich ist! 
 
 Eine alternative Beschreibung ist auf der NASA-Website zu lesen:
 https://www.nasa.gov/reference/2-0-fundamentals-of-systems-engineering/[Fundamentals of Systems Engineering]. Dies ist eine schön beschreibende Seite, die in meinen Augen den Punkt schon sehr auf den Punkt bringt. 
